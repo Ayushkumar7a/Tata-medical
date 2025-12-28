@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCare</title>
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Smooth scroll -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ================= FIXED TOP BAR ================= -->
+    <div class="top-bar fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- LOGO ALWAYS VISIBLE -->
+            <div class="top-logo fw-bold">
+                ❤️ MediCare
+            </div>
+
+            <!-- CONTACT INFO: DESKTOP ONLY -->
+            <div class="top-right d-none d-md-flex align-items-center gap-3">
+                <span>📞 9845633745</span>
+                <span>✉ info@medicare.com</span>
+                <a href="#appointment" class="top-btn">Get Appointment</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FIXED -->
+    <a href="#appointment" class="top-btn"> Get Appointment </a>
+    </div>
+    </div>
+    </div>
+
+    <!-- ================= MAIN NAV ================= -->
+    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="navbar-nav gap-md-4 text-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#doctors">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer -->
+    <div style="height: 120px"></div>
+
+    <!-- ================= HERO + APPOINTMENT ================= -->
+    <section id="home" class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <!-- LEFT -->
+                <div class="col-lg-8">
+                    <div class="slider rounded-4 shadow-lg">
+                        <div class="slide active slide1">
+                            <h1>Urban Life</h1>
+                            <p>Feel the city energy</p>
+                        </div>
+                        <div class="slide slide2">
+                            <h1>Healthy Living</h1>
+                            <p>Your health, our priority</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: APPOINTMENT FORM (MAIN TARGET) -->
+                <div class="col-lg-4">
+                    <div class="appointment-card shadow-lg" id="appointment">
+                        <h4 class="mb-4">📅 Book Appointment</h4>
+
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email Address" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" placeholder="Phone Number" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="date" class="form-control" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <select class="form-select" required>
+                    <option disabled selected>Select Doctor</option>
+                    <option>Dr. Sarah Johnson</option>
+                    <option>Dr. Michael Chen</option>
+                  </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="3" placeholder="Additional Message"></textarea>
+                            </div>
+
+                            <button class="btn btn-primary w-100 py-2">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= DOCTORS ================= -->
+
+    <section id="doctors" class="doctors-section">
+        <h2 class="section-title text-center">Our Doctors</h2>
+
+        <div class="doctors-grid">
+            <!-- Doctor 1 -->
+            <div class="doctor-flip">
+                <div class="doctor-inner">
+                    <!-- FRONT -->
+                    <div class="doctor-front">
+                        <img src="images/doctor1.jpg" class="doctor-photo" alt="Dr Sarah Johnson" />
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="specialty">Cardiologist</p>
+                    </div>
+
+                    <!-- BACK -->
+                    <div class="doctor-back">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>15+ Years Experience</p>
+
+                        <button class="doctor-btn open-appointment" type="button">
+                Book Appointment
+              </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="doctor-flip">
+                <div class="doctor-inner">
+                    <!-- FRONT -->
+                    <div class="doctor-front">
+                        <img src="images/doctor2.jpg" class="doctor-photo" alt="Dr Michael Chen" />
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="specialty">Neurologist</p>
+                    </div>
+
+                    <!-- BACK -->
+                    <div class="doctor-back">
+                        <h3>Dr. Michael Chen</h3>
+                        <p>12+ Years Experience</p>
+
+                        <button class="doctor-btn open-appointment" type="button">
+                Book Appointment
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= GALLERY ================= -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title text-center">Our Gallery</h2>
+        <p class="section-subtitle text-center">
+            A glimpse of our hospital infrastructure and patient care
+        </p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery1.jpg" alt="Hospital Building" />
+                <div class="gallery-overlay">Hospital Building</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery2.jpg" alt="Doctor Consultation" />
+                <div class="gallery-overlay">Doctor Consultation</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery3.jpg" alt="Medical Laboratory" />
+                <div class="gallery-overlay">Medical Laboratory</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery4.jpg" alt="Doctors Team" />
+                <div class="gallery-overlay">Our Doctors</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery5.jpg" alt="Reception Area" />
+                <div class="gallery-overlay">Reception Area</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery6.jpg" alt="Patient Care" />
+                <div class="gallery-overlay">Patient Care</div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title text-center">Contact Us</h2>
+        <p class="contact-subtitle text-center">
+            We are here to help you. Reach out to us anytime.
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h4>Phone</h4>
+                <p>+91 98456 33745</p>
+                <p>+91 80177 38112</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h4>Email</h4>
+                <p>info@medicare.com</p>
+                <p>support@medicare.com</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h4>Address</h4>
+                <p>123 Health Street</p>
+                <p>Medical District, India</p>
+            </div>
+        </div>
+    </section>
+    <!-- ================= MOBILE BOTTOM NAV ================= -->
+    <nav class="mobile-nav d-md-none">
+        <a href="#home">🏠<span>Home</span></a>
+        <a href="#about">👥<span>About</span></a>
+        <a href="#services">🧪<span>Services</span></a>
+
+        <!-- FIXED -->
+        <a href="#appointment" class="mobile-appointment-btn">
+        📅<span>Appointment</span>
+      </a>
+
+        <a href="#doctors">👨‍⚕️<span>Doctors</span></a>
+        <a href="#contact">📞<span>Contact</span></a>
+    </nav>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
