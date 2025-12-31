@@ -1,281 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediCare</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        section {
-            scroll-margin-top: 130px;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      section {
+        scroll-margin-top: 130px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ================= TOP BAR ================= -->
-    <div class="top-bar fixed-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="top-logo">
-                <img src="images/logo.png" alt="Tata Medical" />
-            </div>
-
-            <div class="top-right d-none d-md-flex gap-3 align-items-center">
-                <span>📞 9845633745</span>
-                <span>✉ info@medicare.com</span>
-                <a href="#appointment" class="top-btn">Get Appointment</a>
-            </div>
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <!-- LOGO -->
+        <div class="top-logo">
+          <img src="images/logo.png" alt="Tata Medical Logo" />
         </div>
+
+        <!-- INFO -->
+        <div class="top-info">
+          <span>📍 Roorkee, Uttarakhand</span>
+          <span id="liveDateTime">🕒 Loading...</span>
+          <span>📞 9845633745</span>
+          <span>✉ info@medicare.com</span>
+        </div>
+      </div>
     </div>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
-        <div class="container">
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <nav
+      class="navbar navbar-expand-md navbar-dark main-nav fixed-top"
+      style="top: 50px"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-                <ul class="navbar-nav gap-md-4">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#doctors">Doctors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="mainNav"
+        >
+          <ul class="navbar-nav gap-md-4">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#doctors">Doctors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ================= HOME ================= -->
-    <section id="home" class="py-5">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-8">
-                    <div class="slider">
-                        <div class="slide active slide1">
-                            <h1>Healthy Living</h1>
-                            <p>Your health, our priority</p>
-                        </div>
-                        <div class="slide slide2">
-                            <h1>Advanced Care</h1>
-                            <p>Trusted medical excellence</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-stretch g-4">
+          <!-- LEFT HERO CONTENT -->
+          <div class="col-lg-8 hero-left">
+            <div class="hero-overlay">
+              <h1>Modern Facilities</h1>
+              <p>
+                State-of-the-art equipment for accurate diagnosis, providing
+                comprehensive healthcare solutions with latest technology and
+                professionals.
+              </p>
 
-                <div class="col-lg-4">
-                    <div class="appointment-card" id="appointment">
-                        <h4>📅 Book Appointment</h4>
-                        <form>
-                            <input class="form-control mb-3" placeholder="Name" required />
-                            <input class="form-control mb-3" placeholder="Email" required />
-                            <input class="form-control mb-3" placeholder="Phone" required />
-                            <input type="date" class="form-control mb-3" required />
-                            <select class="form-select mb-3" required>
-                  <option disabled selected>Select Doctor</option>
-                  <option>Dr. Sarah Johnson</option>
-                  <option>Dr. Michael Chen</option>
-                </select>
-                            <button class="btn btn-primary w-100">Book Now</button>
-                        </form>
-                    </div>
-                </div>
+              <div class="hero-actions">
+                <a href="#about" class="btn btn-outline-light">Learn More</a>
+              </div>
             </div>
+          </div>
+
+          <!-- RIGHT APPOINTMENT CARD -->
+          <div class="col-lg-4">
+            <div class="appointment-card shadow-lg" id="appointment">
+              <h4>Book Appointment</h4>
+              <p class="small text-muted">
+                Fill out the form to schedule a visit
+              </p>
+
+              <form>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  class="form-control mb-3"
+                  placeholder="Email Address"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="form-control mb-3"
+                  placeholder="Phone Number"
+                  required
+                />
+                <input type="date" class="form-control mb-3" required />
+
+                <select class="form-select mb-3">
+                  <option selected disabled>Select Department</option>
+                  <option>Cardiology</option>
+                  <option>Neurology</option>
+                  <option>Orthopedic</option>
+                </select>
+
+                <button class="btn btn-success w-100">
+                  Request Appointment
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ================= ABOUT ================= -->
     <section id="about" class="about-section">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>About MediCare</h2>
-                <p class="about-subtitle">Caring with compassion & technology</p>
-                <p>
-                    MediCare is a modern healthcare center delivering reliable, patient-focused medical services with advanced technology.
-                </p>
+      <div class="about-container">
+        <div class="about-text">
+          <h2>About MediCare</h2>
+          <p class="about-subtitle">Caring with compassion & technology</p>
+          <p>
+            MediCare is a modern healthcare center delivering reliable,
+            patient-focused medical services with advanced technology.
+          </p>
 
-                <div class="about-features">
-                    <div class="feature">🏥 Advanced Infrastructure</div>
-                    <div class="feature">👨‍⚕️ Expert Doctors</div>
-                    <div class="feature">💊 Quality Care</div>
-                    <div class="feature">⏱ 24/7 Emergency</div>
-                </div>
-            </div>
-
-            <div class="about-stats">
-                <div class="stat-card">
-                    <h3>25+</h3>
-                    <p>Years</p>
-                </div>
-                <div class="stat-card">
-                    <h3>50+</h3>
-                    <p>Doctors</p>
-                </div>
-                <div class="stat-card">
-                    <h3>10k+</h3>
-                    <p>Patients</p>
-                </div>
-                <div class="stat-card">
-                    <h3>24/7</h3>
-                    <p>Support</p>
-                </div>
-            </div>
+          <div class="about-features">
+            <div class="feature">🏥 Advanced Infrastructure</div>
+            <div class="feature">👨‍⚕️ Expert Doctors</div>
+            <div class="feature">💊 Quality Care</div>
+            <div class="feature">⏱ 24/7 Emergency</div>
+          </div>
         </div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <h3>25+</h3>
+            <p>Years</p>
+          </div>
+          <div class="stat-card">
+            <h3>50+</h3>
+            <p>Doctors</p>
+          </div>
+          <div class="stat-card">
+            <h3>10k+</h3>
+            <p>Patients</p>
+          </div>
+          <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Support</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ================= SERVICES ================= -->
-    <section id="services" class="services-section">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Comprehensive healthcare solutions</p>
+    <section class="services-pro">
+      <div class="services-head">
+        <span class="services-tag">Our Services</span>
+        <h2>Comprehensive Healthcare Services</h2>
+        <p>
+          We provide a wide range of diagnostic and medical services with
+          accuracy, care, and advanced technology.
+        </p>
+      </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🧪</div>
-                <h3>Laboratory</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🩸</div>
-                <h3>Blood Bank</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🩻</div>
-                <h3>Imaging</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">❤️</div>
-                <h3>Cardiac Care</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">👶</div>
-                <h3>Pediatrics</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🩺</div>
-                <h3>Checkups</h3>
-            </div>
+      <div class="services-grid-pro">
+        <!-- Card 1 -->
+        <div class="service-card-pro">
+          <div class="service-icon-pro blue">🧪</div>
+          <h3>Lab Test</h3>
+          <p>
+            Comprehensive laboratory testing with accurate results and quick
+            turnaround times.
+          </p>
+          <a href="#">Learn More →</a>
         </div>
+
+        <!-- Card 2 -->
+        <div class="service-card-pro">
+          <div class="service-icon-pro red">🩸</div>
+          <h3>Blood Test</h3>
+          <p>
+            Complete blood count, metabolic panels, and specialized blood tests.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card-pro">
+          <div class="service-icon-pro green">🩻</div>
+          <h3>X-Ray</h3>
+          <p>
+            Digital X-ray imaging with instant results and expert
+            interpretation.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card-pro">
+          <div class="service-icon-pro teal">🩺</div>
+          <h3>Doctor Appointment</h3>
+          <p>
+            Easy scheduling with experienced specialists across all departments.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card-pro">
+          <div class="service-icon-pro blue">💊</div>
+          <h3>Medicine</h3>
+          <p>Full-service pharmacy with prescription and OTC medications.</p>
+          <a href="#">Learn More →</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="service-card-pro">
+          <div class="service-icon-pro green">🚑</div>
+          <h3>Emergency Care</h3>
+          <p>
+            24/7 emergency services with rapid response and critical care
+            support.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+      </div>
     </section>
 
     <!-- ================= DOCTORS ================= -->
-    <section id="doctors" class="doctors-section">
-        <h2 class="section-title">Our Doctors</h2>
-
-        <div class="doctors-grid">
-            <div class="doctor-flip">
-                <div class="doctor-inner">
-                    <div class="doctor-front">
-                        <img src="images/doctor1.jpg" class="doctor-photo" />
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p>Cardiologist</p>
-                    </div>
-                    <div class="doctor-back">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <p>15+ Years Experience</p>
-                        <a href="#appointment" class="doctor-btn">Book Appointment</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="doctor-flip">
-                <div class="doctor-inner">
-                    <div class="doctor-front">
-                        <img src="images/doctor2.jpg" class="doctor-photo" />
-                        <h3>Dr. Michael Chen</h3>
-                        <p>Neurologist</p>
-                    </div>
-                    <div class="doctor-back">
-                        <h3>Dr. Michael Chen</h3>
-                        <p>12+ Years Experience</p>
-                        <a href="#appointment" class="doctor-btn">Book Appointment</a>
-                    </div>
-                </div>
-            </div>
+    <section id="doctors" class="doctors-section-new">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Our Medical Team</span>
+          <h2>Meet Our Expert Doctors</h2>
+          <p>
+            Our team of board-certified physicians brings decades of combined
+            experience and a commitment to excellence in patient care.
+          </p>
         </div>
+
+        <div class="doctor-grid-new">
+          <!-- Doctor Card -->
+          <div class="doctor-card-new">
+            <img src="images/doctor1.jpg" alt="Dr Robert Wilson" />
+
+            <button class="doctor-book-btn">Book Appointment</button>
+
+            <div class="doctor-info">
+              <div class="rating">⭐ 4.9 <span>• 15+ Years</span></div>
+              <h3>Dr. Robert Wilson</h3>
+              <h4>General Medicine</h4>
+              <p class="degree">MD, FACP</p>
+              <p class="desc">
+                Specializing in comprehensive primary care with a focus on
+                preventive medicine.
+              </p>
+            </div>
+          </div>
+
+          <div class="doctor-card-new">
+            <img src="images/doctor2.jpg" alt="Dr Sarah Johnson" />
+            <button class="doctor-book-btn">Book Appointment</button>
+
+            <div class="doctor-info">
+              <div class="rating">⭐ 4.8 <span>• 12+ Years</span></div>
+              <h3>Dr. Sarah Johnson</h3>
+              <h4>Cardiology</h4>
+              <p class="degree">MD, FACC</p>
+              <p class="desc">
+                Expert in cardiovascular diseases and interventional cardiology
+                procedures.
+              </p>
+            </div>
+          </div>
+
+          <div class="doctor-card-new">
+            <img src="images/doctor3.jpg" alt="Dr Michael Chen" />
+            <button class="doctor-book-btn">Book Appointment</button>
+
+            <div class="doctor-info">
+              <div class="rating">⭐ 4.9 <span>• 20+ Years</span></div>
+              <h3>Dr. Michael Chen</h3>
+              <h4>Neurology</h4>
+              <p class="degree">MD, PhD</p>
+              <p class="desc">
+                Leading specialist in neurological disorders and brain health.
+              </p>
+            </div>
+          </div>
+
+          <div class="doctor-card-new">
+            <img src="images/doctor4.jpg" alt="Dr Emily Davis" />
+            <button class="doctor-book-btn">Book Appointment</button>
+
+            <div class="doctor-info">
+              <div class="rating">⭐ 4.7 <span>• 10+ Years</span></div>
+              <h3>Dr. Emily Davis</h3>
+              <h4>Pediatrics</h4>
+              <p class="degree">MD, FAAP</p>
+              <p class="desc">
+                Dedicated to providing compassionate care for children of all
+                ages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ================= GALLERY ================= -->
     <section id="gallery" class="gallery-section">
-        <h2 class="section-title">Gallery</h2>
+      <div class="section-head">
+        <span class="section-tag">Our Infrastructure</span>
+        <h2>Inside Our Medical Center</h2>
+        <p>
+          Take a closer look at our state-of-the-art facilities, advanced
+          diagnostic labs, expert doctors, and patient-friendly environment
+          designed for comfort and care.
+        </p>
+      </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/gallery1.jpg" />
-                <div class="gallery-overlay">Hospital</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery2.jpg" />
-                <div class="gallery-overlay">Consultation</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery3.jpg" />
-                <div class="gallery-overlay">Lab</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery4.jpg" />
-                <div class="gallery-overlay">Doctors</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery5.jpg" />
-                <div class="gallery-overlay">Reception</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery6.jpg" />
-                <div class="gallery-overlay">Care</div>
-            </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/gallery1.jpg" alt="Hospital Building" />
+          <div class="gallery-overlay">
+            <span>Hospital Infrastructure</span>
+          </div>
         </div>
-    </section>
 
+        <div class="gallery-item">
+          <img src="images/gallery2.jpg" alt="Doctor Consultation" />
+          <div class="gallery-overlay">
+            <span>Doctor Consultation</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/gallery3.jpg" alt="Medical Laboratory" />
+          <div class="gallery-overlay">
+            <span>Advanced Laboratory</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/gallery4.jpg" alt="Medical Team" />
+          <div class="gallery-overlay">
+            <span>Expert Medical Team</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/gallery5.jpg" alt="Reception Area" />
+          <div class="gallery-overlay">
+            <span>Patient Reception</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/gallery6.jpg" alt="Patient Care" />
+          <div class="gallery-overlay">
+            <span>Compassionate Care</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================= REVIEWS ================= -->
+    <section class="reviews-section">
+      <div class="reviews-head">
+        <span class="reviews-tag">Patient Reviews</span>
+        <h2>What Our Patients Say</h2>
+        <p>
+          Real stories from real patients who trusted us with their healthcare
+          journey.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “After my heart surgery, the cardiology team provided outstanding
+            follow-up care. I'm grateful for their expertise and dedication.
+            MediCare truly puts patients first.”
+          </p>
+
+          <div class="review-user">
+            <img src="images/patient1.jpg" alt="Patient" />
+            <div>
+              <h4>David Thompson</h4>
+              <span>Cardiac Surgery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “As a mother of three, I appreciate how the pediatric department
+            handles children with such patience and care. The doctors made my
+            kids feel comfortable during visits.”
+          </p>
+
+          <div class="review-user">
+            <img src="images/patient2.jpg" alt="Patient" />
+            <div>
+              <h4>Amanda Rodriguez</h4>
+              <span>Pediatric Care</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p class="review-text">
+            “The emergency staff responded very quickly when I was brought in
+            for chest pain. Their swift action and clear explanation gave me
+            peace of mind.”
+          </p>
+
+          <div class="review-user">
+            <img src="images/patient3.jpg" alt="Patient" />
+            <div>
+              <h4>Michael Anderson</h4>
+              <span>Emergency Care</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter-section">
+      <div class="newsletter-box">
+        <div class="newsletter-text">
+          <h3>Subscribe to Our Newsletter</h3>
+          <p>Get the latest health tips and updates directly in your inbox.</p>
+        </div>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe →</button>
+        </form>
+      </div>
+    </section>
     <!-- ================= CONTACT ================= -->
     <section id="contact" class="contact-section">
-        <h2 class="contact-title">Contact Us</h2>
-
-        <div class="contact-grid">
-            <div class="contact-card">📞 +91 98456 33745</div>
-            <div class="contact-card">✉ info@medicare.com</div>
-            <div class="contact-card">📍 Medical District, India</div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Contact Us</span>
+          <h2>Get in Touch</h2>
+          <p>We are here to help you. Reach out anytime.</p>
         </div>
+      </div>
     </section>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="images/logo.png" alt="MediCare" />
+            <span>MediCare</span>
+          </div>
+          <p>
+            Providing exceptional healthcare services with compassion and
+            expertise since 1998. Your health is our priority.
+          </p>
+
+          <div class="social-links">
+            <a href="#">🌐</a>
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#doctors">Our Doctors</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="footer-links">
+          <h4>Our Services</h4>
+          <a href="#">General Medicine</a>
+          <a href="#">Cardiology</a>
+          <a href="#">Neurology</a>
+          <a href="#">Pediatrics</a>
+          <a href="#">Emergency Care</a>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p>📍 123 Medical Center Drive, Healthcare City</p>
+          <p>📞 +91 98456 33745</p>
+          <p>✉ info@medicare.com</p>
+          <p>⏰ Mon – Sat: 8AM – 8PM</p>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <span>© 2025 MediCare Hospital. All rights reserved.</span>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
     <!-- ================= MOBILE HEADER ================= -->
+
     <div class="mobile-header d-md-none">
-        <img src="images/logo.png" alt="Tata Medical" class="mobile-logo" />
-        <span class="mobile-title">Tata Medical</span>
+      <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" />
     </div>
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
-        <a href="#home">🏠<span>Home</span></a>
-        <a href="#about">👥<span>About</span></a>
-        <a href="#services">🧪<span>Services</span></a>
-        <a href="#appointment" class="mobile-appointment-btn">📅<span>Appointment</span></a
-      >
-      <a href="#doctors">👨‍⚕️<span>Doctors</span></a>
-        <a href="#contact">📞<span>Contact</span></a>
+      <a href="#home" class="nav-item">
+        <span class="icon">🏠</span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="#about" class="nav-item">
+        <span class="icon">👥</span>
+        <span class="label">About</span>
+      </a>
+
+      <a href="#services" class="nav-item">
+        <span class="icon">🧪</span>
+        <span class="label">Services</span>
+      </a>
+
+      <!-- CENTER APPOINTMENT -->
+      <a href="#appointment" class="nav-item appointment-item active">
+        <span class="icon">📅</span>
+        <span class="label">Appointment</span>
+      </a>
+
+      <a href="#gallery" class="nav-item">
+        <span class="icon">🖼️</span>
+        <span class="label">Gallery</span>
+      </a>
+
+      <a href="#doctors" class="nav-item">
+        <span class="icon">👨‍⚕️</span>
+        <span class="label">Doctors</span>
+      </a>
+
+      <a href="#contact" class="nav-item">
+        <span class="icon">📞</span>
+        <span class="label">Contact</span>
+      </a>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
