@@ -65,6 +65,22 @@ body {
     color: #c8e6c9 !important;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+    /* top-bar + navbar */
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px;
+        /* mobile header height */
+    }
+}
+
 
 /* ======================================================
    HERO SECTION
@@ -1440,36 +1456,7 @@ section {
 }
 
 
-/* ================= FIXED HEADER SCROLL FIX ================= */
-
-section {
-    scroll-margin-top: 120px;
-}
-
-@media (max-width: 768px) {
-    section {
-        scroll-margin-top: 80px;
-    }
-}
-
-
-/* ================= MOBILE APPOINTMENT FIX ================= */
-
-@media (max-width: 768px) {
-    .appointment-card {
-        scroll-margin-top: 80px;
-        /* mobile header height */
-    }
-}
-
-
 /* ================= MOBILE FIX: APPOINTMENT SCROLL ISSUE ================= */
-
-@media (max-width: 768px) {
-    .appointment-card {
-        height: auto !important;
-    }
-}
 
 @media (max-width: 768px) {
     .hero-left {
@@ -1481,31 +1468,78 @@ section {
 /* ================= MOBILE HERO & APPOINTMENT FIX (FINAL) ================= */
 
 @media (max-width: 768px) {
-    /* Hero ko flexible banao */
-    .hero-section {
-        padding-top: 20px;
-    }
-    .hero-left {
-        min-height: unset !important;
-        height: auto !important;
-    }
-    /* Appointment card ko normal flow me rakho */
-    .appointment-card {
-        height: auto !important;
-        position: relative;
-        z-index: 1;
-    }
-    /* Jab form focus ho to scroll adjust ho */
-    .appointment-card:focus-within {
-        scroll-margin-top: 80px;
-    }
-}
-
-@media (max-width: 768px) {
     body {
         padding-top: 64px !important;
     }
     .mobile-header {
         height: 64px;
+    }
+}
+
+
+/* ================= HOME SLIDER ================= */
+
+.home-hero {
+    padding: 100px 0;
+}
+
+.hero-slider {
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hero-slider img {
+    height: 460px;
+    object-fit: cover;
+}
+
+
+/* TEXT OVER SLIDER */
+
+.hero-caption {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    color: #fff;
+    max-width: 70%;
+}
+
+.hero-caption h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.hero-caption p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+
+/* APPOINTMENT CARD */
+
+.appointment-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 22px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .hero-slider img {
+        height: 260px;
+    }
+    .hero-caption {
+        left: 20px;
+        bottom: 20px;
+    }
+    .hero-caption h1 {
+        font-size: 1.6rem;
+    }
+    .home-hero {
+        padding: 60px 0;
     }
 }

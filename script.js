@@ -117,11 +117,50 @@ setInterval(updateDateTime, 1000);
 /* Initial call */
 updateDateTime();
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", function(e) {
         const target = document.querySelector(this.getAttribute("href"));
         if (target) {
             e.preventDefault();
             target.scrollIntoView({ behavior: "smooth" });
         }
+    });
+});
+// ================= FIX SCROLL OFFSET (FINAL) =================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        const targetId = this.getAttribute("href");
+        if (targetId.length <= 1) return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+
+        let offset = 0;
+
+        // Desktop header height
+        const topBar = document.querySelector(".top-bar");
+        const navBar = document.querySelector(".main-nav");
+
+        if (window.innerWidth > 768) {
+            offset =
+                (topBar ? topBar.offsetHeight : 0) +
+                (navBar ? navBar.offsetHeight : 0) +
+                10;
+        }
+
+        // Mobile header height
+        if (window.innerWidth <= 768) {
+            const mobileHeader = document.querySelector(".mobile-header");
+            offset = mobileHeader ? mobileHeader.offsetHeight + 10 : 70;
+        }
+
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     });
 });
