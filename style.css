@@ -546,8 +546,8 @@ section {
 ====================================================== */
 
 .contact-section {
-    background: linear-gradient(135deg, var(--primary-green), #1b5e20);
-    color: #fff;
+    background: #f9fbfd;
+    color: #263238;
 }
 
 
@@ -585,7 +585,7 @@ section {
 
 
 /* ======================================================
-   MOBILE BOTTOM NAV
+   MOBILE BOTTOM NAV – FIXED & BALANCED
 ====================================================== */
 
 @media (max-width: 768px) {
@@ -598,23 +598,49 @@ section {
         max-width: 520px;
         background: linear-gradient(135deg, #1f3d2b, #2e7d32);
         border-radius: 26px;
+        padding: 12px 10px;
         display: flex;
-        justify-content: space-around;
-        padding: 14px 0;
+        justify-content: space-between;
+        /* ✅ IMPORTANT */
+        align-items: center;
         z-index: 3000;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
-    .mobile-nav a {
-        color: #e0f2f1;
-        font-size: 12px;
-        text-decoration: none;
+    .mobile-nav .nav-item {
+        flex: 1;
+        /* ✅ equal width */
+        min-width: 0;
+        /* ✅ fixes spacing bug */
         text-align: center;
+        color: #e0f2f1;
+        text-decoration: none;
+        font-size: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 6px 0;
     }
-    .mobile-appointment-btn {
-        background: #fff;
-        color: var(--dark-green);
-        padding: 12px 16px;
-        border-radius: 18px;
-        font-weight: 700;
+    .mobile-nav .icon {
+        font-size: 18px;
+        line-height: 1;
+    }
+    .mobile-nav .label {
+        max-width: 60px;
+        /* ✅ fixes Appointment gap */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /* ❌ REMOVE highlight */
+    .mobile-nav .appointment-item {
+        background: none;
+        color: #e0f2f1;
+        box-shadow: none;
+        margin-top: 0;
+        border-radius: 0;
+        font-weight: normal;
     }
 }
 
@@ -947,6 +973,40 @@ section {
 
 .newsletter-form button:hover {
     transform: translateY(-2px);
+}
+
+
+/* ================= CONTACT CTA ================= */
+
+.contact-cta {
+    margin-top: 28px;
+}
+
+
+/* Button style – same system as rest of site */
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 26px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    /* pill */
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(46, 125, 50, 0.25);
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.contact-btn:hover {
+    background: #2e7d32;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(46, 125, 50, 0.45);
 }
 
 
@@ -1296,10 +1356,6 @@ section {
         align-items: center;
         gap: 4px;
     }
-    .mobile-nav a.active {
-        color: #ffd54f;
-        font-weight: 600;
-    }
     .mobile-appointment-btn {
         background: #ffffff;
         color: #1f3d2b;
@@ -1349,15 +1405,18 @@ section {
     .mobile-nav .label {
         font-size: 11px;
     }
-    /* ACTIVE / APPOINTMENT */
-    .mobile-nav .appointment-item {
-        background: #ffffff;
-        color: #1f3d2b;
-        border-radius: 18px;
-        padding: 10px 8px;
-        margin-top: -18px;
-        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-        font-weight: 600;
+    .mobile-nav .nav-item {
+        flex: 1;
+        text-align: center;
+        color: #e0f2f1;
+        text-decoration: none;
+        font-size: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 0;
+        border-radius: 14px;
     }
     .mobile-nav .appointment-item .icon {
         font-size: 20px;
@@ -1479,10 +1538,6 @@ section {
 
 /* ================= HOME SLIDER ================= */
 
-.home-hero {
-    padding: 100px 0;
-}
-
 .hero-slider {
     border-radius: 26px;
     overflow: hidden;
@@ -1528,18 +1583,43 @@ section {
 
 /* ================= MOBILE ================= */
 
+.hero-caption {
+    left: 20px;
+    bottom: 20px;
+}
+
+.hero-caption h1 {
+    font-size: 1.6rem;
+}
+
+
+/* ================= FIX NAVBAR + HOME SPACING ================= */
+
+
+/* Desktop */
+
+#home {
+    padding-top: 160px;
+}
+
+
+/* Mobile */
+
 @media (max-width: 768px) {
-    .hero-slider img {
-        height: 260px;
+    #home {
+        padding-top: 110px;
     }
-    .hero-caption {
-        left: 20px;
-        bottom: 20px;
-    }
-    .hero-caption h1 {
-        font-size: 1.6rem;
-    }
-    .home-hero {
-        padding: 60px 0;
+}
+
+.hero-slider {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .contact-btn {
+        width: 100%;
+        max-width: 240px;
     }
 }
