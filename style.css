@@ -291,7 +291,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 32px;
-    max-width: 1200px;
     margin: auto;
 }
 
@@ -332,7 +331,7 @@ section {
     background: #2e7d32;
     color: white;
     border: none;
-    padding: 10px 22px;
+    padding: 10px;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
