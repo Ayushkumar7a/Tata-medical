@@ -87,7 +87,7 @@ html {
 ====================================================== */
 
 .hero-left {
-    background: linear-gradient( to right, rgba(20, 50, 30, 0.75), rgba(20, 50, 30, 0.35)), url("images/hero-hospital.jpg") center / cover no-repeat;
+    background: linear-gradient(to right, rgba(20, 50, 30, 0.75), rgba(20, 50, 30, 0.35)), url("images/hero-hospital.jpg") center / cover no-repeat;
     border-radius: 28px;
     min-height: 420px;
 }
@@ -392,6 +392,7 @@ section {
     .doctor-card-new img {
         height: 220px;
     }
+
     .doctor-book-btn {
         top: 180px;
     }
@@ -564,10 +565,12 @@ section {
         padding-top: 64px;
         padding-bottom: 90px;
     }
+
     .top-bar,
     .main-nav {
         display: none;
     }
+
     .mobile-header {
         position: fixed;
         top: 0;
@@ -579,6 +582,7 @@ section {
         align-items: center;
         z-index: 2000;
     }
+
     .mobile-header img {
         height: 100%;
         width: auto;
@@ -610,6 +614,7 @@ section {
         z-index: 3000;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
+
     .mobile-nav .nav-item {
         flex: 1;
         /* ✅ equal width */
@@ -626,10 +631,12 @@ section {
         gap: 4px;
         padding: 6px 0;
     }
+
     .mobile-nav .icon {
         font-size: 18px;
         line-height: 1;
     }
+
     .mobile-nav .label {
         max-width: 60px;
         /* ✅ fixes Appointment gap */
@@ -637,6 +644,7 @@ section {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
     /* ❌ REMOVE highlight */
     .mobile-nav .appointment-item {
         background: none;
@@ -910,9 +918,11 @@ section {
     .reviews-section {
         padding: 60px 14px;
     }
+
     .reviews-head h2 {
         font-size: 2rem;
     }
+
     .review-card {
         padding: 26px 22px;
     }
@@ -1139,17 +1149,21 @@ section {
         text-align: center;
         padding: 30px 20px;
     }
+
     .newsletter-form {
         width: 100%;
         flex-direction: column;
     }
+
     .newsletter-form input {
         width: 100%;
     }
+
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
+
     .footer-bottom {
         flex-direction: column;
         gap: 10px;
@@ -1229,11 +1243,13 @@ section {
 ===================================================== */
 
 @media (max-width: 768px) {
+
     /* -------- BODY RESET -------- */
     body {
         padding-bottom: 90px;
         background: #f7f9fc;
     }
+
     /* -------- MOBILE HEADER -------- */
     .mobile-header {
         position: fixed;
@@ -1248,6 +1264,7 @@ section {
         z-index: 9999;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     }
+
     .mobile-header img {
         height: 100%;
         width: auto;
@@ -1255,6 +1272,7 @@ section {
         object-fit: contain;
         padding: 6px 10px;
     }
+
     /* -------- SECTIONS -------- */
     section {
         padding: 40px 14px;
@@ -1262,80 +1280,99 @@ section {
         border-radius: 16px;
         margin-bottom: 16px;
     }
+
     /* -------- HERO -------- */
     .hero-left {
         min-height: 220px;
         border-radius: 18px;
     }
+
     .hero-overlay {
         padding: 24px;
         text-align: center;
     }
+
     .hero-overlay h1 {
         font-size: 1.6rem;
     }
+
     .hero-overlay p {
         font-size: 0.95rem;
     }
+
     /* -------- APPOINTMENT CARD -------- */
     .appointment-card {
         padding: 20px;
         border-radius: 18px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
+
     .appointment-card h4 {
         font-size: 1.2rem;
         text-align: center;
     }
+
     .appointment-card input,
     .appointment-card select,
     .appointment-card button {
         height: 44px;
         font-size: 14px;
     }
+
     /* -------- ABOUT -------- */
     .about-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
+
     .about-text h2 {
         font-size: 1.8rem;
     }
+
     .about-features {
         grid-template-columns: 1fr;
     }
+
     /* -------- SERVICES -------- */
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
     .service-card {
         padding: 26px 20px;
     }
+
     /* -------- DOCTORS -------- */
     .doctors-grid,
     .doctor-grid-new {
         grid-template-columns: 1fr;
     }
+
     .doctor-card-new img {
         height: 220px;
     }
+
     .doctor-book-btn {
         top: auto;
         bottom: 14px;
     }
+
     /* -------- GALLERY -------- */
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
+
     .gallery-item {
         border-radius: 16px;
     }
+
     /* -------- CONTACT -------- */
     .contact-section {
         text-align: center;
     }
+
     /* -------- MOBILE NAV -------- */
     .mobile-nav {
         display: flex;
@@ -1352,6 +1389,7 @@ section {
         z-index: 3000;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
+
     .mobile-nav a {
         font-size: 12px;
         color: #e8f5e9;
@@ -1361,6 +1399,7 @@ section {
         align-items: center;
         gap: 4px;
     }
+
     .mobile-appointment-btn {
         background: #ffffff;
         color: #1f3d2b;
@@ -1391,6 +1430,7 @@ section {
         z-index: 3000;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
+
     .mobile-nav .nav-item {
         flex: 1;
         text-align: center;
@@ -1403,13 +1443,16 @@ section {
         gap: 4px;
         opacity: 0.9;
     }
+
     .mobile-nav .icon {
         font-size: 18px;
         line-height: 1;
     }
+
     .mobile-nav .label {
         font-size: 11px;
     }
+
     .mobile-nav .nav-item {
         flex: 1;
         text-align: center;
@@ -1423,6 +1466,7 @@ section {
         padding: 8px 0;
         border-radius: 14px;
     }
+
     .mobile-nav .appointment-item .icon {
         font-size: 20px;
     }
@@ -1514,6 +1558,7 @@ section {
         grid-template-columns: 1fr;
         text-align: center;
     }
+
     .about-features-pro {
         grid-template-columns: 1fr;
     }
@@ -1535,6 +1580,7 @@ section {
     body {
         padding-top: 64px !important;
     }
+
     .mobile-header {
         height: 64px;
     }
