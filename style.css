@@ -555,39 +555,297 @@ section {
 }
 
 
-/* ======================================================
-   MOBILE HEADER (LOGO FULL WIDTH)
-====================================================== */
+/* ==========================================
+   TATA MOBILE HEADER CSS - PROFESSIONAL
+   LEFT: Logo | CENTER: Date & Time | RIGHT: Icons
+   ========================================== */
 
-@media (max-width: 768px) {
-    body {
-        padding-top: 64px;
-        padding-bottom: 90px;
+/* Hide mobile header on desktop */
+@media (min-width: 769px) {
+    .tata-mobile-header {
+        display: none !important;
     }
+}
 
-    .top-bar,
-    .main-nav {
+/* Mobile Header Styles (768px and below) */
+@media (max-width: 768px) {
+    .main-nav{
         display: none;
     }
 
-    .mobile-header {
+    /* Mobile Header Container */
+    .tata-mobile-header {
         position: fixed;
         top: 0;
+        left: 0;
         width: 100%;
-        height: 64px;
-        background: var(--dark-green);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
+        height: 70px;
+        background: linear-gradient(135deg, #1b5e4f 0%, #145043 100%);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        display: block !important;
     }
 
-    .mobile-header img {
+    /* Content Wrapper - 3 Column Layout */
+    .tata-mobile-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
         height: 100%;
-        width: auto;
-        padding: 6px;
-        object-fit: contain;
+        padding: 0 15px;
+        gap: 15px;
     }
+
+    /* LEFT: Logo Section */
+    .tata-mobile-logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .tata-mobile-logo {
+        height: 62px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+        filter: brightness(1.15) drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+        transition: transform 0.3s ease;
+    }
+
+    .tata-mobile-logo:hover {
+        transform: scale(1.05);
+    }
+
+    /* CENTER: Date & Time Section */
+    .tata-mobile-datetime {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 2px;
+    }
+
+    .tata-date {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        line-height: 1;
+    }
+
+    .tata-time {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: 'Courier New', 'Consolas', monospace;
+        line-height: 1;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* RIGHT: Contact Icons Container */
+    .tata-mobile-contacts {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    /* Individual Contact Icon */
+    .tata-contact-icon {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    /* Icon Styling */
+    .tata-contact-icon i {
+        font-size: 1.25rem;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    /* Hover Effects */
+    .tata-contact-icon:hover i {
+        transform: scale(1.2);
+        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Phone Icon Hover - Green Glow */
+    .tata-contact-icon:first-child:hover i {
+        color: #4caf50;
+        filter: drop-shadow(0 0 8px rgba(76, 175, 80, 0.8));
+    }
+
+    /* Email Icon Hover - Blue Glow */
+    .tata-contact-icon:last-child:hover i {
+        color: #2196f3;
+        filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.8));
+    }
+
+    /* Active State */
+    .tata-contact-icon:active i {
+        transform: scale(1.1);
+    }
+
+    .container.mobile-container {
+        padding: 0px;
+    }
+    .doctor-card-new .doctor-book-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+    .doctor-book-btn {
+        top: 200px;
+    }
+}
+
+/* Tablet Adjustments (600px - 768px) */
+@media (max-width: 768px) and (min-width: 601px) {
+    .tata-mobile-header {
+        height: 75px;
+    }
+
+    .main-nav{
+        display: none;
+    }
+
+    .tata-mobile-content {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .tata-mobile-logo {
+        height: 68px;
+        max-width: 170px;
+    }
+
+    .tata-date {
+        font-size: 0.75rem;
+    }
+
+    .tata-time {
+        font-size: 1.2rem;
+    }
+
+    .tata-mobile-contacts {
+        gap: 18px;
+    }
+
+    .tata-contact-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .tata-contact-icon i {
+        font-size: 1.35rem;
+    }
+}
+
+/* Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+    .tata-mobile-header {
+        height: 65px;
+    }
+
+    .tata-mobile-content {
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .tata-mobile-logo {
+        height: 56px;
+        max-width: 120px;
+    }
+
+    .tata-date {
+        font-size: 0.65rem;
+    }
+
+    .tata-time {
+        font-size: 0.95rem;
+    }
+
+    .tata-mobile-contacts {
+        gap: 12px;
+    }
+
+    .tata-contact-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .tata-contact-icon i {
+        font-size: 1.15rem;
+    }
+    .main-nav{
+        display: none;
+    }
+}
+
+/* Extra Small Mobile (up to 360px) */
+@media (max-width: 360px) {
+    .tata-mobile-header {
+        height: 62px;
+    }
+    .main-nav{
+        display: none;
+    }
+    .tata-mobile-content {
+        padding: 0 10px;
+        gap: 8px;
+    }
+
+    .tata-mobile-logo {
+        height: 52px;
+        max-width: 110px;
+    }
+
+    .tata-date {
+        font-size: 0.6rem;
+    }
+
+    .tata-time {
+        font-size: 0.9rem;
+    }
+
+    .tata-mobile-contacts {
+        gap: 10px;
+    }
+
+    .tata-contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tata-contact-icon i {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation for page load */
+@keyframes tata-slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.tata-mobile-header {
+    animation: tata-slideDown 0.5s ease-out;
 }
 
 
@@ -1353,8 +1611,7 @@ section {
     }
 
     .doctor-book-btn {
-        top: auto;
-        bottom: 14px;
+        top: 200px;
     }
 
     /* -------- GALLERY -------- */
@@ -1657,7 +1914,15 @@ section {
 
 @media (max-width: 768px) {
     #home {
-        /* padding-top: 110px; */
+        padding: 0px;
+    }
+
+    .col-lg-8.mobile-hero-banner {
+        padding: 0px;
+    }
+
+    .hero-slider {
+        border-radius: 0px !important;
     }
 }
 

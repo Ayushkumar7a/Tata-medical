@@ -164,3 +164,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+// mobile nav-bar
+
+function updateTataMobileDateTime() {
+    const now = new Date();
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    
+    const day = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    
+    const dateElement = document.getElementById('tataMobileDate');
+    const timeElement = document.getElementById('tataMobileTime');
+    
+    if (dateElement) {
+        dateElement.textContent = day + ', ' + date + ' ' + month + ' ' + year;
+    }
+    if (timeElement) {
+        timeElement.textContent = hours + ':' + minutes + ':' + seconds;
+    }
+}
+
+// Update immediately and then every second
+updateTataMobileDateTime();
+setInterval(updateTataMobileDateTime, 1000);
