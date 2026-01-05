@@ -174,7 +174,8 @@ html {
 ====================================================== */
 
 section {
-    padding: 80px 20px;
+    /* padding: 80px 20px; */
+    padding: 120px 20px 40px 20px
 }
 
 
@@ -250,7 +251,8 @@ section {
 
 .doctors-section-new {
     background: #f9fbfd;
-    padding: 90px 20px;
+    /* padding: 90px 20px; */
+    padding: 40px;
 }
 
 .section-head {
@@ -432,7 +434,8 @@ section {
 
 .gallery-section {
     background: #ffffff;
-    padding: 90px 20px;
+    /* padding: 90px 20px; */
+    padding: 40px;
 }
 
 
@@ -548,6 +551,7 @@ section {
 .contact-section {
     background: #f9fbfd;
     color: #263238;
+    padding: 40px;
 }
 
 
@@ -793,7 +797,8 @@ section {
 
 .reviews-section {
     background: #ffffff;
-    padding: 90px 20px;
+    /* padding: 90px 20px; */
+    padding: 40px;
 }
 
 .reviews-head {
@@ -1430,7 +1435,7 @@ section {
 
 .about-pro {
     background: #f9fbfd;
-    padding: 90px 20px;
+    padding: 40px;
 }
 
 .about-grid {
@@ -1599,7 +1604,7 @@ section {
 /* Desktop */
 
 #home {
-    padding-top: 160px;
+    /* padding-top: 160px; */
 }
 
 
@@ -1607,7 +1612,7 @@ section {
 
 @media (max-width: 768px) {
     #home {
-        padding-top: 110px;
+        /* padding-top: 110px; */
     }
 }
 
