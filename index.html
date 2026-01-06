@@ -41,28 +41,41 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
         <div class="container">
+
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
             <div class="collapse navbar-collapse justify-content-center" id="mainNav">
                 <ul class="navbar-nav gap-md-4">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+
+                    <!-- Home (scrolls on same page) -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="index.html#home">Home</a>
                     </li>
+
+                    <!-- About (opens new page) -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
+
+                    <!-- These stay on home page -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#doctors">Doctors</a>
+                        <a class="nav-link" href="index.html#services">Services</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="index.html#doctors">Doctors</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="index.html#gallery">Gallery</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -570,17 +583,16 @@
             <span class="label">Home</span>
         </a>
 
-        <a href="#about" class="nav-item">
+        <a href="about.html" class="nav-item">
             <span class="icon">👥</span>
             <span class="label">About</span>
         </a>
 
-        <a href="#services" class="nav-item">
+        <a href="services.html" class="nav-item">
             <span class="icon">🧪</span>
             <span class="label">Services</span>
         </a>
 
-        <!-- CENTER APPOINTMENT -->
         <a href="#appointment" class="nav-item">
             <span class="icon">📅</span>
             <span class="label">Booking</span>
