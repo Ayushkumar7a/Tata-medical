@@ -1558,33 +1558,41 @@ section {
 }
 
 /* =====================================================
-   ABOUT PAGE ONLY (SAFE SCOPED CSS)
-   Affects ONLY about.html
+   ABOUT PAGE – MATCH HOME DESIGN (FINAL & CLEAN)
 ===================================================== */
 
+.about-page {
+  padding-top: 70px;
+  background: var(--light-bg);
+  color: var(--dark-text);
+}
+
+/* ================= HERO ================= */
+
 .about-page .page-banner {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
-  color: #ffffff;
-  padding: 90px 20px;
+  background: linear-gradient(rgba(31, 61, 43, 0.88), rgba(31, 61, 43, 0.88)),
+    url("images/about-hero.jpg") center/cover no-repeat;
+  padding: 120px 20px;
   text-align: center;
+  color: #fff;
+  border-radius: 0 0 40px 40px;
 }
 
 .about-page .page-banner h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
 .about-page .page-banner p {
   font-size: 1.1rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 /* ================= INTRO ================= */
 
 .about-page .about-intro {
-  padding: 80px 20px;
-  background: #ffffff;
+  background: #fff;
+  padding: 90px 20px;
 }
 
 .about-page .intro-grid {
@@ -1595,182 +1603,105 @@ section {
 }
 
 .about-page .intro-content h2 {
-  font-size: 2.2rem;
-  color: #1e3a8a;
-  margin-bottom: 18px;
+  font-size: 2.4rem;
+  color: var(--primary-green);
 }
 
 .about-page .intro-content p {
-  font-size: 1rem;
   color: #555;
   line-height: 1.8;
-  margin-bottom: 16px;
 }
 
 .about-page .image-placeholder {
-  height: 380px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #60a5fa, #818cf8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 420px;
+  border-radius: 26px;
+  background: linear-gradient(rgba(46, 125, 50, 0.25), rgba(46, 125, 50, 0.25)),
+    url("images/about-side.jpg") center/cover no-repeat;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= MISSION / VISION ================= */
 
 .about-page .mission-vision {
-  background: #f4f6fb;
-  padding: 80px 20px;
+  background: #f9fbfd;
+  padding: 90px 20px;
 }
 
 .about-page .mv-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
 .about-page .mv-card {
-  background: #ffffff;
+  background: #fff;
   padding: 36px;
   border-radius: 22px;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.about-page .mv-card:hover {
+  transform: translateY(-8px);
 }
 
 .about-page .mv-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: var(--primary-green);
+  color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
 }
 
-.about-page .mv-card h3 {
-  font-size: 1.5rem;
-  color: #1e3a8a;
-  margin-bottom: 10px;
-}
+/* ================= VALUES ================= */
 
-.about-page .mv-card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.7;
-}
-
-/* ================= CORE VALUES ================= */
-
-.about-page .core-values {
-  padding: 80px 20px;
-  background: #ffffff;
-}
-
-.about-page .section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #1e3a8a;
-  margin-bottom: 50px;
-}
-
-.about-page .values-grid {
+.about-page .values-grid,
+.about-page .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  gap: 26px;
 }
 
-.about-page .value-card {
-  background: #f9fafb;
-  padding: 26px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-.about-page .value-card h4 {
-  margin: 14px 0 8px;
-  color: #1e3a8a;
+.about-page .value-card,
+.about-page .feature-card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 /* ================= ACHIEVEMENTS ================= */
 
-.about-page .achievements {
-  background: #f4f6fb;
-  padding: 80px 20px;
-}
-
-.about-page .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
 .about-page .stat-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 22px;
   text-align: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .about-page .stat-number {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #2563eb;
-}
-
-/* ================= WHY CHOOSE ================= */
-
-.about-page .why-choose {
-  padding: 80px 20px;
-  background: #ffffff;
-}
-
-.about-page .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-}
-
-.about-page .feature-card {
-  background: #f9fafb;
-  padding: 28px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-.about-page .feature-number {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #2563eb;
-  margin-bottom: 6px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary-green);
 }
 
 /* ================= CTA ================= */
 
 .about-page .cta-section {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
-  padding: 90px 20px;
+  background: linear-gradient(rgba(31, 61, 43, 0.92), rgba(31, 61, 43, 0.92)),
+    url("images/cta-bg.jpg") center/cover no-repeat;
+  color: #fff;
+  padding: 100px 20px;
   text-align: center;
-  color: #ffffff;
 }
 
 .about-page .cta-buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 26px;
+  padding: 14px 30px;
   border-radius: 30px;
-  text-decoration: none;
   font-weight: 600;
-}
-
-.about-page .btn-primary {
-  background: #ffffff;
-  color: #1e3a8a;
-}
-
-.about-page .btn-secondary {
-  border: 2px solid #ffffff;
-  color: #ffffff;
 }
 
 /* ================= MOBILE ================= */
@@ -1783,11 +1714,4 @@ section {
   .about-page .page-banner h1 {
     font-size: 2rem;
   }
-}
-
-/* ================= ABOUT PAGE FIX ================= */
-
-.about-page {
-  padding-top: 100px;
-  /* desktop navbar + top bar space */
 }

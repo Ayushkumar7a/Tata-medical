@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCare</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="services.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <
+  <body class="services-page">
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <!-- LOGO -->
+        <div class="top-logo">
+          <img src="images/logo.png" alt="Tata Medical Logo" />
+        </div>
+
+        <!-- INFO -->
+        <div class="top-info">
+          <span>📍 Roorkee, Uttarakhand</span>
+          <span id="liveDateTime">🕒 Loading...</span>
+          <span>📞 9845633745</span>
+          <span>✉ info@medicare.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav
+      class="navbar navbar-expand-md navbar-dark main-nav fixed-top"
+      style="top: 50px"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="mainNav"
+        >
+          <ul class="navbar-nav gap-md-4">
+            <!-- Home (scrolls on same page) -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">Home</a>
+            </li>
+
+            <!-- About (opens new page) -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <!-- These stay on home page -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">Services</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#doctors">Doctors</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#gallery">Gallery</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= PAGE BANNER ================= -->
+    <section class="services-banner">
+      <div class="container">
+        <h1>Our Medical Services</h1>
+        <p>Comprehensive healthcare with compassion & advanced technology</p>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="services-intro">
+      <div class="container">
+        <h2>Quality Healthcare Under One Roof</h2>
+        <p>
+          MediCare offers a complete range of medical and diagnostic services
+          delivered by experienced doctors using modern equipment.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES GRID ================= -->
+    <section class="services-list">
+      <div class="container">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🩺</div>
+            <h3>General Medicine</h3>
+            <p>
+              Diagnosis and treatment of common illnesses by expert physicians.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🫀</div>
+            <h3>Cardiology</h3>
+            <p>
+              Advanced heart care including ECG, Echo & specialist consultation.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧠</div>
+            <h3>Neurology</h3>
+            <p>Complete care for brain, spine and nervous system disorders.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧪</div>
+            <h3>Laboratory Services</h3>
+            <p>Accurate lab testing with fast and reliable reports.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🩻</div>
+            <h3>Digital X-Ray</h3>
+            <p>High-quality imaging with instant results.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🚑</div>
+            <h3>Emergency Care</h3>
+            <p>24×7 emergency services with rapid response.</p>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <h3>Pediatrics</h3>
+        <p>
+          Specialized healthcare services for infants, children, and
+          adolescents, ensuring healthy growth and development.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🦴</div>
+        <h3>Orthopedics</h3>
+        <p>
+          Treatment for bone, joint, and muscle conditions including fractures,
+          arthritis, and sports injuries.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👁️</div>
+        <h3>Ophthalmology</h3>
+        <p>
+          Complete eye care services including vision testing, cataract surgery,
+          and treatment of eye disorders.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🦷</div>
+        <h3>Dental Care</h3>
+        <p>
+          Preventive and corrective dental services including cleaning,
+          fillings, and oral health consultations.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🩸</div>
+        <h3>Blood Bank</h3>
+        <p>
+          Safe and reliable blood collection, storage, and transfusion services
+          available round the clock.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧬</div>
+        <h3>Health Checkup Packages</h3>
+        <p>
+          Comprehensive preventive health checkup plans customized for all age
+          groups and lifestyles.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE ================= -->
+    <section class="services-highlights">
+      <div class="container">
+        <h2>Service Highlights</h2>
+
+        <div class="highlight-grid">
+          <div class="highlight-item">✔ NABL Certified Laboratory</div>
+          <div class="highlight-item">✔ Same-Day Test Reports</div>
+          <div class="highlight-item">✔ Experienced Specialists</div>
+          <div class="highlight-item">✔ Modern Medical Equipment</div>
+          <div class="highlight-item">✔ Affordable Pricing</div>
+          <div class="highlight-item">✔ Patient-Centric Care</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="department-services">
+      <div class="container">
+        <h2>Departments We Serve</h2>
+
+        <ul class="department-list">
+          <li>General Medicine</li>
+          <li>Cardiology</li>
+          <li>Neurology</li>
+          <li>Pediatrics</li>
+          <li>Orthopedics</li>
+          <li>Gynecology</li>
+          <li>Radiology</li>
+          <li>Emergency & Trauma</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="service-process">
+      <div class="container">
+        <h2>How Our Service Works</h2>
+
+        <div class="process-steps">
+          <div class="step">1️⃣ Book Appointment</div>
+          <div class="step">2️⃣ Doctor Consultation</div>
+          <div class="step">3️⃣ Diagnosis & Tests</div>
+          <div class="step">4️⃣ Treatment & Care</div>
+          <div class="step">5️⃣ Follow-Up Support</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h4>Do I need an appointment?</h4>
+          <p>
+            Walk-ins are accepted, but appointments help reduce waiting time.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Do you accept insurance?</h4>
+          <p>Yes, we accept most major health insurance providers.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Are emergency services available 24/7?</h4>
+          <p>Yes, our emergency department operates round the clock.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="services-cta">
+      <div class="container">
+        <h2>Need Medical Assistance?</h2>
+        <p>Book your appointment with our specialists today.</p>
+        <a href="index.html#appointment" class="cta-btn">Book Appointment</a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="images/logo.png" alt="MediCare" />
+          </div>
+          <p>
+            Providing exceptional healthcare services with compassion and
+            expertise since 1998. Your health is our priority.
+          </p>
+
+          <div class="social-links">
+            <a href="#">🌐</a>
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#doctors">Our Doctors</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="footer-links">
+          <h4>Our Services</h4>
+          <a href="#">General Medicine</a>
+          <a href="#">Cardiology</a>
+          <a href="#">Neurology</a>
+          <a href="#">Pediatrics</a>
+          <a href="#">Emergency Care</a>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p>📍 123 Medical Center Drive, Healthcare City</p>
+          <p>📞 +91 98456 33745</p>
+          <p>✉ info@medicare.com</p>
+          <p>⏰ Mon – Sat: 8AM – 8PM</p>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <span>© 2025 MediCare Hospital. All rights reserved.</span>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+    <!-- ================= MOBILE HEADER ================= -->
+
+    <div class="mobile-header d-md-none">
+      <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" />
+    </div>
+    <!-- ================= MOBILE NAV ================= -->
+    <nav class="mobile-nav d-md-none">
+      <a href="index.html#home" class="nav-item">
+        <span class="icon">🏠</span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="about.html" class="nav-item">
+        <span class="icon">👥</span>
+        <span class="label">About</span>
+      </a>
+
+      <a href="index.html#services" class="nav-item">
+        <span class="icon">🧪</span>
+        <span class="label">Services</span>
+      </a>
+
+      <a href="#appointment" class="nav-item">
+        <span class="icon">📅</span>
+        <span class="label">Booking</span>
+      </a>
+
+      <a href="index.html#gallery" class="nav-item">
+        <span class="icon">🖼️</span>
+        <span class="label">Gallery</span>
+      </a>
+
+      <a href="index.html#doctors" class="nav-item">
+        <span class="icon">👨‍⚕️</span>
+        <span class="label">Doctors</span>
+      </a>
+
+      <a href="contact.html#contact" class="nav-item">
+        <span class="icon">📞</span>
+        <span class="label">Contact</span>
+      </a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
