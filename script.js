@@ -166,84 +166,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+// mobile nav-bar
 
-// Animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Add animation to cards
-document.querySelectorAll('.value-card, .feature-card, .stat-card, .award-item').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease-out';
-    observer.observe(card);
-});
-
-// Counter animation for stats
-function animateCounter(element, target) {
-    let current = 0;
-    const increment = target / 50;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + '+';
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current) + '+';
-        }
-    }, 30);
-}
-
-// Trigger counter animation when stats section is visible
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const text = stat.textContent;
-                const number = parseInt(text.replace(/\D/g, ''));
-                animateCounter(stat, number);
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const statsSection = document.querySelector('.stats-grid');
-if (statsSection) {
-    statsObserver.observe(statsSection);
-}
-
-// Add active class to current nav item
-const currentPage = window.location.pathname.split('/').pop();
-document.querySelectorAll('.nav-item').forEach(item => {
-    if (item.getAttribute('href') === currentPage) {
-        item.classList.add('active');
+function updateTataMobileDateTime() {
+    const now = new Date();
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    
+    const day = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    
+    const dateElement = document.getElementById('tataMobileDate');
+    const timeElement = document.getElementById('tataMobileTime');
+    
+    if (dateElement) {
+        dateElement.textContent = day + ', ' + date + ' ' + month + ' ' + year;
     }
-});
+    if (timeElement) {
+        timeElement.textContent = hours + ':' + minutes + ':' + seconds;
+    }
+}
 
-console.log('About page loaded successfully!');
+// Update immediately and then every second
+updateTataMobileDateTime();
+setInterval(updateTataMobileDateTime, 1000);
