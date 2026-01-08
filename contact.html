@@ -1,274 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | MediCare</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Main CSS (shared) -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <!-- Contact Page CSS ONLY -->
     <link rel="stylesheet" href="contact.css" />
-</head>
+  </head>
 
-<body class="contact-page">
+  <body class="contact-page">
     <!-- ✅ TOP BAR (copy from index.html) -->
     <div class="top-bar">
-        <div class="container top-bar-inner">
-            <!-- LOGO -->
-            <div class="top-logo">
-                <img src="images/logo.png" alt="Tata Medical Logo" />
-            </div>
-
-            <!-- INFO -->
-            <div class="top-info">
-                <span>📍 Roorkee, Uttarakhand</span>
-                <span id="liveDateTime">🕒 Loading...</span>
-                <span>📞 9845633745</span>
-                <span>✉ info@medicare.com</span>
-            </div>
+      <div class="container top-bar-inner">
+        <!-- LOGO -->
+        <div class="top-logo">
+          <img src="images/logo.png" alt="Tata Medical Logo" />
         </div>
+
+        <!-- INFO -->
+        <div class="top-info">
+          <span>📍 Roorkee, Uttarakhand</span>
+          <span id="liveDateTime">🕒 Loading...</span>
+          <span>📞 9845633745</span>
+          <span>✉ info@medicare.com</span>
+        </div>
+      </div>
     </div>
     <!-- ✅ NAVBAR (copy from index.html) -->
-    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
-        <div class="container">
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <nav
+      class="navbar navbar-expand-md navbar-dark main-nav fixed-top"
+      style="top: 50px"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-                <ul class="navbar-nav gap-md-4">
-                    <!-- Home (scrolls on same page) -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="mainNav"
+        >
+          <ul class="navbar-nav gap-md-4">
+            <!-- Home (scrolls on same page) -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">Home</a>
+            </li>
 
-                    <!-- About (opens new page) -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
+            <!-- About (opens new page) -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
 
-                    <!-- These stay on home page -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#services">Services</a>
-                    </li>
+            <!-- These stay on home page -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">Services</a>
+            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#doctors">Doctors</a>
-                    </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#doctors">Doctors</a>
+            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#gallery">Gallery</a>
-                    </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#gallery">Gallery</a>
+            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- ================= CONTACT BANNER ================= -->
     <!-- CONTACT HERO -->
     <section class="contact-hero">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>We are here to help you anytime</p>
-        </div>
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We are here to help you anytime</p>
+      </div>
     </section>
 
     <!-- BREADCRUMB -->
-    <div class="contact-breadcrumb">
-
-    </div>
+    <div class="contact-breadcrumb"></div>
 
     <!-- ================= CONTACT CONTENT ================= -->
     <section class="contact-main">
-        <div class="container">
-            <div class="row g-5 align-items-stretch">
-                <!-- LEFT FORM -->
-                <div class="col-lg-7">
-                    <div class="contact-form-card">
-                        <h3>Any question or remarks?</h3>
-                        <p>Just drop us a message.</p>
+      <div class="container">
+        <div class="row g-5 align-items-stretch">
+          <!-- LEFT FORM -->
+          <div class="col-lg-7">
+            <div class="contact-form-card">
+              <h3>Any question or remarks?</h3>
+              <p>Just drop us a message.</p>
 
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label>Enquiry Type*</label>
-                                    <select class="form-control">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label>Enquiry Type*</label>
+                    <select class="form-control">
                       <option>Select Enquiry Type</option>
                       <option>Appointment</option>
                       <option>Service</option>
                       <option>Feedback</option>
                     </select>
-                                </div>
+                  </div>
 
-                                <div class="col-md-6">
-                                    <label>Hospital*</label>
-                                    <select class="form-control">
+                  <div class="col-md-6">
+                    <label>Hospital*</label>
+                    <select class="form-control">
                       <option>Select Hospital</option>
                       <option>MediCare Roorkee</option>
                     </select>
-                                </div>
+                  </div>
 
-                                <div class="col-md-6">
-                                    <label>Name*</label>
-                                    <input type="text" class="form-control" placeholder="Your Name" />
-                                </div>
+                  <div class="col-md-6">
+                    <label>Name*</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Name"
+                    />
+                  </div>
 
-                                <div class="col-md-6">
-                                    <label>Email*</label>
-                                    <input type="email" class="form-control" placeholder="Email Id" />
-                                </div>
+                  <div class="col-md-6">
+                    <label>Email*</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email Id"
+                    />
+                  </div>
 
-                                <div class="col-md-6">
-                                    <label>Phone*</label>
-                                    <input type="tel" class="form-control" placeholder="Phone Number" />
-                                </div>
+                  <div class="col-md-6">
+                    <label>Phone*</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="Phone Number"
+                    />
+                  </div>
 
-                                <div class="col-12">
-                                    <label>Your Query</label>
-                                    <textarea class="form-control" rows="4"></textarea>
-                                </div>
+                  <div class="col-12">
+                    <label>Your Query</label>
+                    <textarea class="form-control" rows="4"></textarea>
+                  </div>
 
-                                <div class="col-12">
-                                    <button class="btn btn-success px-4">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                  <div class="col-12">
+                    <button class="btn btn-success px-4">Submit</button>
+                  </div>
                 </div>
-
-                <!-- RIGHT INFO CARD -->
-                <div class="col-lg-5">
-                    <div class="contact-info-card">
-                        <img src="images/contact-side.jpg" alt="contact" />
-                        <h4>24×7 Enquiry</h4>
-                        <p>📞 9845633745</p>
-                    </div>
-                </div>
+              </form>
             </div>
+          </div>
+
+          <!-- RIGHT INFO CARD -->
+          <div class="col-lg-5">
+            <div class="contact-info-card">
+              <img src="images/contact-side.jpg" alt="contact" />
+              <h4>24×7 Enquiry</h4>
+              <p>📞 9845633745</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ✅ FOOTER (copy from index.html) -->
     <footer class="footer">
-        <div class="footer-container">
-            <!-- BRAND -->
-            <div class="footer-brand">
-                <div class="brand-logo">
-                    <img src="images/logo.png" alt="MediCare" />
+      <div class="footer-container">
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="images/logo.png" alt="MediCare" />
+          </div>
+          <p>
+            Providing exceptional healthcare services with compassion and
+            expertise since 1998. Your health is our priority.
+          </p>
 
-                </div>
-                <p>
-                    Providing exceptional healthcare services with compassion and expertise since 1998. Your health is our priority.
-                </p>
-
-                <div class="social-links">
-                    <a href="#">🌐</a>
-                    <a href="#">🐦</a>
-                    <a href="#">📘</a>
-                    <a href="#">📸</a>
-                </div>
-            </div>
-
-            <!-- QUICK LINKS -->
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#doctors">Our Doctors</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-            <!-- SERVICES -->
-            <div class="footer-links">
-                <h4>Our Services</h4>
-                <a href="#">General Medicine</a>
-                <a href="#">Cardiology</a>
-                <a href="#">Neurology</a>
-                <a href="#">Pediatrics</a>
-                <a href="#">Emergency Care</a>
-            </div>
-
-            <!-- CONTACT -->
-            <div class="footer-contact">
-                <h4>Contact Info</h4>
-                <p>📍 123 Medical Center Drive, Healthcare City</p>
-                <p>📞 +91 98456 33745</p>
-                <p>✉ info@medicare.com</p>
-                <p>⏰ Mon – Sat: 8AM – 8PM</p>
-            </div>
+          <div class="social-links">
+            <a href="#">🌐</a>
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+          </div>
         </div>
 
-        <!-- BOTTOM BAR -->
-        <div class="footer-bottom">
-            <span>© 2025 MediCare Hospital. All rights reserved.</span>
-            <div>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms</a>
-                <a href="#">Cookies</a>
-            </div>
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#doctors">Our Doctors</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
         </div>
+
+        <!-- SERVICES -->
+        <div class="footer-links">
+          <h4>Our Services</h4>
+          <a href="#">General Medicine</a>
+          <a href="#">Cardiology</a>
+          <a href="#">Neurology</a>
+          <a href="#">Pediatrics</a>
+          <a href="#">Emergency Care</a>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p>📍 123 Medical Center Drive, Healthcare City</p>
+          <p>📞 +91 98456 33745</p>
+          <p>✉ info@medicare.com</p>
+          <p>⏰ Mon – Sat: 8AM – 8PM</p>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <span>© 2025 MediCare Hospital. All rights reserved.</span>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
     </footer>
     <!-- ================= MOBILE HEADER ================= -->
 
-    <div class="mobile-header d-md-none">
+    <!-- <div class="mobile-header d-md-none">
         <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" />
+    </div> -->
+
+    <!-- Mobile Header -->
+    <div class="tata-mobile-header d-md-none">
+      <div class="tata-mobile-content">
+        <!-- Left: Logo -->
+        <div class="tata-mobile-logo-wrapper">
+          <img
+            src="images/logo.png"
+            alt="Tata Medical & Diagnostic Center"
+            class="tata-mobile-logo"
+          />
+        </div>
+
+        <!-- Center: Live Date & Time -->
+        <div class="tata-mobile-datetime">
+          <div class="tata-date" id="tataMobileDate">Loading...</div>
+          <div class="tata-time" id="tataMobileTime">Loading...</div>
+        </div>
+
+        <!-- Right: Contact Icons -->
+        <div class="tata-mobile-contacts">
+          <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+          <a
+            href="mailto:info@medicare.com"
+            class="tata-contact-icon"
+            title="Email Us"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
-        <a href="index.html#home" class="nav-item">
-            <span class="icon">🏠</span>
-            <span class="label">Home</span>
-        </a>
+      <a href="index.html#home" class="nav-item">
+        <span class="icon">🏠</span>
+        <span class="label">Home</span>
+      </a>
 
-        <a href="about.html" class="nav-item">
-            <span class="icon">👥</span>
-            <span class="label">About</span>
-        </a>
+      <a href="about.html" class="nav-item">
+        <span class="icon">👥</span>
+        <span class="label">About</span>
+      </a>
 
-        <a href="services.html" class="nav-item">
-            <span class="icon">🧪</span>
-            <span class="label">Services</span>
-        </a>
+      <a href="services.html" class="nav-item">
+        <span class="icon">🧪</span>
+        <span class="label">Services</span>
+      </a>
 
-        <a href="index.html#appointment" class="nav-item">
-            <span class="icon">📅</span>
-            <span class="label">Booking</span>
-        </a>
+      <a href="index.html#appointment" class="nav-item">
+        <span class="icon">📅</span>
+        <span class="label">Booking</span>
+      </a>
 
-        <a href="gallery.html" class="nav-item">
-            <span class="icon">🖼️</span>
-            <span class="label">Gallery</span>
-        </a>
+      <a href="gallery.html" class="nav-item">
+        <span class="icon">🖼️</span>
+        <span class="label">Gallery</span>
+      </a>
 
-        <a href="#doctors" class="nav-item">
-            <span class="icon">👨‍⚕️</span>
-            <span class="label">Doctors</span>
-        </a>
+      <a href="#doctors" class="nav-item">
+        <span class="icon">👨‍⚕️</span>
+        <span class="label">Doctors</span>
+      </a>
 
-        <a href="#contact" class="nav-item">
-            <span class="icon">📞</span>
-            <span class="label">Contact</span>
-        </a>
+      <a href="contact.html#contact" class="nav-item">
+        <span class="icon">📞</span>
+        <span class="label">Contact</span>
+      </a>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
-
-</html>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>

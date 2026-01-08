@@ -530,298 +530,266 @@ section {
   padding: 40px;
 }
 
-
 /* ==========================================
    TATA MOBILE HEADER CSS - PROFESSIONAL
    LEFT: Logo | CENTER: Date & Time | RIGHT: Icons
    ========================================== */
 
 /* Hide mobile header on desktop */
+
 @media (min-width: 769px) {
-    .tata-mobile-header {
-        display: none !important;
-    }
+  .tata-mobile-header {
+    display: none !important;
+  }
 }
 
 /* Mobile Header Styles (768px and below) */
+
 @media (max-width: 768px) {
-    .main-nav{
-        display: none;
-    }
-
-    /* Mobile Header Container */
-    .tata-mobile-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        background: linear-gradient(135deg, #1b5e4f 0%, #145043 100%);
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-        z-index: 9999;
-        display: block !important;
-    }
-
-    /* Content Wrapper - 3 Column Layout */
-    .tata-mobile-content {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        height: 100%;
-        padding: 0 15px;
-        gap: 15px;
-    }
-
-    /* LEFT: Logo Section */
-    .tata-mobile-logo-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    .tata-mobile-logo {
-        height: 62px;
-        width: auto;
-        max-width: 150px;
-        object-fit: contain;
-        filter: brightness(1.15) drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-        transition: transform 0.3s ease;
-    }
-
-    .tata-mobile-logo:hover {
-        transform: scale(1.05);
-    }
-
-    /* CENTER: Date & Time Section */
-    .tata-mobile-datetime {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 2px;
-    }
-
-    .tata-date {
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 0.7rem;
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        line-height: 1;
-    }
-
-    .tata-time {
-        color: #ffffff;
-        font-size: 1.1rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-family: 'Courier New', 'Consolas', monospace;
-        line-height: 1;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    /* RIGHT: Contact Icons Container */
-    .tata-mobile-contacts {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    /* Individual Contact Icon */
-    .tata-contact-icon {
-        width: 42px;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: #ffffff;
-        transition: all 0.3s ease;
-        position: relative;
-    }
-
-    /* Icon Styling */
-    .tata-contact-icon i {
-        font-size: 1.25rem;
-        color: #ffffff;
-        transition: all 0.3s ease;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    }
-
-    /* Hover Effects */
-    .tata-contact-icon:hover i {
-        transform: scale(1.2);
-        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
-    }
-
-    /* Phone Icon Hover - Green Glow */
-    .tata-contact-icon:first-child:hover i {
-        color: #4caf50;
-        filter: drop-shadow(0 0 8px rgba(76, 175, 80, 0.8));
-    }
-
-    /* Email Icon Hover - Blue Glow */
-    .tata-contact-icon:last-child:hover i {
-        color: #2196f3;
-        filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.8));
-    }
-
-    /* Active State */
-    .tata-contact-icon:active i {
-        transform: scale(1.1);
-    }
-
-    .container.mobile-container {
-        padding: 0px;
-    }
-    .doctor-card-new .doctor-book-btn {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(-50%, 0);
-    }
-    .doctor-book-btn {
-        top: 200px;
-    }
+  .main-nav {
+    display: none;
+  }
+  /* Mobile Header Container */
+  .tata-mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(135deg, #1b5e4f 0%, #145043 100%);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: block !important;
+  }
+  /* Content Wrapper - 3 Column Layout */
+  .tata-mobile-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+    gap: 15px;
+  }
+  /* LEFT: Logo Section */
+  .tata-mobile-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .tata-mobile-logo {
+    height: 62px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: brightness(1.15) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+  }
+  .tata-mobile-logo:hover {
+    transform: scale(1.05);
+  }
+  /* CENTER: Date & Time Section */
+  .tata-mobile-datetime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2px;
+  }
+  .tata-date {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .tata-time {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: "Courier New", "Consolas", monospace;
+    line-height: 1;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  /* RIGHT: Contact Icons Container */
+  .tata-mobile-contacts {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  /* Individual Contact Icon */
+  .tata-contact-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  /* Icon Styling */
+  .tata-contact-icon i {
+    font-size: 1.25rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+  /* Hover Effects */
+  .tata-contact-icon:hover i {
+    transform: scale(1.2);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+  }
+  /* Phone Icon Hover - Green Glow */
+  .tata-contact-icon:first-child:hover i {
+    color: #4caf50;
+    filter: drop-shadow(0 0 8px rgba(76, 175, 80, 0.8));
+  }
+  /* Email Icon Hover - Blue Glow */
+  .tata-contact-icon:last-child:hover i {
+    color: #2196f3;
+    filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.8));
+  }
+  /* Active State */
+  .tata-contact-icon:active i {
+    transform: scale(1.1);
+  }
+  .container.mobile-container {
+    padding: 0px;
+  }
+  .doctor-card-new .doctor-book-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+  .doctor-book-btn {
+    top: 200px;
+  }
 }
 
 /* Tablet Adjustments (600px - 768px) */
+
 @media (max-width: 768px) and (min-width: 601px) {
-    .tata-mobile-header {
-        height: 75px;
-    }
-
-    .main-nav{
-        display: none;
-    }
-
-    .tata-mobile-content {
-        padding: 0 20px;
-        gap: 20px;
-    }
-
-    .tata-mobile-logo {
-        height: 68px;
-        max-width: 170px;
-    }
-
-    .tata-date {
-        font-size: 0.75rem;
-    }
-
-    .tata-time {
-        font-size: 1.2rem;
-    }
-
-    .tata-mobile-contacts {
-        gap: 18px;
-    }
-
-    .tata-contact-icon {
-        width: 46px;
-        height: 46px;
-    }
-
-    .tata-contact-icon i {
-        font-size: 1.35rem;
-    }
+  .tata-mobile-header {
+    height: 75px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .tata-mobile-content {
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .tata-mobile-logo {
+    height: 68px;
+    max-width: 170px;
+  }
+  .tata-date {
+    font-size: 0.75rem;
+  }
+  .tata-time {
+    font-size: 1.2rem;
+  }
+  .tata-mobile-contacts {
+    gap: 18px;
+  }
+  .tata-contact-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .tata-contact-icon i {
+    font-size: 1.35rem;
+  }
 }
 
 /* Small Mobile (up to 400px) */
+
 @media (max-width: 400px) {
-    .tata-mobile-header {
-        height: 65px;
-    }
-
-    .tata-mobile-content {
-        padding: 0 12px;
-        gap: 10px;
-    }
-
-    .tata-mobile-logo {
-        height: 56px;
-        max-width: 120px;
-    }
-
-    .tata-date {
-        font-size: 0.65rem;
-    }
-
-    .tata-time {
-        font-size: 0.95rem;
-    }
-
-    .tata-mobile-contacts {
-        gap: 12px;
-    }
-
-    .tata-contact-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .tata-contact-icon i {
-        font-size: 1.15rem;
-    }
-    .main-nav{
-        display: none;
-    }
+  .tata-mobile-header {
+    height: 65px;
+  }
+  .tata-mobile-content {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .tata-mobile-logo {
+    height: 56px;
+    max-width: 120px;
+  }
+  .tata-date {
+    font-size: 0.65rem;
+  }
+  .tata-time {
+    font-size: 0.95rem;
+  }
+  .tata-mobile-contacts {
+    gap: 12px;
+  }
+  .tata-contact-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .tata-contact-icon i {
+    font-size: 1.15rem;
+  }
+  .main-nav {
+    display: none;
+  }
 }
 
 /* Extra Small Mobile (up to 360px) */
+
 @media (max-width: 360px) {
-    .tata-mobile-header {
-        height: 62px;
-    }
-    .main-nav{
-        display: none;
-    }
-    .tata-mobile-content {
-        padding: 0 10px;
-        gap: 8px;
-    }
-
-    .tata-mobile-logo {
-        height: 52px;
-        max-width: 110px;
-    }
-
-    .tata-date {
-        font-size: 0.6rem;
-    }
-
-    .tata-time {
-        font-size: 0.9rem;
-    }
-
-    .tata-mobile-contacts {
-        gap: 10px;
-    }
-
-    .tata-contact-icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .tata-contact-icon i {
-        font-size: 1.1rem;
-    }
+  .tata-mobile-header {
+    height: 62px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .tata-mobile-content {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .tata-mobile-logo {
+    height: 52px;
+    max-width: 110px;
+  }
+  .tata-date {
+    font-size: 0.6rem;
+  }
+  .tata-time {
+    font-size: 0.9rem;
+  }
+  .tata-mobile-contacts {
+    gap: 10px;
+  }
+  .tata-contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .tata-contact-icon i {
+    font-size: 1.1rem;
+  }
 }
 
 /* Animation for page load */
+
 @keyframes tata-slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .tata-mobile-header {
-    animation: tata-slideDown 0.5s ease-out;
+  animation: tata-slideDown 0.5s ease-out;
 }
 
 /* ======================================================
@@ -1434,170 +1402,145 @@ section {
 ===================================================== */
 
 @media (max-width: 768px) {
-
-    /* -------- BODY RESET -------- */
-    body {
-        padding-bottom: 90px;
-        background: #f7f9fc;
-    }
-
-    /* -------- MOBILE HEADER -------- */
-    .mobile-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 64px;
-        background: linear-gradient(135deg, #1f3d2b, #2e7d32);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    }
-
-    .mobile-header img {
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-        padding: 6px 10px;
-    }
-
-    /* -------- SECTIONS -------- */
-    section {
-        padding: 40px 14px;
-        background: #ffffff;
-        border-radius: 16px;
-        margin-bottom: 16px;
-    }
-
-    /* -------- HERO -------- */
-    .hero-left {
-        min-height: 220px;
-        border-radius: 18px;
-    }
-
-    .hero-overlay {
-        padding: 24px;
-        text-align: center;
-    }
-
-    .hero-overlay h1 {
-        font-size: 1.6rem;
-    }
-
-    .hero-overlay p {
-        font-size: 0.95rem;
-    }
-
-    /* -------- APPOINTMENT CARD -------- */
-    .appointment-card {
-        padding: 20px;
-        border-radius: 18px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    .appointment-card h4 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    .appointment-card input,
-    .appointment-card select,
-    .appointment-card button {
-        height: 44px;
-        font-size: 14px;
-    }
-
-    /* -------- ABOUT -------- */
-    .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .about-features {
-        grid-template-columns: 1fr;
-    }
-
-    /* -------- SERVICES -------- */
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .service-card {
-        padding: 26px 20px;
-    }
-
-    /* -------- DOCTORS -------- */
-    .doctors-grid,
-    .doctor-grid-new {
-        grid-template-columns: 1fr;
-    }
-
-    .doctor-card-new img {
-        height: 220px;
-    }
-
-    .doctor-book-btn {
-        top: 200px;
-    }
-
-    /* -------- GALLERY -------- */
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .gallery-item {
-        border-radius: 16px;
-    }
-
-    /* -------- CONTACT -------- */
-    .contact-section {
-        text-align: center;
-    }
-
-    /* -------- MOBILE NAV -------- */
-    .mobile-nav {
-        display: flex;
-        position: fixed;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 24px);
-        background: linear-gradient(135deg, #1f3d2b, #2e7d32);
-        border-radius: 26px;
-        padding: 12px 0;
-        justify-content: space-around;
-        align-items: center;
-        z-index: 3000;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .mobile-nav a {
-        font-size: 12px;
-        color: #e8f5e9;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .mobile-appointment-btn {
-        background: #ffffff;
-        color: #1f3d2b;
-        padding: 10px 14px;
-        border-radius: 16px;
-        font-weight: 700;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    }
+  /* -------- BODY RESET -------- */
+  body {
+    padding-bottom: 90px;
+    background: #f7f9fc;
+  }
+  /* -------- MOBILE HEADER -------- */
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+  .mobile-header img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    padding: 6px 10px;
+  }
+  /* -------- SECTIONS -------- */
+  section {
+    padding: 40px 14px;
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  /* -------- HERO -------- */
+  .hero-left {
+    min-height: 220px;
+    border-radius: 18px;
+  }
+  .hero-overlay {
+    padding: 24px;
+    text-align: center;
+  }
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+  .hero-overlay p {
+    font-size: 0.95rem;
+  }
+  /* -------- APPOINTMENT CARD -------- */
+  .appointment-card {
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+  .appointment-card h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .appointment-card input,
+  .appointment-card select,
+  .appointment-card button {
+    height: 44px;
+    font-size: 14px;
+  }
+  /* -------- ABOUT -------- */
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+  /* -------- SERVICES -------- */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .service-card {
+    padding: 26px 20px;
+  }
+  /* -------- DOCTORS -------- */
+  .doctors-grid,
+  .doctor-grid-new {
+    grid-template-columns: 1fr;
+  }
+  .doctor-card-new img {
+    height: 220px;
+  }
+  .doctor-book-btn {
+    top: 200px;
+  }
+  /* -------- GALLERY -------- */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .gallery-item {
+    border-radius: 16px;
+  }
+  /* -------- CONTACT -------- */
+  .contact-section {
+    text-align: center;
+  }
+  /* -------- MOBILE NAV -------- */
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    border-radius: 26px;
+    padding: 12px 0;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3000;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+  .mobile-nav a {
+    font-size: 12px;
+    color: #e8f5e9;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .mobile-appointment-btn {
+    background: #ffffff;
+    color: #1f3d2b;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
 }
 
 /* ================= MOBILE BOTTOM NAV – FIXED & BALANCED ================= */
@@ -1825,17 +1768,15 @@ section {
 /* Mobile */
 
 @media (max-width: 768px) {
-    #home {
-        padding: 0px;
-    }
-
-    .col-lg-8.mobile-hero-banner {
-        padding: 0px;
-    }
-
-    .hero-slider {
-        border-radius: 0px !important;
-    }
+  #home {
+    padding: 0px;
+  }
+  .col-lg-8.mobile-hero-banner {
+    padding: 0px;
+  }
+  .hero-slider {
+    border-radius: 0px !important;
+  }
 }
 
 .hero-slider {
@@ -2124,4 +2065,25 @@ section {
     padding-bottom: 120px;
     /* mobile nav safe space */
   }
+}
+
+/* ================= GLOBAL TOP BAR FIX ================= */
+
+/* Apply to ALL pages */
+
+.top-bar .top-info span {
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 1 !important;
+}
+
+.top-bar .top-info span i,
+.top-bar .top-info span svg {
+  color: #ffffff !important;
+  font-size: 16px;
+  opacity: 1 !important;
 }

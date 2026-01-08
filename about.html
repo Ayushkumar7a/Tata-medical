@@ -13,6 +13,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <style>
       html {
@@ -522,8 +526,42 @@
     </footer>
     <!-- ================= MOBILE HEADER ================= -->
 
-    <div class="mobile-header d-md-none">
-      <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" />
+    <!-- <div class="mobile-header d-md-none">
+        <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" />
+    </div> -->
+
+    <!-- Mobile Header -->
+    <div class="tata-mobile-header d-md-none">
+      <div class="tata-mobile-content">
+        <!-- Left: Logo -->
+        <div class="tata-mobile-logo-wrapper">
+          <img
+            src="images/logo.png"
+            alt="Tata Medical & Diagnostic Center"
+            class="tata-mobile-logo"
+          />
+        </div>
+
+        <!-- Center: Live Date & Time -->
+        <div class="tata-mobile-datetime">
+          <div class="tata-date" id="tataMobileDate">Loading...</div>
+          <div class="tata-time" id="tataMobileTime">Loading...</div>
+        </div>
+
+        <!-- Right: Contact Icons -->
+        <div class="tata-mobile-contacts">
+          <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+          <a
+            href="mailto:info@medicare.com"
+            class="tata-contact-icon"
+            title="Email Us"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
@@ -537,7 +575,7 @@
         <span class="label">About</span>
       </a>
 
-      <a href="services.html#services" class="nav-item">
+      <a href="services.html" class="nav-item">
         <span class="icon">🧪</span>
         <span class="label">Services</span>
       </a>
@@ -552,7 +590,7 @@
         <span class="label">Gallery</span>
       </a>
 
-      <a href="index.html#doctors" class="nav-item">
+      <a href="#doctors" class="nav-item">
         <span class="icon">👨‍⚕️</span>
         <span class="label">Doctors</span>
       </a>
