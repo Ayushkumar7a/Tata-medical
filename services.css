@@ -5,6 +5,7 @@
 body.services-page {
   padding-top: 70px;
 }
+
 /* ---------- Banner ---------- */
 
 .services-page .services-banner {
@@ -24,6 +25,7 @@ body.services-page {
   font-size: 18px;
   margin-top: 10px;
 }
+
 /* ---------- Intro ---------- */
 
 .services-page .services-intro {
@@ -41,6 +43,7 @@ body.services-page {
   margin: 15px auto 0;
   color: #555;
 }
+
 /* ---------- Services Grid ---------- */
 
 .services-page .services-list {
@@ -81,6 +84,7 @@ body.services-page {
   color: #666;
   font-size: 14px;
 }
+
 /* ---------- Why Choose ---------- */
 
 .services-page .services-why {
@@ -103,6 +107,7 @@ body.services-page {
   font-size: 16px;
   margin: 10px 0;
 }
+
 /* ---------- CTA ---------- */
 
 .services-page .services-cta {
@@ -122,6 +127,7 @@ body.services-page {
   text-decoration: none;
   margin-top: 15px;
 }
+
 /* ================= SERVICE HIGHLIGHTS ================= */
 
 .services-page .services-highlights {
@@ -152,6 +158,7 @@ body.services-page {
   color: #2e7d32;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
+
 /* ================= DEPARTMENTS ================= */
 
 .services-page .department-services {
@@ -183,6 +190,7 @@ body.services-page {
   text-align: center;
   color: #1f3d2b;
 }
+
 /* ================= SERVICE PROCESS ================= */
 
 .services-page .service-process {
@@ -213,6 +221,7 @@ body.services-page {
   text-align: center;
   backdrop-filter: blur(6px);
 }
+
 /* ================= SERVICES FAQ ================= */
 
 .services-page .services-faq {
@@ -245,6 +254,7 @@ body.services-page {
   color: #555;
   line-height: 1.6;
 }
+
 /* ======================================================
    DESKTOP HEADER (TOP BAR + NAV)
 ====================================================== */
@@ -286,6 +296,7 @@ html {
   scroll-padding-top: 130px;
   /* top-bar + navbar */
 }
+
 /* Mobile */
 
 @media (max-width: 768px) {
@@ -294,6 +305,7 @@ html {
     /* mobile header height */
   }
 }
+
 /* ======================================================
    HERO SECTION
 ====================================================== */
@@ -331,6 +343,7 @@ html {
     overflow: visible;
   }
 }
+
 /* ======================================================
    FOOTER
 ====================================================== */
@@ -348,6 +361,7 @@ html {
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   gap: 40px;
 }
+
 /* BRAND */
 
 .footer-brand p {
@@ -389,6 +403,7 @@ html {
 .social-links a:hover {
   background: #2e7d32;
 }
+
 /* LINKS */
 
 .footer-links h4,
@@ -409,12 +424,14 @@ html {
 .footer-links a:hover {
   color: #a5d6a7;
 }
+
 /* CONTACT */
 
 .footer-contact p {
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
+
 /* BOTTOM BAR */
 
 .footer-bottom {
@@ -437,6 +454,7 @@ html {
 .footer-bottom a:hover {
   color: #ffffff;
 }
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
@@ -462,6 +480,7 @@ html {
     text-align: center;
   }
 }
+
 /* ================= TOP BAR FIX ================= */
 
 .top-bar {
@@ -477,6 +496,7 @@ html {
   align-items: center;
   justify-content: space-between;
 }
+
 /* LOGO SIZE INCREASE */
 
 .top-logo img {
@@ -485,6 +505,7 @@ html {
   width: auto;
   object-fit: contain;
 }
+
 /* INFO VISIBILITY FIX */
 
 .top-info {
@@ -503,12 +524,14 @@ html {
   gap: 6px;
   opacity: 0.95;
 }
+
 /* ICON COLOR */
 
 .top-info span i,
 .top-info span svg {
   color: #c8e6c9;
 }
+
 /* ================= MOBILE HANDLING ================= */
 
 @media (max-width: 992px) {
@@ -517,6 +540,7 @@ html {
     /* clean mobile look */
   }
 }
+
 /* =====================================================
    MOBILE VIEW FIX – CLEAN & PROFESSIONAL
    (Does NOT affect desktop)
@@ -642,4 +666,12 @@ html {
     padding-top: 120px;
     /* adjust for fixed navbar height */
   }
+}
+
+/* ===============================
+   DOCTORS PAGE – FIX TOP GAP
+================================ */
+
+body.doctors-page {
+  padding-top: 0 !important;
 }

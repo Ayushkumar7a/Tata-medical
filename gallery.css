@@ -117,3 +117,7 @@
     height: 220px;
   }
 }
+
+body.gallery-page {
+  padding-top: 0 !important;
+}

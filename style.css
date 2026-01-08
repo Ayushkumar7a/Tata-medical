@@ -180,40 +180,54 @@ section {
    ABOUT SECTION
 ====================================================== */
 
-.about-section {
-  background: linear-gradient(135deg, #f9fbfd, #eef3f8);
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.about-text h2 {
-  font-size: 2.6rem;
-  color: #0f2f52;
-}
-
-.about-subtitle {
-  color: var(--accent-blue);
-  margin-bottom: 20px;
-}
-
-.about-features {
+.about-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 22px;
 }
 
-.feature {
-  background: #fff;
-  padding: 14px;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+.stat-card.premium {
+  background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+  color: #fff;
+  padding: 40px 24px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(46, 125, 50, 0.35);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card.premium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
+}
+
+.stat-card.premium:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 40px 80px rgba(46, 125, 50, 0.5);
+}
+
+.stat-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.stat-card h3 {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.stat-card p {
+  font-size: 1rem;
+  opacity: 0.95;
 }
 
 /* ======================================================
@@ -2086,4 +2100,99 @@ section {
   color: #ffffff !important;
   font-size: 16px;
   opacity: 1 !important;
+}
+
+/* ================= FOOTER MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 40px 20px;
+    text-align: left;
+  }
+  /* Hide brand text on mobile (optional but clean) */
+  .footer-brand {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  /* QUICK LINKS LEFT */
+  .footer-links:nth-child(2) {
+    grid-column: 1 / 2;
+  }
+  /* SERVICES RIGHT */
+  .footer-links:nth-child(3) {
+    grid-column: 2 / 3;
+  }
+  .footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 6px;
+  }
+  .footer-links a {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  /* CONTACT FULL WIDTH */
+  .footer-contact {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .footer-contact p {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  /* BOTTOM BAR */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* ================= FOOTER TOP SPACE FIX (MOBILE) ================= */
+
+@media (max-width: 768px) {
+  footer.footer {
+    padding-top: 20px !important;
+  }
+  .footer-container {
+    padding-top: 20px !important;
+  }
+  /* Logo + text ke upar ka gap kam */
+  .footer-brand {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .footer-brand img {
+    margin-top: 0 !important;
+    margin-bottom: 12px;
+  }
+  /* Agar last section ke niche se gap aa raha ho */
+  section:last-of-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.top-bar {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+body.contact-page {
+  padding-top: 0 !important;
 }
