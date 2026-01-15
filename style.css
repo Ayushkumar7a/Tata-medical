@@ -27,6 +27,21 @@ body {
   color: var(--dark-text);
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
 /* ======================================================
    DESKTOP HEADER (TOP BAR + NAV)
 ====================================================== */
@@ -133,6 +148,65 @@ html {
   .hero-left {
     min-height: 420px;
     /* mobile */
+  }
+}
+
+/* ==========================================
+   ABOUT DROPDOWN (DESKTOP ONLY - HOVER OPEN)
+   SAFE - Only affects About dropdown
+========================================== */
+
+/* Dropdown menu base */
+
+.about-dropdown {
+  position: relative;
+}
+
+.about-dropdown .about-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 0;
+  margin-top: 12px;
+  border: none;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+}
+
+/* Items style */
+
+.about-dropdown .dropdown-item {
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f3d2b;
+  transition: 0.55s ease;
+}
+
+/* Hover item */
+
+.about-dropdown .dropdown-item:hover {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Show on hover (Desktop only) */
+
+@media (min-width: 769px) {
+  .about-dropdown:hover .about-menu {
+    display: block;
+  }
+}
+
+/* Mobile pe hide dropdown completely */
+
+@media (max-width: 768px) {
+  .about-dropdown .about-menu {
+    display: none !important;
   }
 }
 
@@ -1705,6 +1779,12 @@ section {
   .hero-left {
     overflow: visible;
   }
+  @media (max-width: 768px) {
+    .footer-bottom {
+      padding-bottom: 110px;
+      /* bottom nav ke liye space */
+    }
+  }
 }
 
 /* ================= MOBILE HERO & APPOINTMENT FIX (FINAL) ================= */
@@ -1819,8 +1899,8 @@ section {
 /* ================= HERO ================= */
 
 .about-page .page-banner {
-  background: linear-gradient(rgba(31, 61, 43, 0.88), rgba(31, 61, 43, 0.88)),
-    url("images/about-hero.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("images/doctors-hero.jpg") center/cover no-repeat;
   padding: 120px 20px;
   text-align: center;
   color: #fff;
@@ -1835,6 +1915,31 @@ section {
 .about-page .page-banner p {
   font-size: 1.1rem;
   opacity: 0.95;
+}
+
+.page-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  /* dark overlay */
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* ================= INTRO ================= */
@@ -1862,95 +1967,328 @@ section {
 }
 
 .about-page .image-placeholder {
-  height: 420px;
+  height: 490px;
   border-radius: 26px;
   background: linear-gradient(rgba(46, 125, 50, 0.25), rgba(46, 125, 50, 0.25)),
     url("images/about-side.jpg") center/cover no-repeat;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
-/* ================= MISSION / VISION ================= */
+/* ================= MISSION / VISION (PREMIUM) ================= */
 
 .about-page .mission-vision {
-  background: #f9fbfd;
-  padding: 90px 20px;
+  background: linear-gradient(180deg, #f9fbfd, #ffffff);
+  padding: 100px 20px;
 }
 
 .about-page .mv-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 35px;
 }
 
 .about-page .mv-card {
-  background: #fff;
-  padding: 36px;
-  border-radius: 22px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 42px 38px;
+  border-radius: 26px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  overflow: hidden;
+  transition: 0.35s ease;
+}
+
+/* ✅ Soft glow background */
+
+.about-page .mv-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(46, 125, 50, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.35s ease;
 }
 
 .about-page .mv-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  box-shadow: 0 28px 65px rgba(46, 125, 50, 0.22);
 }
 
-.about-page .mv-icon {
-  width: 64px;
-  height: 64px;
-  background: var(--primary-green);
-  color: #fff;
-  border-radius: 50%;
+.about-page .mv-card:hover::before {
+  opacity: 1;
+}
+
+.awards-section {
+  background: #ffffff;
+  padding: 70px 20px;
+}
+
+.awards-box {
+  background: #f9fbfd;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.award-item {
+  display: flex;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.award-item:last-child {
+  border-bottom: none;
+}
+
+.award-icon {
+  width: 44px;
+  height: 44px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
-/* ================= VALUES ================= */
+.award-item h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 700;
+  color: #263238;
+}
 
-.about-page .values-grid,
-.about-page .features-grid {
+.award-item p {
+  margin: 6px 0 0;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+/* ✅ Icon style modern */
+
+.about-page .mv-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(46, 125, 50, 0.35);
+  font-size: 26px;
+}
+
+/* ✅ Title & text */
+
+.about-page .mv-card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1f3d2b;
+  margin-bottom: 12px;
+}
+
+.about-page .mv-card p {
+  font-size: 0.98rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ================= ACHIEVEMENTS (PREMIUM STATS) ================= */
+
+.about-page .achievements {
+  background: linear-gradient(180deg, #ffffff, #f9fbfd);
+  padding: 100px 20px;
+}
+
+.about-page .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
 }
-
-.about-page .value-card,
-.about-page .feature-card {
-  background: #fff;
-  padding: 28px;
-  border-radius: 20px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-}
-
-/* ================= ACHIEVEMENTS ================= */
 
 .about-page .stat-card {
-  background: #fff;
-  padding: 32px;
-  border-radius: 22px;
+  position: relative;
+  background: #ffffff;
+  padding: 40px 28px;
+  border-radius: 26px;
   text-align: center;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  overflow: hidden;
+  transition: 0.35s ease;
 }
+
+/* ✅ Gradient top strip */
+
+.about-page .stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+}
+
+.about-page .stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 70px rgba(46, 125, 50, 0.22);
+}
+
+/* ✅ Number design */
 
 .about-page .stat-number {
-  font-size: 2.6rem;
-  font-weight: 800;
-  color: var(--primary-green);
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 }
 
-/* ================= CTA ================= */
+.about-page .stat-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f3d2b;
+  margin-bottom: 10px;
+}
 
-.about-page .cta-section {
-  background: linear-gradient(rgba(31, 61, 43, 0.92), rgba(31, 61, 43, 0.92)),
-    url("images/cta-bg.jpg") center/cover no-repeat;
-  color: #fff;
-  padding: 100px 20px;
-  text-align: center;
+.about-page .stat-card p {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.why-choose {
+  padding: 70px 20px;
+  background: #f7f9fc;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1f3d2b;
+  margin-bottom: 35px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.why-card {
+  background: #fff;
+  padding: 26px 24px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: 0.35s ease;
+  border: 1px solid rgba(46, 125, 50, 0.08);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.why-number {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(46, 125, 50, 0.25);
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #263238;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+  .about-page .mv-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-page .mv-card {
+    padding: 34px 26px;
+  }
+}
+
+/* ================= CTA BUTTONS (ABOUT PAGE) ================= */
+
+.about-page .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
 }
 
 .about-page .cta-buttons a {
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* ✅ Primary Button (Green like site theme) */
+
+.about-page .cta-buttons .btn-primary {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.35);
+}
+
+.about-page .cta-buttons .btn-primary:hover {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.35);
+}
+
+/* ✅ Secondary Button (Outline style premium) */
+
+.about-page .cta-buttons .btn-secondary {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.35);
+}
+
+.about-page .cta-buttons .btn-secondary:hover {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.35);
 }
 
 /* ================= MOBILE ================= */
@@ -1962,6 +2300,26 @@ section {
   }
   .about-page .page-banner h1 {
     font-size: 2rem;
+  }
+}
+
+/* ✅ CTA + Footer spacing fix (Mobile) */
+
+@media (max-width: 768px) {
+  /* CTA ke niche extra gap */
+  .cta-section,
+  .services-cta,
+  .about-page .cta-section {
+    margin-bottom: 30px !important;
+    padding-bottom: 60px !important;
+  }
+  /* Footer top gap */
+  footer.footer {
+    margin-top: 20px !important;
+  }
+  /* Fixed bottom nav ke liye safe space */
+  body {
+    padding-bottom: 120px !important;
   }
 }
 
@@ -1982,6 +2340,7 @@ section {
   padding: 120px 20px;
   text-align: center;
   color: #fff;
+  border-radius: 0 0 40px 40px;
 }
 
 .contact-page .contact-hero h1 {
@@ -2078,6 +2437,41 @@ section {
   body.contact-page {
     padding-bottom: 120px;
     /* mobile nav safe space */
+  }
+}
+
+/* ================= GOOGLE MAP ================= */
+
+.contact-page .contact-map {
+  padding: 70px 0;
+  background: #f9fbfd;
+}
+
+.contact-page .map-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f3d2b;
+  margin-bottom: 25px;
+}
+
+.contact-page .map-box {
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.contact-page .map-box iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .contact-page .map-box iframe {
+    height: 300px;
   }
 }
 
@@ -2195,4 +2589,49 @@ section {
 
 body.contact-page {
   padding-top: 0 !important;
+}
+
+/* ===============================
+   COMMON HERO (ALL PAGES)
+=============================== */
+
+.page-hero,
+.services-banner,
+.gallery-hero,
+.about-hero,
+.doctors-hero {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  /* 🔥 SAME HEIGHT EVERY PAGE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+  /* ❌ vertical padding नहीं */
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.page-hero::before,
+.services-banner::before,
+.gallery-hero::before,
+.about-hero::before,
+.doctors-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 61, 43, 0.75);
+  /* same dark layer */
+}
+
+.page-hero > *,
+.services-banner > *,
+.gallery-hero > *,
+.about-hero > *,
+.doctors-hero > * {
+  position: relative;
+  z-index: 2;
 }

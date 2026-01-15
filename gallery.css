@@ -4,18 +4,19 @@
 ================================ */
 
 .gallery-page {
-  padding-top: 120px;
+  padding-top: 110px;
   background: #f9fafb;
 }
 
 /* HERO */
 
 .gallery-hero {
-  background: linear-gradient(rgba(31, 61, 43, 0.85), rgba(31, 61, 43, 0.85)),
-    url("images/gallery-hero.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("images/doctors-hero.jpg") center / cover no-repeat;
   padding: 120px 20px;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
+  border-radius: 0 0 40px 40px;
 }
 
 .gallery-hero h1 {

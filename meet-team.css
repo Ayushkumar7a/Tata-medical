@@ -1,0 +1,130 @@
+/* ==========================================
+   MEET OUR TEAM PAGE (SAFE SCOPED)
+========================================== */
+
+body.team-page {
+  background: #f7f9fc;
+  padding-top: 100px;
+}
+
+/* HERO */
+
+.team-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("images/doctors-hero.jpg") center/cover no-repeat;
+  padding: 120px 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 0 40px 40px;
+}
+
+.team-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.team-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* TEAM SECTION */
+
+.team-section {
+  padding: 80px 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* TEAM CARD */
+
+.team-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  padding-bottom: 25px;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* TEXT */
+
+.team-card h3 {
+  margin-top: 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f3d2b;
+}
+
+.team-card .role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 6px 0;
+}
+
+.team-card .desc {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0 18px;
+  line-height: 1.6;
+}
+
+/* SOCIAL LINKS */
+
+.team-social {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.team-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e8f5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e7d32;
+  font-size: 16px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.team-social a:hover {
+  background: #2e7d32;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  body.team-page {
+    padding-top: 90px;
+  }
+  .team-hero {
+    padding: 90px 16px;
+  }
+  .team-hero h1 {
+    font-size: 2rem;
+  }
+}
