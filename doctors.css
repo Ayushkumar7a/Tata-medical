@@ -1,33 +1,59 @@
-/* ================= DOCTOR PAGE ONLY ================= */
+/* ===== HARD RESET (IMPORTANT) ===== */
 
-.doctors-page {
-  padding-top: 110px;
-  background: #f9fbfd;
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+  background: #f7f9fc;
 }
 
-/* HERO */
+/* ================= DOCTORS PAGE BASE ================= */
 
-.doctor-hero {
-  background: linear-gradient(135deg, #1f3d2b, #2e7d32);
-  color: #fff;
-  padding: 90px 20px;
+.doctors-page {
+  background: #f9fafb;
+  /* top-bar (64) + nav (48) */
+}
+
+/* ======================================
+   DOCTORS PAGE FIX
+====================================== */
+
+/* Step 1: Body padding ko About page (70px) ke barabar karo */
+
+.doctors-page {
+  padding-top: 70px !important;
+  background: #f9fafb;
+}
+
+/* Step 2: Banner ki Height FORCE karo */
+
+.doctors-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("images/doctors-hero.jpg") center / cover no-repeat;
+  height: 400px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #ffffff;
+  border-radius: 0 0 40px 40px;
+  margin-top: 0;
 }
 
 .doctor-hero h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
-}
-
-.doctor-hero p {
-  font-size: 1.1rem;
-  opacity: 0.9;
 }
 
 /* GRID */
 
 .doctor-section {
-  padding: 90px 20px;
+  padding: 120px 20px;
+  background: #f9fafb;
 }
 
 .doctor-grid {
@@ -127,58 +153,22 @@
 /* MOBILE */
 
 @media (max-width: 768px) {
-  .doctor-hero h1 {
-    font-size: 2rem;
+  .doctors-page {
+    padding-top: 64px;
+    /* mobile header */
   }
-  .doctor-card img {
-    height: 220px;
-  }
-}
-
-/* ================= DOCTORS PAGE FIX ================= */
-
-.doctors-page {
-  padding-top: 120px;
-  /* top-bar + navbar space */
-  background: #f9fafb;
-}
-
-/* HERO SECTION */
-
-.doctors-hero {
-  position: relative;
-  padding: 140px 20px 120px;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
-    url("images/doctors-hero.jpg") center/cover no-repeat;
-  /* TITLE */
-  .doctors-hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-  }
-  /* SUBTITLE */
-  .doctors-hero p {
-    font-size: 1.2rem;
-    opacity: 0.95;
-  }
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .doctors-page {
-      padding-top: 95px;
-    }
-    .doctors-hero {
-      padding: 110px 16px 90px;
-    }
-    .doctors-hero h1 {
-      font-size: 2.2rem;
-    }
+  /* Yahan height auto karna zaroori hai mobile ke liye */
+  .doctors-hero {
+    height: auto;
+    padding: 90px 16px 70px;
   }
 }
-
-/* FIX FOR TOP PADDING ON DOCTORS PAGE ONLY */
 
 body.doctors-page {
-  padding-top: 0 !important;
+  padding-top: 112px;
+  /* top-bar (64) + navbar (48) */
+}
+
+.footer {
+  margin-top: 60px;
 }

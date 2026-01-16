@@ -1,402 +1,519 @@
-/* =====================================================
+    /* =====================================================
    SERVICES PAGE (ISOLATED + PREMIUM)
    Works ONLY on services.html
 ===================================================== */
+
 
 /* ✅ HARD RESET (No white line issue) */
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
+
 
 /* ✅ Only services page base */
 
 body.services-page {
-  background: #f5f7fb;
-  padding-top: 112px;
-  /* top-bar + navbar space */
+    background: #f5f7fb;
+    padding-top: 112px;
+    /* top-bar + navbar space */
 }
+
 
 /* ✅ Remove white thin line issue */
 
 .services-page section {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* =====================================================
    HERO / BANNER (Same style like contact)
 ===================================================== */
 
 .services-page .services-banner {
-  width: 100%;
-  margin: 0;
-  padding: 140px 20px 110px;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(31, 61, 43, 0.85)),
-    url("images/doctors-hero.jpg") center/cover no-repeat;
-  border-radius: 0 0 40px 40px;
+    width: 100%;
+    margin: 0;
+    padding: 140px 20px 110px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(31, 61, 43, 0.85)), url("images/doctors-hero.jpg") center/cover no-repeat;
+    border-radius: 0 0 40px 40px;
 }
 
 .services-page .services-banner h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 .services-page .services-banner p {
-  font-size: 1.15rem;
-  opacity: 0.95;
-  max-width: 760px;
-  margin: auto;
-  line-height: 1.6;
+    font-size: 1.15rem;
+    opacity: 0.95;
+    max-width: 760px;
+    margin: auto;
+    line-height: 1.6;
 }
+
 
 /* =====================================================
    INTRO SECTION
 ===================================================== */
 
 .services-page .services-intro {
-  padding: 80px 20px;
-  text-align: center;
-  background: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    background: #ffffff;
 }
 
 .services-page .services-intro h2 {
-  font-size: 2.3rem;
-  color: #1f3d2b;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.services-page .services-intro p {
-  max-width: 780px;
-  margin: auto;
-  color: #555;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-/* =====================================================
+    font-size: 2.3rem;
+    color: #1f3d2b;
+    /* ===== HARD RESET (IMPORTANT) ===== */
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        overflow-x: hidden;
+        background: #f7f9fc;
+    }
+    /* ======================================
+   SERVICES PAGE – PREMIUM & CLEAN
+   (ONLY services.html affected)
+====================================== */
+    body.services-page {
+        padding-top: 128px;
+        background: #f7f9fc;
+    }
+    /* ======================================
+   SERVICES PAGE FIX
+====================================== */
+    body.services-page {
+        padding-top: 70px !important;
+        background: #f7f9fc;
+    }
+    .services-banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("images/doctors-hero.jpg") center / cover no-repeat;
+        height: 400px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 0 0 40px 40px;
+    }
+    .services-banner h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+    .services-page .services-intro p {
+        max-width: 780px;
+        margin: auto;
+        color: #555;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+    /* =====================================================
    SERVICES GRID (PREMIUM)
 ===================================================== */
-
-.services-page .services-list {
-  background: #f5f7fb;
-  padding: 90px 20px;
-}
-
-.services-page .services-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 26px;
-}
-
-/* CARD */
-
-.services-page .service-card {
-  background: #ffffff;
-  padding: 34px 26px;
-  border-radius: 22px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.35s ease;
-  min-height: 220px;
-  /* ✅ all cards same height */
-}
-
-/* Light gradient shine */
-
-.services-page .service-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(46, 125, 50, 0.12), transparent 65%);
-  opacity: 0;
-  transition: 0.35s ease;
-}
-
-/* Hover Premium */
-
-.services-page .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 55px rgba(46, 125, 50, 0.18);
-}
-
-.services-page .service-card:hover::before {
-  opacity: 1;
-}
-
-/* ICON */
-
-.services-page .service-icon {
-  width: 62px;
-  height: 62px;
-  border-radius: 18px;
-  background: #e8f5e9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  margin-bottom: 18px;
-}
-
-/* TITLE */
-
-.services-page .service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #1f3d2b;
-  margin-bottom: 10px;
-}
-
-/* TEXT */
-
-.services-page .service-card p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* =====================================================
+    .services-page .services-list {
+        background: #f5f7fb;
+        padding: 90px 20px;
+    }
+    .services-page .services-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 26px;
+    }
+    /* CARD */
+    .services-page .service-card {
+        background: #ffffff;
+        padding: 34px 26px;
+        border-radius: 22px;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s ease;
+        min-height: 220px;
+        /* ✅ all cards same height */
+    }
+    /* Light gradient shine */
+    .services-page .service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(46, 125, 50, 0.12), transparent 65%);
+        opacity: 0;
+        transition: 0.35s ease;
+    }
+    /* Hover Premium */
+    .services-page .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 55px rgba(46, 125, 50, 0.18);
+    }
+    .services-page .service-card:hover::before {
+        opacity: 1;
+    }
+    /* ICON */
+    .services-page .service-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+        background: #e8f5e9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+    /* TITLE */
+    .services-page .service-card h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #1f3d2b;
+        margin-bottom: 10px;
+    }
+    /* TEXT */
+    .services-page .service-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+    /* =====================================================
    HIGHLIGHTS SECTION
 ===================================================== */
-
-.services-page .services-highlights {
-  background: #ffffff;
-  padding: 90px 20px;
-}
-
-.services-page .services-highlights h2 {
-  text-align: center;
-  font-size: 2.3rem;
-  font-weight: 800;
-  margin-bottom: 40px;
-  color: #1f3d2b;
-}
-
-.services-page .highlight-grid {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-
-.services-page .highlight-item {
-  background: #f5f7fb;
-  padding: 18px 20px;
-  border-radius: 16px;
-  font-weight: 700;
-  color: #2e7d32;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-}
-
-/* =====================================================
+    .services-page .services-highlights {
+        background: #ffffff;
+        padding: 90px 20px;
+    }
+    .services-page .services-highlights h2 {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 40px;
+        color: #1f3d2b;
+    }
+    .services-page .highlight-grid {
+        max-width: 900px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+    }
+    .services-page .highlight-item {
+        background: #f5f7fb;
+        padding: 18px 20px;
+        border-radius: 16px;
+        font-weight: 700;
+        color: #2e7d32;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    }
+    /* =====================================================
    DEPARTMENTS SECTION
 ===================================================== */
-
-.services-page .department-services {
-  padding: 90px 20px;
-  background: #f5f7fb;
-}
-
-.services-page .department-services h2 {
-  text-align: center;
-  font-size: 2.3rem;
-  font-weight: 800;
-  margin-bottom: 35px;
-  color: #1f3d2b;
-}
-
-.services-page .department-list {
-  max-width: 900px;
-  margin: auto;
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.services-page .department-list li {
-  background: #e8f5e9;
-  padding: 14px 18px;
-  border-radius: 14px;
-  font-weight: 700;
-  text-align: center;
-  color: #1f3d2b;
-  transition: 0.3s ease;
-}
-
-.services-page .department-list li:hover {
-  background: #2e7d32;
-  color: #fff;
-  transform: translateY(-4px);
-}
-
-/* =====================================================
+    .services-page .department-services {
+        padding: 90px 20px;
+        background: #f5f7fb;
+    }
+    .services-page .department-services h2 {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 35px;
+        color: #1f3d2b;
+    }
+    .services-page .department-list {
+        max-width: 900px;
+        margin: auto;
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+    }
+    .services-page .department-list li {
+        background: #e8f5e9;
+        padding: 14px 18px;
+        border-radius: 14px;
+        font-weight: 700;
+        text-align: center;
+        color: #1f3d2b;
+        transition: 0.3s ease;
+    }
+    .services-page .department-list li:hover {
+        background: #2e7d32;
+        color: #fff;
+        transform: translateY(-4px);
+    }
+    /* =====================================================
    PROCESS SECTION
 ===================================================== */
-
-.services-page .service-process {
-  background: linear-gradient(135deg, #1f3d2b, #2e7d32);
-  padding: 90px 20px;
-  color: #ffffff;
-}
-
-.services-page .service-process h2 {
-  text-align: center;
-  font-size: 2.3rem;
-  font-weight: 800;
-  margin-bottom: 40px;
-}
-
-.services-page .process-steps {
-  max-width: 1000px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-.services-page .process-steps .step {
-  background: rgba(255, 255, 255, 0.16);
-  padding: 18px;
-  border-radius: 16px;
-  font-weight: 700;
-  text-align: center;
-  backdrop-filter: blur(6px);
-}
-
-/* =====================================================
+    .services-page .service-process {
+        background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+        padding: 90px 20px;
+        color: #ffffff;
+    }
+    .services-page .service-process h2 {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+    .services-page .process-steps {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    .services-page .process-steps .step {
+        background: rgba(255, 255, 255, 0.16);
+        padding: 18px;
+        border-radius: 16px;
+        font-weight: 700;
+        text-align: center;
+        backdrop-filter: blur(6px);
+    }
+    /* =====================================================
    FAQ SECTION
 ===================================================== */
-
-.services-page .services-faq {
-  padding: 90px 20px;
-  background: #ffffff;
-}
-
-.services-page .services-faq h2 {
-  text-align: center;
-  font-size: 2.3rem;
-  font-weight: 800;
-  margin-bottom: 35px;
-  color: #1f3d2b;
-}
-
-.services-page .faq-item {
-  max-width: 900px;
-  margin: 0 auto 18px;
-  background: #f5f7fb;
-  padding: 22px 26px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-.services-page .faq-item h4 {
-  margin-bottom: 8px;
-  color: #2e7d32;
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-
-.services-page .faq-item p {
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* =====================================================
+    .services-page .services-faq {
+        padding: 90px 20px;
+        background: #ffffff;
+    }
+    .services-page .services-faq h2 {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 800;
+        margin-bottom: 35px;
+        color: #1f3d2b;
+    }
+    .services-page .faq-item {
+        max-width: 900px;
+        margin: 0 auto 18px;
+        background: #f5f7fb;
+        padding: 22px 26px;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+    .services-page .faq-item h4 {
+        margin-bottom: 8px;
+        color: #2e7d32;
+        font-size: 1.1rem;
+        font-weight: 800;
+    }
+    .services-page .faq-item p {
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+    /* =====================================================
    CTA SECTION (Footer se chipakna fix)
 ===================================================== */
-
-.services-page .services-cta {
-  background: linear-gradient(135deg, #1f3d2b, #2e7d32);
-  color: #fff;
-  padding: 90px 20px 110px;
-  /* ✅ bottom extra space */
-  text-align: center;
-}
-
-.services-page .services-cta h2 {
-  font-size: 2.4rem;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.services-page .services-cta p {
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-
-/* CTA BUTTON */
-
-.services-page .cta-btn {
-  display: inline-block;
-  background: #ffffff;
-  color: #1f3d2b;
-  padding: 14px 32px;
-  border-radius: 40px;
-  font-weight: 800;
-  text-decoration: none;
-  margin-top: 18px;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
-  transition: 0.3s ease;
-}
-
-.services-page .cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-}
-
-/* =====================================================
+    .services-page .services-cta {
+        background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+        color: #fff;
+        padding: 90px 20px 110px;
+        /* ✅ bottom extra space */
+        text-align: center;
+    }
+    .services-page .services-cta h2 {
+        font-size: 2.4rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+    .services-page .services-cta p {
+        font-size: 1.05rem;
+        opacity: 0.95;
+    }
+    /* CTA BUTTON */
+    .services-page .cta-btn {
+        display: inline-block;
+        background: #ffffff;
+        color: #1f3d2b;
+        padding: 14px 32px;
+        border-radius: 40px;
+        font-weight: 800;
+        text-decoration: none;
+        margin-top: 18px;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease;
+    }
+    .services-page .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+    /* =====================================================
    MOBILE FIXES
 ===================================================== */
-
-@media (max-width: 768px) {
-  body.services-page {
-    padding-top: 64px;
-    /* mobile header height */
-    padding-bottom: 120px;
-    /* bottom nav safe space */
-  }
-  .services-page .services-banner {
-    padding: 95px 16px 70px;
-    border-radius: 0 0 26px 26px;
-  }
-  .services-page .services-banner h1 {
-    font-size: 2rem;
-  }
-  .services-page .services-banner p {
-    font-size: 1rem;
-  }
-  .services-page .services-intro {
-    padding: 55px 16px;
-  }
-  .services-page .services-list {
-    padding: 55px 16px;
-  }
-  .services-page .service-card {
-    text-align: center;
-    min-height: auto;
-  }
-  .services-page .service-icon {
-    margin: 0 auto 14px;
-  }
-  .services-page .services-cta {
-    padding: 70px 16px 110px;
-  }
-}
+    @media (max-width: 768px) {
+        body.services-page {
+            padding-top: 64px;
+            /* mobile header height */
+            padding-bottom: 120px;
+            /* bottom nav safe space */
+        }
+        .services-page .services-banner {
+            padding: 95px 16px 70px;
+            border-radius: 0 0 26px 26px;
+        }
+        .services-page .services-banner h1 {
+            font-size: 2rem;
+        }
+        .services-page .services-banner p {
+            font-size: 1rem;
+        }
+        .services-page .services-intro {
+            padding: 55px 16px;
+        }
+        .services-page .services-list {
+            padding: 55px 16px;
+        }
+        .services-page .service-card {
+            text-align: center;
+            min-height: auto;
+        }
+        .services-page .service-icon {
+            margin: 0 auto 14px;
+        }
+        .services-page .services-cta {
+            padding: 70px 16px 110px;
+        }
+    }
+    /* ======================================
+   INTRO
+====================================== */
+    .services-intro {
+        padding: 70px 0 50px;
+        text-align: center;
+        background: #ffffff;
+    }
+    .services-intro h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #1f3d2b;
+    }
+    .services-intro p {
+        max-width: 720px;
+        margin: 14px auto 0;
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    /* ======================================
+   SERVICES GRID
+====================================== */
+    .services-list {
+        background: #f7f9fc;
+        padding: 80px 0;
+    }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 28px;
+    }
+    .service-card {
+        background: #ffffff;
+        padding: 34px 28px;
+        border-radius: 22px;
+        text-align: center;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.35s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 70px rgba(46, 125, 50, 0.25);
+    }
+    .service-icon {
+        font-size: 42px;
+        margin-bottom: 14px;
+    }
+    .service-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #1f3d2b;
+        margin-bottom: 6px;
+    }
+    .service-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+    /* ======================================
+   CTA
+====================================== */
+    .services-cta {
+        background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+        color: #ffffff;
+        padding: 100px 20px;
+        text-align: center;
+    }
+    .services-cta h2 {
+        font-size: 2.4rem;
+        font-weight: 800;
+        margin-bottom: 60px;
+    }
+    .services-cta p {
+        font-size: 1.05rem;
+        opacity: 0.95;
+    }
+    .cta-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background: #ffffff;
+        color: #1f3d2b;
+        padding: 14px 36px;
+        border-radius: 40px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+        transition: 0.3s;
+    }
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        background: #e8f5e9;
+    }
+    /* ======================================
+   REMOVE WHITE LINES / GAPS
+====================================== */
+    section {
+        margin: 0;
+    }
+    .container {
+        overflow: hidden;
+    }
+    /* ======================================
+   MOBILE FIX
+====================================== */
+    @media (max-width: 768px) {
+        body.services-page {
+            padding-top: 90px;
+        }
+        .services-banner {
+            height: auto;
+            padding: 90px 16px 70px;
+        }
+        .services-banner h1 {
+            font-size: 2rem;
+        }
+        .services-cta {
+            margin-bottom: 80px;
+        }
+    }
+    .footer {
+        margin-top: 20px;
+    }

@@ -16,8 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="services.css" />
+
     <!-- doctor css -->
     <link rel="stylesheet" href="doctors.css" />
 
@@ -48,10 +47,8 @@
     </div>
 
     <!-- ================= NAVBAR ================= -->
-    <nav
-      class="navbar navbar-expand-md navbar-dark main-nav fixed-top"
-      style="top: 50px"
-    >
+
+    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top">
       <div class="container">
         <button
           class="navbar-toggler"
@@ -71,9 +68,24 @@
               <a class="nav-link" href="index.html#home">Home</a>
             </li>
 
-            <!-- About (opens new page) -->
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+            <!-- About Dropdown (Desktop Only) -->
+            <li class="nav-item dropdown about-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="about.html"
+                id="aboutDropdown"
+              >
+                About
+              </a>
+
+              <ul class="dropdown-menu about-menu">
+                <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                <li>
+                  <a class="dropdown-item" href="meet-team.html"
+                    >Management Team</a
+                  >
+                </li>
+              </ul>
             </li>
 
             <!-- These stay on home page -->
@@ -99,7 +111,7 @@
 
     <!-- ================= HERO ================= -->
     <section class="doctors-hero">
-      <div class="container">
+      <div class="container text-center">
         <h1>Meet Our Expert Doctors</h1>
         <p>Highly qualified specialists dedicated to your health & care</p>
       </div>
@@ -444,7 +456,7 @@
     </div>
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
-      <a href="index.html#home" class="nav-item">
+      <a href="#home" class="nav-item">
         <span class="icon">🏠</span>
         <span class="label">Home</span>
       </a>
@@ -459,7 +471,7 @@
         <span class="label">Services</span>
       </a>
 
-      <a href="index.html#appointment" class="nav-item">
+      <a href="#appointment" class="nav-item">
         <span class="icon">📅</span>
         <span class="label">Booking</span>
       </a>
