@@ -14,14 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 4000);
     }
 
-    /* =========================
-       DOCTOR FLIP CARDS
-    ========================= */
-    document.querySelectorAll(".doctor-flip").forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.toggle("flipped");
-        });
-    });
+
     /* =========================
        APPOINTMENT MODAL
     ========================= */
@@ -114,17 +107,7 @@ function updateDateTime() {
 /* Update every second */
 setInterval(updateDateTime, 1000);
 
-/* Initial call */
-updateDateTime();
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth" });
-        }
-    });
-});
+
 // ================= FIX SCROLL OFFSET (FINAL) =================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
@@ -172,19 +155,19 @@ function updateTataMobileDateTime() {
     const now = new Date();
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
+
     const day = days[now.getDay()];
     const date = now.getDate();
     const month = months[now.getMonth()];
     const year = now.getFullYear();
-    
+
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
-    
+
     const dateElement = document.getElementById('tataMobileDate');
     const timeElement = document.getElementById('tataMobileTime');
-    
+
     if (dateElement) {
         dateElement.textContent = day + ', ' + date + ' ' + month + ' ' + year;
     }
@@ -196,3 +179,28 @@ function updateTataMobileDateTime() {
 // Update immediately and then every second
 updateTataMobileDateTime();
 setInterval(updateTataMobileDateTime, 1000);
+
+
+/* =========================
+   SCROLL REVEAL ANIMATION ✅
+========================= */
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    const revealPoint = 120;
+
+    reveals.forEach((el) => {
+        const revealTop = el.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - revealPoint) {
+            el.classList.add("active");
+        }
+    });
+}
+
+// Run once on load
+revealOnScroll();
+
+// Run on scroll
+window.addEventListener("scroll", revealOnScroll);
