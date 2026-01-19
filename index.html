@@ -95,85 +95,100 @@
     </nav>
 
     <!-- ================= HOME ================= -->
-    <section id="home" class="home-hero">
+    <!-- ================= PREMIUM HERO (IMAGE ZOOM + TEXT ANIMATION) ================= -->
+    <section class="premium-hero">
+        <div class="premium-hero-bg"></div>
+
         <div class="container">
-            <div class="row align-items-center g-4">
+            <div class="premium-hero-content">
+                <span class="hero-tag">LABORATORY</span>
 
-                <!-- LEFT : SLIDER -->
-                <div class="col-lg-8 mobile-hero-banner">
-                    <div id="heroSlider" class="carousel slide hero-slider" data-bs-ride="carousel">
+                <h1>
+                    Experience Healthcare <br /> Excellence
+                </h1>
 
-                        <div class="carousel-inner">
+                <p>
+                    Book your appointment today and experience the best diagnostic & healthcare services with trusted specialists.
+                </p>
 
-                            <!-- Slide 1 -->
-                            <div class="carousel-item active">
-                                <img src="images/hero1.jpg" class="d-block w-100" alt="">
-                                <div class="hero-caption">
-                                    <h1>Find a Doctor for You</h1>
-                                    <p>Advanced diagnosis with expert medical care.</p>
-                                </div>
-                            </div>
+                <div class="hero-actions">
+                    <button class="hero-btn primary" id="openAppointmentPopup">
+          Book Appointment
+        </button>
+                    <a href="contact.html" class="hero-btn outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= PREMIUM CARDS ================= -->
+    <section class="premium-cards-section">
+        <div class="container">
+            <div class="premium-cards-wrap">
 
-                            <!-- Slide 2 -->
-                            <div class="carousel-item">
-                                <img src="images/hero2.jpg" class="d-block w-100" alt="">
-                                <div class="hero-caption">
-                                    <h1>Trusted Medical Center</h1>
-                                    <p>Modern facilities & experienced doctors.</p>
-                                </div>
-                            </div>
-
-                            <!-- Slide 3 -->
-                            <div class="carousel-item">
-                                <img src="images/hero3.jpg" class="d-block w-100" alt="">
-                                <div class="hero-caption">
-                                    <h1>Care That Matters</h1>
-                                    <p>Your health is our top priority.</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-
-                        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-
-                    </div>
+                <!-- Card 1 -->
+                <div class="premium-card green">
+                    <div class="premium-card-icon">🧪</div>
+                    <h3>10+ Diagnostic Labs</h3>
+                    <p>
+                        Accurate testing, fast reports & reliable diagnostics powered by modern lab equipment.
+                    </p>
                 </div>
 
-                <!-- RIGHT : APPOINTMENT FORM -->
-                <div class="col-lg-4">
-                    <div class="appointment-card" id="appointment">
-                        <h4>Book Appointment</h4>
+                <!-- Card 2 -->
+                <div class="premium-card blue">
+                    <div class="premium-card-icon">🚑</div>
+                    <h3>Home Sample Collection</h3>
+                    <p>
+                        Book home pickup & get your tests done at your comfort with quick processing.
+                    </p>
+                </div>
 
-                        <form>
-                            <input type="text" class="form-control mb-3" placeholder="Your Name">
-                            <input type="email" class="form-control mb-3" placeholder="Email">
-                            <input type="tel" class="form-control mb-3" placeholder="Phone">
-                            <input type="date" class="form-control mb-3">
+                <!-- Card 3 -->
+                <div class="premium-card light">
+                    <div class="premium-card-icon">📞</div>
+                    <h3>24/7 Support</h3>
+                    <p>
+                        Get instant guidance, appointment support & emergency enquiry anytime.
+                    </p>
 
-                            <select class="form-select mb-3">
-              <option selected>Select Department</option>
-              <option>Cardiology</option>
-              <option>Neurology</option>
-              <option>Orthopedic</option>
-            </select>
-
-                            <button class="btn btn-success w-100">
-              Request Appointment
-            </button>
-                        </form>
-                    </div>
+                    <button class="premium-btn" id="openAppointmentPopup">
+          Book Appointment
+        </button>
                 </div>
 
             </div>
         </div>
     </section>
+
+
+    <!-- ================= APPOINTMENT POPUP MODAL ================= -->
+    <div class="appointment-popup" id="appointmentPopup">
+        <div class="popup-box">
+            <button class="popup-close" id="closePopup">&times;</button>
+
+            <h2>Book an Appointment</h2>
+            <p>Fill the details and we will contact you shortly.</p>
+
+            <form class="popup-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <input type="tel" placeholder="Phone Number" required />
+                <select required>
+        <option value="">Select Department</option>
+        <option>General Medicine</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Pediatrics</option>
+        <option>Orthopedics</option>
+      </select>
+                <input type="date" required />
+
+                <button type="submit" class="popup-submit">
+        Confirm Appointment
+      </button>
+            </form>
+        </div>
+    </div>
 
     <!-- ================= ABOUT ================= -->
     <div class="about-grid-pro">

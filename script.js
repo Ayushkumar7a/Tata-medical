@@ -110,7 +110,7 @@ setInterval(updateDateTime, 1000);
 
 // ================= FIX SCROLL OFFSET (FINAL) =================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", function(e) {
         const targetId = this.getAttribute("href");
         if (targetId.length <= 1) return;
 
@@ -204,3 +204,35 @@ revealOnScroll();
 
 // Run on scroll
 window.addEventListener("scroll", revealOnScroll);
+
+/* ================= APPOINTMENT POPUP CONTROL ================= */
+
+const openBtn = document.getElementById("openAppointmentPopup");
+const popup = document.getElementById("appointmentPopup");
+const closeBtn = document.getElementById("closePopup");
+
+if (openBtn && popup && closeBtn) {
+    openBtn.addEventListener("click", () => {
+        popup.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        popup.classList.remove("active");
+    });
+
+    // click outside to close
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.classList.remove("active");
+        }
+    });
+
+    // Form submit demo
+    const form = popup.querySelector(".popup-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("✅ Appointment Booked Successfully!");
+        form.reset();
+        popup.classList.remove("active");
+    });
+}
