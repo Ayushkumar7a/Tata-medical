@@ -13,7 +13,7 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 
     <style>
         html {
@@ -40,53 +40,61 @@
             </div>
         </div>
     </div>
-
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
         <div class="container">
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+            <!-- Navbar Links -->
             <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-                <ul class="navbar-nav gap-md-4">
+                <ul class="navbar-nav gap-md-4 align-items-md-center">
 
-                    <!-- Home (scrolls on same page) -->
+                    <!-- Home -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#home">Home</a>
                     </li>
 
-                    <!-- About Dropdown (Desktop Only) -->
+                    <!-- ✅ About Dropdown (Desktop Hover) -->
                     <li class="nav-item dropdown about-dropdown">
                         <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown">
-    About
-  </a>
+            About
+            <i class="fa-solid fa-angle-down ms-1"></i>
+          </a>
 
                         <ul class="dropdown-menu about-menu">
                             <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                            <li><a class="dropdown-item" href="meet-team.html"> Management Team</a></li>
+                            <li><a class="dropdown-item" href="meet-team.html">Management Team</a></li>
                         </ul>
                     </li>
 
-                    <!-- These stay on home page -->
+                    <!-- Services -->
                     <li class="nav-item">
                         <a class="nav-link" href="services.html#services">Services</a>
                     </li>
 
+                    <!-- Doctors -->
                     <li class="nav-item">
                         <a class="nav-link" href="doctors.html#doctors">Doctors</a>
                     </li>
 
+                    <!-- Gallery -->
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html#gallery">Gallery</a>
                     </li>
 
+                    <!-- Contact -->
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#appointment">Book appointment</a>
+
+                    <!-- ✅ Book Appointment Button Style Nav Item -->
+                    <a href="#" class="btn-appointment open-appointment-popup">
+  Book Appointment
+</a>
                     </li>
 
                 </ul>
@@ -675,7 +683,7 @@
             <span class="label">Services</span>
         </a>
 
-        <a href="#appointment" class="nav-item">
+        <a href="#" class="nav-item appointment-item open-appointment-popup">
             <span class="icon">📅</span>
             <span class="label">Booking</span>
         </a>

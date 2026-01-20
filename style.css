@@ -53,56 +53,70 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 48px;
-    background: var(--dark-green);
-    z-index: 1000;
-}
-
-.top-logo img {
-    height: 38px;
-    object-fit: contain;
+    height: 58px;
+    z-index: 2000;
+    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 
 .main-nav {
     position: fixed;
-    top: 48px;
+    top: 70px;
+    /* ✅ top-bar height ke hisaab se */
     width: 100%;
-    background: #244a24;
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
     z-index: 999;
+    padding: 10px 0;
 }
 
 .main-nav .nav-link {
-    color: #fff !important;
-    font-weight: 500;
+    color: #1c1c1c !important;
+    font-weight: 600;
 }
 
 .main-nav .nav-link:hover {
-    color: #c8e6c9 !important;
+    color: #2e7d32 !important;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 130px;
+    scroll-padding-top: 100px;
     /* top-bar + navbar */
 }
 
-
-/* Appointment button same as other nav buttons */
-
-.main-nav .nav-appointment {
-    color: #fff !important;
-    font-weight: 600;
-    padding: 8px 18px !important;
-    border-radius: 20px;
-    transition: 0.3s ease;
+.top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
+.top-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
 
-/* Hover effect same vibe */
+.top-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-.main-nav .nav-appointment:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #c8e6c9 !important;
+.top-info span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
 }
 
 
@@ -171,136 +185,6 @@ html {
 }
 
 
-/* ==========================================
-   ABOUT DROPDOWN (DESKTOP ONLY - HOVER OPEN)
-   SAFE - Only affects About dropdown
-========================================== */
-
-
-/* Dropdown menu base */
-
-.about-dropdown {
-    position: relative;
-}
-
-.about-dropdown .about-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 220px;
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 10px 0;
-    margin-top: 12px;
-    border: none;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-    z-index: 9999;
-}
-
-
-/* Items style */
-
-.about-dropdown .dropdown-item {
-    padding: 10px 16px;
-    font-weight: 600;
-    font-size: 14px;
-    color: #1f3d2b;
-    transition: 0.55s ease;
-}
-
-
-/* Hover item */
-
-.about-dropdown .dropdown-item:hover {
-    background: #e8f5e9;
-    color: #2e7d32;
-}
-
-
-/* Show on hover (Desktop only) */
-
-@media (min-width: 769px) {
-    .about-dropdown:hover .about-menu {
-        display: block;
-    }
-}
-
-
-/* Mobile pe hide dropdown completely */
-
-@media (max-width: 768px) {
-    .about-dropdown .about-menu {
-        display: none !important;
-    }
-}
-
-
-/* ===== Desktop hover dropdown fix ===== */
-
-.nav-item.dropdown {
-    position: relative;
-}
-
-.nav-item.dropdown .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    /* About ke niche */
-    left: 0;
-    margin-top: 10px;
-    /* gap thoda */
-    min-width: 220px;
-    background: #fff;
-    border-radius: 14px;
-    padding: 10px 0;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    z-index: 9999;
-}
-
-
-/* ✅ This is the MAIN FIX */
-
-.nav-item.dropdown:hover .dropdown-menu,
-.nav-item.dropdown:focus-within .dropdown-menu {
-    display: block;
-}
-
-
-/*
-/* ======================================================
-   APPOINTMENT CARD
-====================================================== */
-
-.appointment-card {
-    background: var(--white);
-    border-radius: 26px;
-    padding: 34px;
-    height: 100%;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-}
-
-.appointment-card h4 {
-    color: var(--primary-green);
-    font-weight: 700;
-}
-
-.appointment-card input,
-.appointment-card select,
-.appointment-card button {
-    height: 46px;
-    border-radius: 10px;
-}
-
-.appointment-card button {
-    background: var(--primary-green);
-    color: #fff;
-    font-weight: 600;
-    border: none;
-}
-
-
 /* ======================================================
    SECTION BASE
 ====================================================== */
@@ -309,11 +193,6 @@ section {
     /* padding: 80px 20px; */
     padding: 120px 20px 40px 20px;
 }
-
-
-/* ======================================================
-   ABOUT SECTION
-====================================================== */
 
 
 /* =======================
@@ -615,25 +494,6 @@ section {
 }
 
 
-/* BOOK BUTTON */
-
-.doctor-book-btn {
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2e7d32;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.45);
-}
-
-
 /* INFO */
 
 .doctor-info {
@@ -688,36 +548,6 @@ section {
     .doctor-book-btn {
         top: 180px;
     }
-}
-
-
-/* ================= BOOK BUTTON HOVER EFFECT ================= */
-
-
-/* Hide button by default (desktop) */
-
-.doctor-book-btn {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, 10px);
-    transition: all 0.35s ease;
-}
-
-
-/* Show button only when card is hovered */
-
-.doctor-card-new:hover .doctor-book-btn {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 0);
-}
-
-
-/* Extra highlight on hover */
-
-.doctor-book-btn:hover {
-    background: #1b5e20;
-    box-shadow: 0 12px 28px rgba(46, 125, 50, 0.6);
 }
 
 
@@ -2866,92 +2696,6 @@ body.contact-page {
 }
 
 
-/* ===============================
-   COMMON HERO (ALL PAGES)
-=============================== */
-
-.page-hero,
-.services-banner,
-.gallery-hero,
-.about-hero,
-.doctors-hero {
-    position: relative;
-    width: 100%;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0;
-    padding: 0 20px;
-    color: #ffffff;
-    overflow: hidden;
-}
-
-.page-hero::before,
-.services-banner::before,
-.gallery-hero::before,
-.about-hero::before,
-.doctors-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(31, 61, 43, 0.75);
-    /* same dark layer */
-}
-
-.page-hero>*,
-.services-banner>*,
-.gallery-hero>*,
-.about-hero>*,
-.doctors-hero>* {
-    position: relative;
-    z-index: 2;
-}
-
-
-/* ✅ Smooth hover effect for all cards/buttons */
-
-.service-card,
-.doctor-card,
-.stat-card-pro,
-.mv-card,
-.gallery-card,
-.faq-item,
-.contact-info-card,
-.feature-pro,
-.cta-btn,
-.btn-primary,
-.btn-secondary {
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-
-/* ✅ Hover lift effect */
-
-.service-card:hover,
-.doctor-card:hover,
-.stat-card-pro:hover,
-.mv-card:hover,
-.gallery-card:hover,
-.faq-item:hover,
-.contact-info-card:hover,
-.feature-pro:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-}
-
-
-/* ✅ Buttons hover effect */
-
-.cta-btn:hover,
-.btn-primary:hover,
-.btn-secondary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
-
-
 /* ✅ Scroll animation default hidden */
 
 .reveal {
@@ -3379,5 +3123,182 @@ body.contact-page {
     }
     .premium-hero-content p {
         font-size: 15px;
+    }
+}
+
+
+/* ===============================
+   PREMIUM ABOUT DROPDOWN (DESKTOP)
+=============================== */
+
+@media (min-width: 992px) {
+    .about-dropdown {
+        position: relative;
+    }
+    /* ✅ Hover pe open */
+    .about-dropdown:hover .about-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    /* ✅ Dropdown menu premium */
+    .about-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition: 0.25s ease;
+        margin-top: 10px;
+        border: none;
+        padding: 10px;
+        border-radius: 14px;
+        background: #ffffff;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+        min-width: 220px;
+    }
+    .about-menu .dropdown-item {
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-weight: 600;
+        color: #1f3d2b;
+        transition: 0.25s ease;
+    }
+    .about-menu .dropdown-item:hover {
+        background: #e8f5e9;
+        color: #2e7d32;
+        transform: translateX(4px);
+    }
+}
+
+
+/* ✅ Mobile me dropdown normal click se chale */
+
+@media (max-width: 991px) {
+    .about-menu {
+        border-radius: 12px;
+        padding: 8px;
+    }
+}
+
+
+/* ===============================
+   BOOK APPOINTMENT BUTTON IN NAV
+=============================== */
+
+.btn-appointment {
+    background: #2e7d32;
+    color: #ffffff !important;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.btn-appointment:hover {
+    background: #256428;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.35);
+}
+
+
+/* ✅ Dropdown stable hover (no vanish) */
+
+@media (min-width: 992px) {
+    .about-dropdown {
+        position: relative;
+    }
+    /* ✅ Invisible hover bridge (gap remove) */
+    .about-dropdown::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 16px;
+        /* ✅ hover bridge size */
+        background: transparent;
+    }
+    /* ✅ Dropdown hidden by default */
+    .about-menu {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(12px);
+        transition: 0.25s ease;
+    }
+    /* ✅ Show dropdown when hover on About OR menu */
+    .about-dropdown:hover .about-menu,
+    .about-menu:hover {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+}
+
+
+/* ✅ background image */
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/doctors-hero.jpg") center/cover no-repeat;
+    transform: scale(1.05);
+    z-index: 0;
+}
+
+
+/* ✅ dark overlay */
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+
+/* ✅ Banner content always centered */
+
+.page-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 18px;
+}
+
+
+/* ✅ heading same for all */
+
+.page-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin: 0;
+}
+
+
+/* ✅ Mobile banner fix */
+
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 260px;
+        border-radius: 0 0 26px 26px;
+    }
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    .page-hero p {
+        font-size: 1rem;
     }
 }

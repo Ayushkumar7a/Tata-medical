@@ -1,448 +1,438 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MediCare</title>
+    <title>MediCare - Services</title>
 
     <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Add this in your <head> section -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
 
-    <!-- Custom CSS -->
+    <!-- Main Global CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Services CSS -->
+    <!-- Services Page CSS -->
     <link rel="stylesheet" href="services.css" />
-  </head>
+</head>
 
-  <body class="services-page">
+<body class="services-page">
     <!-- ================= TOP BAR ================= -->
     <div class="top-bar">
-      <div class="container top-bar-inner">
-        <!-- LOGO -->
-        <div class="top-logo">
-          <img src="images/logo.png" alt="Tata Medical Logo" />
-        </div>
+        <div class="container top-bar-inner">
+            <!-- LOGO -->
+            <div class="top-logo">
+                <img src="images/logo.png" alt="Tata Medical Logo" />
+            </div>
 
-        <!-- INFO -->
-        <div class="top-info">
-          <span>📍 Roorkee, Uttarakhand</span>
-          <span id="liveDateTime">🕒 Loading...</span>
-          <span>📞 9845633745</span>
-          <span>✉ info@medicare.com</span>
+            <!-- INFO -->
+            <div class="top-info">
+                <span>📍 Roorkee, Uttarakhand</span>
+                <span id="liveDateTime">🕒 Loading...</span>
+                <span>📞 9845633745</span>
+                <span>✉ info@medicare.com</span>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- ================= NAVBAR ================= -->
-    <nav
-      class="navbar navbar-expand-md navbar-dark main-nav fixed-top"
-      style="top: 50px"
-    >
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
+    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 64px">
+        <div class="container">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="mainNav"
-        >
-          <ul class="navbar-nav gap-md-4">
-            <!-- Home (scrolls on same page) -->
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#home">Home</a>
-            </li>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="navbar-nav gap-md-4 align-items-center">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
 
-            <li class="nav-item dropdown about-dd">
-              <a
-                class="nav-link dropdown-toggle"
-                href="about.html"
-                role="button"
-              >
+                    <!-- ✅ About Dropdown -->
+                    <li class="nav-item dropdown about-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                 About
               </a>
-
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                <li>
-                  <a class="dropdown-item" href="meet-team.html"
-                    >Management Team</a
+                        <!-- ✅ class about-menu added -->
+                        <ul class="dropdown-menu about-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li>
+                                <a class="dropdown-item" href="meet-team.html">Management Team</a
                   >
                 </li>
               </ul>
             </li>
-            <!-- These stay on home page -->
-            <li class="nav-item">
-              <a class="nav-link" href="services.html#services">Services</a>
-            </li>
 
+            <!-- Services -->
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html#doctors">Doctors</a>
-            </li>
+              <a class="nav-link active" href="services.html">Services</a>
+                            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html#gallery">Gallery</a>
-            </li>
+                            <!-- Doctors -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctors.html">Doctors</a>
+                            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#appointment"
-                >Book appointment</a
-              >
-            </li>
-          </ul>
+                            <!-- Gallery -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.html">Gallery</a>
+                            </li>
+
+                            <!-- Contact -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+
+                            <!-- ✅ Book Appointment Button -->
+                            <li class="nav-item">
+                                <a href="#" class="btn-appointment open-appointment-popup">
+                Book Appointment
+              </a>
+                            </li>
+                        </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- ================= PAGE BANNER ================= -->
     <section class="services-banner">
-      <div class="services-banner-content">
-        <h1>Our Medical Services</h1>
-        <p>Comprehensive healthcare with compassion & advanced technology</p>
-      </div>
+        <div class="services-banner-content">
+            <h1>Our Medical Services</h1>
+            <p>Comprehensive healthcare with compassion & advanced technology</p>
+        </div>
     </section>
 
     <!-- ================= INTRO ================= -->
     <section class="services-intro">
-      <div class="container">
-        <h2>Quality Healthcare Under One Roof</h2>
-        <p>
-          MediCare offers a complete range of medical and diagnostic services
-          delivered by experienced doctors using modern equipment.
-        </p>
-      </div>
+        <div class="container">
+            <h2>Quality Healthcare Under One Roof</h2>
+            <p>
+                MediCare offers a complete range of medical and diagnostic services delivered by experienced doctors using modern equipment.
+            </p>
+        </div>
     </section>
 
-    <!-- ================= SERVICES GRID ✅ FIXED ================= -->
+    <!-- ================= SERVICES GRID ================= -->
     <section class="services-list">
-      <div class="container">
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🩺</div>
-            <h3>General Medicine</h3>
-            <p>
-              Diagnosis and treatment of common illnesses by expert physicians.
-            </p>
-          </div>
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>General Medicine</h3>
+                    <p>
+                        Diagnosis and treatment of common illnesses by expert physicians.
+                    </p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🫀</div>
-            <h3>Cardiology</h3>
-            <p>
-              Advanced heart care including ECG, Echo & specialist consultation.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🫀</div>
+                    <h3>Cardiology</h3>
+                    <p>
+                        Advanced heart care including ECG, Echo & specialist consultation.
+                    </p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🧠</div>
-            <h3>Neurology</h3>
-            <p>Complete care for brain, spine and nervous system disorders.</p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Neurology</h3>
+                    <p>Complete care for brain, spine and nervous system disorders.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🧪</div>
-            <h3>Laboratory Services</h3>
-            <p>Accurate lab testing with fast and reliable reports.</p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🧪</div>
+                    <h3>Laboratory Services</h3>
+                    <p>Accurate lab testing with fast and reliable reports.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🩻</div>
-            <h3>Digital X-Ray</h3>
-            <p>High-quality imaging with instant results.</p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🩻</div>
+                    <h3>Digital X-Ray</h3>
+                    <p>High-quality imaging with instant results.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🚑</div>
-            <h3>Emergency Care</h3>
-            <p>24×7 emergency services with rapid response.</p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🚑</div>
+                    <h3>Emergency Care</h3>
+                    <p>24×7 emergency services with rapid response.</p>
+                </div>
 
-          <!-- ✅ These 6 cards were outside container before, now FIXED -->
-          <div class="service-card">
-            <div class="service-icon">👶</div>
-            <h3>Pediatrics</h3>
-            <p>
-              Specialized healthcare services for infants, children, and
-              adolescents, ensuring healthy growth and development.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Pediatrics</h3>
+                    <p>Specialized healthcare for infants, children and adolescents.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🦴</div>
-            <h3>Orthopedics</h3>
-            <p>
-              Treatment for bone, joint, and muscle conditions including
-              fractures, arthritis, and sports injuries.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🦴</div>
+                    <h3>Orthopedics</h3>
+                    <p>Treatment for bone, joint, muscle conditions & injuries.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">👁️</div>
-            <h3>Ophthalmology</h3>
-            <p>
-              Complete eye care services including vision testing, cataract
-              surgery, and treatment of eye disorders.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">👁️</div>
+                    <h3>Ophthalmology</h3>
+                    <p>Complete eye care including cataract & vision testing.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🦷</div>
-            <h3>Dental Care</h3>
-            <p>
-              Preventive and corrective dental services including cleaning,
-              fillings, and oral health consultations.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🦷</div>
+                    <h3>Dental Care</h3>
+                    <p>Preventive and corrective dental services for oral health.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🩸</div>
-            <h3>Blood Bank</h3>
-            <p>
-              Safe and reliable blood collection, storage, and transfusion
-              services available round the clock.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🩸</div>
+                    <h3>Blood Bank</h3>
+                    <p>Safe blood collection, storage and transfusion services.</p>
+                </div>
 
-          <div class="service-card">
-            <div class="service-icon">🧬</div>
-            <h3>Health Checkup Packages</h3>
-            <p>
-              Comprehensive preventive health checkup plans customized for all
-              age groups and lifestyles.
-            </p>
-          </div>
+                <div class="service-card">
+                    <div class="service-icon">🧬</div>
+                    <h3>Health Checkup Packages</h3>
+                    <p>Preventive checkup plans for all age groups and lifestyle.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- ================= SERVICE HIGHLIGHTS ================= -->
+    <!-- ================= HIGHLIGHTS ================= -->
     <section class="services-highlights">
-      <div class="container">
-        <h2>Service Highlights</h2>
+        <div class="container">
+            <h2>Service Highlights</h2>
 
-        <div class="highlight-grid">
-          <div class="highlight-item">✔ NABL Certified Laboratory</div>
-          <div class="highlight-item">✔ Same-Day Test Reports</div>
-          <div class="highlight-item">✔ Experienced Specialists</div>
-          <div class="highlight-item">✔ Modern Medical Equipment</div>
-          <div class="highlight-item">✔ Affordable Pricing</div>
-          <div class="highlight-item">✔ Patient-Centric Care</div>
+            <div class="highlight-grid">
+                <div class="highlight-item">✔ NABL Certified Laboratory</div>
+                <div class="highlight-item">✔ Same-Day Test Reports</div>
+                <div class="highlight-item">✔ Experienced Specialists</div>
+                <div class="highlight-item">✔ Modern Medical Equipment</div>
+                <div class="highlight-item">✔ Affordable Pricing</div>
+                <div class="highlight-item">✔ Patient-Centric Care</div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ================= DEPARTMENTS ================= -->
     <section class="department-services">
-      <div class="container">
-        <h2>Departments We Serve</h2>
+        <div class="container">
+            <h2>Departments We Serve</h2>
 
-        <ul class="department-list">
-          <li>General Medicine</li>
-          <li>Cardiology</li>
-          <li>Neurology</li>
-          <li>Pediatrics</li>
-          <li>Orthopedics</li>
-          <li>Gynecology</li>
-          <li>Radiology</li>
-          <li>Emergency & Trauma</li>
-        </ul>
-      </div>
+            <ul class="department-list">
+                <li>General Medicine</li>
+                <li>Cardiology</li>
+                <li>Neurology</li>
+                <li>Pediatrics</li>
+                <li>Orthopedics</li>
+                <li>Gynecology</li>
+                <li>Radiology</li>
+                <li>Emergency & Trauma</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- ================= SERVICE PROCESS ================= -->
+    <!-- ================= PROCESS ================= -->
     <section class="service-process">
-      <div class="container">
-        <h2>How Our Service Works</h2>
+        <div class="container">
+            <h2>How Our Service Works</h2>
 
-        <div class="process-steps">
-          <div class="step">1️⃣ Book Appointment</div>
-          <div class="step">2️⃣ Doctor Consultation</div>
-          <div class="step">3️⃣ Diagnosis & Tests</div>
-          <div class="step">4️⃣ Treatment & Care</div>
-          <div class="step">5️⃣ Follow-Up Support</div>
+            <div class="process-steps">
+                <div class="step">1️⃣ Book Appointment</div>
+                <div class="step">2️⃣ Doctor Consultation</div>
+                <div class="step">3️⃣ Diagnosis & Tests</div>
+                <div class="step">4️⃣ Treatment & Care</div>
+                <div class="step">5️⃣ Follow-Up Support</div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ================= FAQ ================= -->
     <section class="services-faq">
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
 
-        <div class="faq-item">
-          <h4>Do I need an appointment?</h4>
-          <p>
-            Walk-ins are accepted, but appointments help reduce waiting time.
-          </p>
-        </div>
+            <div class="faq-item">
+                <h4>Do I need an appointment?</h4>
+                <p>
+                    Walk-ins are accepted, but appointments help reduce waiting time.
+                </p>
+            </div>
 
-        <div class="faq-item">
-          <h4>Do you accept insurance?</h4>
-          <p>Yes, we accept most major health insurance providers.</p>
-        </div>
+            <div class="faq-item">
+                <h4>Do you accept insurance?</h4>
+                <p>Yes, we accept most major health insurance providers.</p>
+            </div>
 
-        <div class="faq-item">
-          <h4>Are emergency services available 24/7?</h4>
-          <p>Yes, our emergency department operates round the clock.</p>
+            <div class="faq-item">
+                <h4>Are emergency services available 24/7?</h4>
+                <p>Yes, our emergency department operates round the clock.</p>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ================= CTA ================= -->
     <section class="services-cta">
-      <div class="container">
-        <h2>Need Medical Assistance?</h2>
-        <p>Book your appointment with our specialists today.</p>
-        <a href="index.html#appointment" class="cta-btn">Book Appointment</a>
-      </div>
+        <div class="container">
+            <h2>Need Medical Assistance?</h2>
+            <p>Book your appointment with our specialists today.</p>
+
+            <!-- ✅ Popup open button -->
+            <a href="#" class="cta-btn open-appointment-popup">Book Appointment</a>
+        </div>
     </section>
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <img src="images/logo.png" alt="MediCare" />
-          </div>
-          <p>
-            Providing exceptional healthcare services with compassion and
-            expertise since 1998. Your health is our priority.
-          </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <img src="images/logo.png" alt="MediCare" />
+                </div>
+                <p>
+                    Providing exceptional healthcare services with compassion and expertise since 1998. Your health is our priority.
+                </p>
 
-          <div class="social-links">
-            <a href="#">🌐</a>
-            <a href="#">🐦</a>
-            <a href="#">📘</a>
-            <a href="#">📸</a>
-          </div>
+                <div class="social-links">
+                    <a href="#">🌐</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="doctors.html">Our Doctors</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <a href="#">General Medicine</a>
+                <a href="#">Cardiology</a>
+                <a href="#">Neurology</a>
+                <a href="#">Pediatrics</a>
+                <a href="#">Emergency Care</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>📍 123 Medical Center Drive, Healthcare City</p>
+                <p>📞 +91 98456 33745</p>
+                <p>✉ info@medicare.com</p>
+                <p>⏰ Mon – Sat: 8AM – 8PM</p>
+            </div>
         </div>
 
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="doctors.html">Our Doctors</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
+        <div class="footer-bottom">
+            <span>© 2025 MediCare Hospital. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
         </div>
-
-        <div class="footer-links">
-          <h4>Our Services</h4>
-          <a href="#">General Medicine</a>
-          <a href="#">Cardiology</a>
-          <a href="#">Neurology</a>
-          <a href="#">Pediatrics</a>
-          <a href="#">Emergency Care</a>
-        </div>
-
-        <div class="footer-contact">
-          <h4>Contact Info</h4>
-          <p>📍 123 Medical Center Drive, Healthcare City</p>
-          <p>📞 +91 98456 33745</p>
-          <p>✉ info@medicare.com</p>
-          <p>⏰ Mon – Sat: 8AM – 8PM</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2025 MediCare Hospital. All rights reserved.</span>
-        <div>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cookies</a>
-        </div>
-      </div>
     </footer>
 
     <!-- ================= MOBILE HEADER ================= -->
     <div class="tata-mobile-header d-md-none">
-      <div class="tata-mobile-content">
-        <div class="tata-mobile-logo-wrapper">
-          <img
-            src="images/logo.png"
-            alt="Tata Medical & Diagnostic Center"
-            class="tata-mobile-logo"
-          />
-        </div>
+        <div class="tata-mobile-content">
+            <div class="tata-mobile-logo-wrapper">
+                <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" class="tata-mobile-logo" />
+            </div>
 
-        <div class="tata-mobile-datetime">
-          <div class="tata-date" id="tataMobileDate">Loading...</div>
-          <div class="tata-time" id="tataMobileTime">Loading...</div>
-        </div>
+            <div class="tata-mobile-datetime">
+                <div class="tata-date" id="tataMobileDate">Loading...</div>
+                <div class="tata-time" id="tataMobileTime">Loading...</div>
+            </div>
 
-        <div class="tata-mobile-contacts">
-          <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
-            <i class="fas fa-phone-alt"></i>
-          </a>
-          <a
-            href="mailto:info@medicare.com"
-            class="tata-contact-icon"
-            title="Email Us"
-          >
-            <i class="fas fa-envelope"></i>
-          </a>
+            <div class="tata-mobile-contacts">
+                <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="mailto:info@medicare.com" class="tata-contact-icon" title="Email Us">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
-      <a href="index.html#home" class="nav-item">
-        <span class="icon">🏠</span>
-        <span class="label">Home</span>
-      </a>
+        <a href="index.html#home" class="nav-item">
+            <span class="icon">🏠</span>
+            <span class="label">Home</span>
+        </a>
 
-      <a href="about.html" class="nav-item">
-        <span class="icon">👥</span>
-        <span class="label">About</span>
-      </a>
+        <a href="about.html" class="nav-item">
+            <span class="icon">👥</span>
+            <span class="label">About</span>
+        </a>
 
-      <a href="services.html" class="nav-item">
-        <span class="icon">🧪</span>
-        <span class="label">Services</span>
-      </a>
+        <a href="services.html" class="nav-item">
+            <span class="icon">🧪</span>
+            <span class="label">Services</span>
+        </a>
 
-      <a href="index.html#appointment" class="nav-item">
-        <span class="icon">📅</span>
-        <span class="label">Booking</span>
-      </a>
+        <!-- ✅ popup open -->
+        <a href="#" class="nav-item appointment-item open-appointment-popup">
+            <span class="icon">📅</span>
+            <span class="label">Booking</span>
+        </a>
 
-      <a href="gallery.html" class="nav-item">
-        <span class="icon">🖼️</span>
-        <span class="label">Gallery</span>
-      </a>
+        <a href="gallery.html" class="nav-item">
+            <span class="icon">🖼️</span>
+            <span class="label">Gallery</span>
+        </a>
 
-      <a href="doctors.html" class="nav-item">
-        <span class="icon">👨‍⚕️</span>
-        <span class="label">Doctors</span>
-      </a>
+        <a href="doctors.html" class="nav-item">
+            <span class="icon">👨‍⚕️</span>
+            <span class="label">Doctors</span>
+        </a>
 
-      <a href="contact.html" class="nav-item">
-        <span class="icon">📞</span>
-        <span class="label">Contact</span>
-      </a>
+        <a href="contact.html" class="nav-item">
+            <span class="icon">📞</span>
+            <span class="label">Contact</span>
+        </a>
     </nav>
 
+    <!-- ✅ Appointment Popup Modal (BODY ke END me) -->
+    <div class="appointment-popup" id="appointmentPopup">
+        <div class="popup-box">
+            <button class="popup-close">&times;</button>
+
+            <h2>Book Appointment</h2>
+            <p>Please fill the details to confirm your appointment.</p>
+
+            <form class="popup-form">
+                <input type="text" placeholder="Full Name" required />
+                <input type="tel" placeholder="Phone Number" required />
+
+                <select required>
+            <option value="">Select Department</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Pathology</option>
+          </select>
+
+                <input type="date" required />
+                <button type="submit" class="popup-submit">
+            Confirm Appointment
+          </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

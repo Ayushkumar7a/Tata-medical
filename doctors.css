@@ -1,174 +1,214 @@
-/* ===== HARD RESET (IMPORTANT) ===== */
+/* ======================================================
+   DOCTORS PAGE CSS (FINAL CLEAN + FIXED)
+   ✅ Banner height fixed
+   ✅ Top-bar & navbar gap fixed
+   ✅ Mobile responsive perfect
+====================================================== */
+
+
+/* ===== HARD RESET (SAFE) ===== */
 
 html,
 body {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100%;
-  overflow-x: hidden;
-  background: #f7f9fc;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+    background: #f7f9fc;
 }
+
 
 /* ================= DOCTORS PAGE BASE ================= */
 
-.doctors-page {
-  background: #f9fafb;
-  /* top-bar (64) + nav (48) */
+body.doctors-page {
+    background: #f9fafb;
+    padding-top: 122px;
+    /* ✅ top-bar + navbar (perfect) */
 }
 
-/* ======================================
-   DOCTORS PAGE FIX
-====================================== */
 
-/* Step 1: Body padding ko About page (70px) ke barabar karo */
-
-.doctors-page {
-  padding-top: 70px !important;
-  background: #f9fafb;
-}
-
-/* Step 2: Banner ki Height FORCE karo */
+/* ================= HERO / BANNER (FIXED HEIGHT) ================= */
 
 .doctors-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("images/doctors-hero.jpg") center / cover no-repeat;
-  height: 400px;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #ffffff;
-  border-radius: 0 0 40px 40px;
-  margin-top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("images/doctors-hero.jpg") center/cover no-repeat;
+    min-height: 420px;
+    /* ✅ Banner height fix */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* ✅ center vertically */
+    justify-content: center;
+    /* ✅ center horizontally */
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0 0 50px 50px;
+    margin: 0;
+    padding: 90px 20px;
+    /* ✅ spacing for text */
 }
 
-.doctor-hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
+
+/* ✅ Title Fix */
+
+.doctors-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
-/* GRID */
+
+/* ✅ Subtitle Fix */
+
+.doctors-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin: 0;
+}
+
+
+/* ================= DOCTOR GRID SECTION ================= */
 
 .doctor-section {
-  padding: 120px 20px;
-  background: #f9fafb;
+    padding: 120px 20px;
+    background: #f9fafb;
 }
 
 .doctor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
 }
 
-/* CARD */
+
+/* ================= DOCTOR CARD ================= */
 
 .doctor-card {
-  background: #ffffff;
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+    background: #ffffff;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
 }
 
 .doctor-card:hover {
-  transform: translateY(-8px);
+    transform: translateY(-8px);
 }
 
 .doctor-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 }
 
-/* BODY */
+
+/* ================= DOCTOR BODY ================= */
 
 .doctor-body {
-  padding: 26px;
-  text-align: center;
+    padding: 26px;
+    text-align: center;
 }
 
 .doctor-rating {
-  color: #2e7d32;
-  font-weight: 600;
-  margin-bottom: 6px;
+    color: #2e7d32;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .doctor-body h3 {
-  font-size: 1.25rem;
-  margin-bottom: 4px;
+    font-size: 1.25rem;
+    margin-bottom: 4px;
 }
 
 .doctor-body h4 {
-  font-size: 0.95rem;
-  color: #2e7d32;
-  font-weight: 600;
+    font-size: 0.95rem;
+    color: #2e7d32;
+    font-weight: 600;
 }
 
 .degree {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
 }
 
 .availability {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 0.9rem;
 }
 
-/* ACTION BUTTONS */
+
+/* ================= ACTION BUTTONS ================= */
 
 .doctor-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .doctor-actions .btn {
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.25s ease;
 }
+
+.doctor-actions .btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
 
 /* BUTTON COLORS */
 
 .btn.whatsapp {
-  background: #25d366;
+    background: #25d366;
 }
 
 .btn.call {
-  background: #2e7d32;
+    background: #2e7d32;
 }
 
 .btn.linkedin {
-  background: #0a66c2;
+    background: #0a66c2;
 }
 
-/* MOBILE */
 
-@media (max-width: 768px) {
-  .doctors-page {
-    padding-top: 64px;
-    /* mobile header */
-  }
-  /* Yahan height auto karna zaroori hai mobile ke liye */
-  .doctors-hero {
-    height: auto;
-    padding: 90px 16px 70px;
-  }
-}
-
-body.doctors-page {
-  padding-top: 112px;
-  /* top-bar (64) + navbar (48) */
-}
+/* ================= FOOTER SAFE GAP ================= */
 
 .footer {
-  margin-top: 60px;
+    margin-top: 60px;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    body.doctors-page {
+        padding-top: 70px;
+        /* ✅ mobile header fixed height */
+        padding-bottom: 120px;
+        /* ✅ bottom nav safe space */
+    }
+    .doctors-hero {
+        min-height: 300px;
+        padding: 80px 16px 70px;
+        border-radius: 0 0 30px 30px;
+    }
+    .doctors-hero h1 {
+        font-size: 2rem;
+    }
+    .doctors-hero p {
+        font-size: 1rem;
+    }
+    .doctor-card img {
+        height: 220px;
+    }
+    .doctor-section {
+        padding: 70px 14px;
+    }
 }

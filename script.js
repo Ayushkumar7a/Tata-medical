@@ -236,3 +236,22 @@ if (openBtn && popup && closeBtn) {
         popup.classList.remove("active");
     });
 }
+// ✅ OPEN POPUP (ALL BOOK BUTTONS)
+document.querySelectorAll(".open-appointment-popup").forEach((btn) => {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(".appointment-popup").classList.add("active");
+    });
+});
+
+// ✅ CLOSE POPUP
+document.querySelector(".popup-close").addEventListener("click", function() {
+    document.querySelector(".appointment-popup").classList.remove("active");
+});
+
+// ✅ CLOSE ON OUTSIDE CLICK
+document.querySelector(".appointment-popup").addEventListener("click", function(e) {
+    if (e.target.classList.contains("appointment-popup")) {
+        document.querySelector(".appointment-popup").classList.remove("active");
+    }
+});

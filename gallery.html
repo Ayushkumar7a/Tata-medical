@@ -1,81 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | MediCare</title>
 
     <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Main CSS (DO NOT TOUCH) -->
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-
-    <!-- Gallery Page CSS ONLY -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="gallery.css" />
-  </head>
+</head>
+<!-- ✅ Appointment Popup Modal -->
+<div class="appointment-popup" id="appointmentPopup">
+    <div class="popup-box">
+        <button class="popup-close">&times;</button>
 
-  <body class="gallery-page">
+        <h2>Book Appointment</h2>
+        <p>Please fill the details to confirm your appointment.</p>
+
+        <form class="popup-form">
+            <input type="text" placeholder="Full Name" required />
+            <input type="tel" placeholder="Phone Number" required />
+            <select required>
+          <option value="">Select Department</option>
+          <option>Cardiology</option>
+          <option>Neurology</option>
+          <option>Pathology</option>
+        </select>
+            <input type="date" required />
+            <button type="submit" class="popup-submit">Confirm Appointment</button>
+        </form>
+    </div>
+</div>
+
+<body class="gallery-page">
     <!-- ===== TOP BAR ===== -->
     <div class="top-bar">
-      <div class="container top-bar-inner">
-        <div class="top-logo">
-          <img src="images/logo.png" alt="MediCare Logo" />
+        <div class="container top-bar-inner">
+            <div class="top-logo">
+                <img src="images/logo.png" alt="MediCare Logo" />
+            </div>
+            <div class="top-info">
+                <span>📍 Roorkee, Uttarakhand</span>
+                <span>📞 9845633745</span>
+                <span>✉ info@medicare.com</span>
+            </div>
         </div>
-        <div class="top-info">
-          <span>📍 Roorkee, Uttarakhand</span>
-          <span>📞 9845633745</span>
-          <span>✉ info@medicare.com</span>
-        </div>
-      </div>
     </div>
 
     <!-- ===== NAVBAR ===== -->
-    <nav
-      class="navbar navbar-expand-md navbar-dark main-nav fixed-top"
-      style="top: 50px"
-    >
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
+    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
+        <div class="container">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="mainNav"
-        >
-          <ul class="navbar-nav gap-md-4">
-            <!-- Home (scrolls on same page) -->
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#home">Home</a>
-            </li>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="navbar-nav gap-md-4">
+                    <!-- Home (scrolls on same page) -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
 
-            <!-- About Dropdown (Desktop Only) -->
-            <li class="nav-item dropdown about-dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="about.html"
-                id="aboutDropdown"
-              >
+                    <!-- About Dropdown (Desktop Only) -->
+                    <li class="nav-item dropdown about-dropdown">
+                        <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown">
                 About
               </a>
 
-              <ul class="dropdown-menu about-menu">
-                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                <li>
-                  <a class="dropdown-item" href="meet-team.html"
-                    >Management Team</a
+                        <ul class="dropdown-menu about-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li>
+                                <a class="dropdown-item" href="meet-team.html">Management Team</a
                   >
                 </li>
               </ul>
@@ -84,155 +84,152 @@
             <!-- These stay on home page -->
             <li class="nav-item">
               <a class="nav-link" href="services.html#services">Services</a>
-            </li>
+                            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="doctors.html#doctors">Doctors</a>
-            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctors.html#doctors">Doctors</a>
+                            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html#gallery">Gallery</a>
-            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.html#gallery">Gallery</a>
+                            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#appointment"
-                >Book appointment</a
-              >
-            </li>
-          </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                            <!-- ✅ Book Appointment Button Style Nav Item -->
+                            <a href="#" class="btn-appointment open-appointment-popup">
+              Book Appointment
+            </a>
+                        </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- ===== HERO ===== -->
     <section class="gallery-hero">
-      <div class="container">
-        <h1>Our Medical Gallery</h1>
-        <p>Inside MediCare – Infrastructure, Labs & Patient Care</p>
-      </div>
+        <div class="container">
+            <h1>Our Medical Gallery</h1>
+            <p>Inside MediCare – Infrastructure, Labs & Patient Care</p>
+        </div>
     </section>
 
     <!-- ===== INTRO ===== -->
     <section class="gallery-intro">
-      <div class="container">
-        <h2>Excellence You Can See</h2>
-        <p>
-          Explore our state-of-the-art facilities, advanced diagnostic labs,
-          expert doctors, and patient-friendly environment.
-        </p>
-      </div>
+        <div class="container">
+            <h2>Excellence You Can See</h2>
+            <p>
+                Explore our state-of-the-art facilities, advanced diagnostic labs, expert doctors, and patient-friendly environment.
+            </p>
+        </div>
     </section>
 
     <!-- ===== GALLERY GRID ===== -->
     <section class="gallery-grid-section">
-      <div class="container">
-        <div class="gallery-grid">
-          <!-- CARD -->
-          <div class="gallery-card">
-            <img src="images/gallery1.jpg" alt="Hospital Building" />
-            <div class="overlay">Hospital Infrastructure</div>
-          </div>
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- CARD -->
+                <div class="gallery-card">
+                    <img src="images/gallery1.jpg" alt="Hospital Building" />
+                    <div class="overlay">Hospital Infrastructure</div>
+                </div>
 
-          <div class="gallery-card">
-            <img src="images/gallery2.jpg" alt="Doctor Consultation" />
-            <div class="overlay">Doctor Consultation</div>
-          </div>
+                <div class="gallery-card">
+                    <img src="images/gallery2.jpg" alt="Doctor Consultation" />
+                    <div class="overlay">Doctor Consultation</div>
+                </div>
 
-          <div class="gallery-card">
-            <img src="images/gallery3.jpg" alt="Laboratory" />
-            <div class="overlay">Advanced Laboratory</div>
-          </div>
+                <div class="gallery-card">
+                    <img src="images/gallery3.jpg" alt="Laboratory" />
+                    <div class="overlay">Advanced Laboratory</div>
+                </div>
 
-          <div class="gallery-card">
-            <img src="images/gallery4.jpg" alt="Medical Team" />
-            <div class="overlay">Expert Medical Team</div>
-          </div>
+                <div class="gallery-card">
+                    <img src="images/gallery4.jpg" alt="Medical Team" />
+                    <div class="overlay">Expert Medical Team</div>
+                </div>
 
-          <div class="gallery-card">
-            <img src="images/gallery5.jpg" alt="Reception" />
-            <div class="overlay">Patient Reception</div>
-          </div>
+                <div class="gallery-card">
+                    <img src="images/gallery5.jpg" alt="Reception" />
+                    <div class="overlay">Patient Reception</div>
+                </div>
 
-          <div class="gallery-card">
-            <img src="images/gallery6.jpg" alt="Patient Care" />
-            <div class="overlay">Compassionate Care</div>
-          </div>
+                <div class="gallery-card">
+                    <img src="images/gallery6.jpg" alt="Patient Care" />
+                    <div class="overlay">Compassionate Care</div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ===== CTA ===== -->
     <section class="gallery-cta">
-      <div class="container">
-        <h2>Experience MediCare First-Hand</h2>
-        <p>Visit our center or book an appointment today</p>
-        <a href="contact.html" class="btn btn-light">Contact Us</a>
-      </div>
+        <div class="container">
+            <h2>Experience MediCare First-Hand</h2>
+            <p>Visit our center or book an appointment today</p>
+            <a href="contact.html" class="btn btn-light">Contact Us</a>
+        </div>
     </section>
 
     <!-- =============== FOOTER ================= -->
     <footer class="footer">
-      <div class="footer-container">
-        <!-- BRAND -->
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <img src="images/logo.png" alt="MediCare" />
-          </div>
-          <p>
-            Providing exceptional healthcare services with compassion and
-            expertise since 1998. Your health is our priority.
-          </p>
+        <div class="footer-container">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <img src="images/logo.png" alt="MediCare" />
+                </div>
+                <p>
+                    Providing exceptional healthcare services with compassion and expertise since 1998. Your health is our priority.
+                </p>
 
-          <div class="social-links">
-            <a href="#">🌐</a>
-            <a href="#">🐦</a>
-            <a href="#">📘</a>
-            <a href="#">📸</a>
-          </div>
+                <div class="social-links">
+                    <a href="#">🌐</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#doctors">Our Doctors</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <!-- SERVICES -->
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <a href="#">General Medicine</a>
+                <a href="#">Cardiology</a>
+                <a href="#">Neurology</a>
+                <a href="#">Pediatrics</a>
+                <a href="#">Emergency Care</a>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>📍 123 Medical Center Drive, Healthcare City</p>
+                <p>📞 +91 98456 33745</p>
+                <p>✉ info@medicare.com</p>
+                <p>⏰ Mon – Sat: 8AM – 8PM</p>
+            </div>
         </div>
 
-        <!-- QUICK LINKS -->
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#doctors">Our Doctors</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <span>© 2025 MediCare Hospital. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
         </div>
-
-        <!-- SERVICES -->
-        <div class="footer-links">
-          <h4>Our Services</h4>
-          <a href="#">General Medicine</a>
-          <a href="#">Cardiology</a>
-          <a href="#">Neurology</a>
-          <a href="#">Pediatrics</a>
-          <a href="#">Emergency Care</a>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="footer-contact">
-          <h4>Contact Info</h4>
-          <p>📍 123 Medical Center Drive, Healthcare City</p>
-          <p>📞 +91 98456 33745</p>
-          <p>✉ info@medicare.com</p>
-          <p>⏰ Mon – Sat: 8AM – 8PM</p>
-        </div>
-      </div>
-
-      <!-- BOTTOM BAR -->
-      <div class="footer-bottom">
-        <span>© 2025 MediCare Hospital. All rights reserved.</span>
-        <div>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cookies</a>
-        </div>
-      </div>
     </footer>
     <!-- ================= MOBILE HEADER ================= -->
 
@@ -242,76 +239,69 @@
 
     <!-- Mobile Header -->
     <div class="tata-mobile-header d-md-none">
-      <div class="tata-mobile-content">
-        <!-- Left: Logo -->
-        <div class="tata-mobile-logo-wrapper">
-          <img
-            src="images/logo.png"
-            alt="Tata Medical & Diagnostic Center"
-            class="tata-mobile-logo"
-          />
-        </div>
+        <div class="tata-mobile-content">
+            <!-- Left: Logo -->
+            <div class="tata-mobile-logo-wrapper">
+                <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" class="tata-mobile-logo" />
+            </div>
 
-        <!-- Center: Live Date & Time -->
-        <div class="tata-mobile-datetime">
-          <div class="tata-date" id="tataMobileDate">Loading...</div>
-          <div class="tata-time" id="tataMobileTime">Loading...</div>
-        </div>
+            <!-- Center: Live Date & Time -->
+            <div class="tata-mobile-datetime">
+                <div class="tata-date" id="tataMobileDate">Loading...</div>
+                <div class="tata-time" id="tataMobileTime">Loading...</div>
+            </div>
 
-        <!-- Right: Contact Icons -->
-        <div class="tata-mobile-contacts">
-          <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
-            <i class="fas fa-phone-alt"></i>
-          </a>
-          <a
-            href="mailto:info@medicare.com"
-            class="tata-contact-icon"
-            title="Email Us"
-          >
-            <i class="fas fa-envelope"></i>
-          </a>
+            <!-- Right: Contact Icons -->
+            <div class="tata-mobile-contacts">
+                <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="mailto:info@medicare.com" class="tata-contact-icon" title="Email Us">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
-      <a href="index.html#home" class="nav-item">
-        <span class="icon">🏠</span>
-        <span class="label">Home</span>
-      </a>
+        <a href="index.html#home" class="nav-item">
+            <span class="icon">🏠</span>
+            <span class="label">Home</span>
+        </a>
 
-      <a href="about.html" class="nav-item">
-        <span class="icon">👥</span>
-        <span class="label">About</span>
-      </a>
+        <a href="about.html" class="nav-item">
+            <span class="icon">👥</span>
+            <span class="label">About</span>
+        </a>
 
-      <a href="services.html" class="nav-item">
-        <span class="icon">🧪</span>
-        <span class="label">Services</span>
-      </a>
+        <a href="services.html" class="nav-item">
+            <span class="icon">🧪</span>
+            <span class="label">Services</span>
+        </a>
 
-      <a href="index.html#appointment" class="nav-item">
-        <span class="icon">📅</span>
-        <span class="label">Booking</span>
-      </a>
+        <a href="#" class="nav-item appointment-item open-appointment-popup">
+            <span class="icon">📅</span>
+            <span class="label">Booking</span>
+        </a>
 
-      <a href="gallery.html" class="nav-item">
-        <span class="icon">🖼️</span>
-        <span class="label">Gallery</span>
-      </a>
+        <a href="gallery.html" class="nav-item">
+            <span class="icon">🖼️</span>
+            <span class="label">Gallery</span>
+        </a>
 
-      <a href="doctors.html" class="nav-item">
-        <span class="icon">👨‍⚕️</span>
-        <span class="label">Doctors</span>
-      </a>
+        <a href="doctors.html" class="nav-item">
+            <span class="icon">👨‍⚕️</span>
+            <span class="label">Doctors</span>
+        </a>
 
-      <a href="contact.html#contact" class="nav-item">
-        <span class="icon">📞</span>
-        <span class="label">Contact</span>
-      </a>
+        <a href="contact.html#contact" class="nav-item">
+            <span class="icon">📞</span>
+            <span class="label">Contact</span>
+        </a>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
