@@ -14,21 +14,16 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-    <!-- Doctors CSS -->
-    <link rel="stylesheet" href="doctors.css" />
 </head>
 
 <body class="doctors-page">
-    <!-- ================= TOP BAR ================= -->
+    <!-- ✅ TOP BAR (ONLY ONE) -->
     <div class="top-bar">
         <div class="container top-bar-inner">
-            <!-- LOGO -->
             <div class="top-logo">
                 <img src="images/logo.png" alt="Tata Medical Logo" />
             </div>
 
-            <!-- INFO -->
             <div class="top-info">
                 <span>📍 Roorkee, Uttarakhand</span>
                 <span id="liveDateTime">🕒 Loading...</span>
@@ -39,449 +34,440 @@
     </div>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 64px">
-        <div class="container">
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <header class="premium-header">
+        <nav class="navbar navbar-expand-md navbar-dark main-nav premium-nav fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-                <ul class="navbar-nav gap-md-4 align-items-center">
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
+                <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                    <ul class="navbar-nav gap-md-4 align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#home">Home</a>
+                        </li>
 
-                    <!-- About Dropdown -->
-                    <li class="nav-item dropdown about-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                About
-              </a>
+                        <li class="nav-item dropdown about-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  About
+                </a>
+                            <ul class="dropdown-menu about-menu">
+                                <li>
+                                    <a class="dropdown-item" href="about.html">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="meet-team.html">Management Team</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-                        <ul class="dropdown-menu about-menu">
-                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                            <li>
-                                <a class="dropdown-item" href="meet-team.html">Management Team</a
-                  >
-                </li>
-              </ul>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="doctors.html">Doctors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="gallery.html">Gallery</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
 
-            <!-- Services -->
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-                            </li>
-
-                            <!-- Doctors -->
-                            <li class="nav-item">
-                                <a class="nav-link active" href="doctors.html">Doctors</a>
-                            </li>
-
-                            <!-- Gallery -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="gallery.html">Gallery</a>
-                            </li>
-
-                            <!-- Contact -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-
-                            <!-- ✅ Book Appointment Button -->
-                            <li class="nav-item">
-                                <a href="#" class="btn-appointment open-appointment-popup">
-                Book Appointment
-              </a>
-                            </li>
-                        </ul>
-            </div>
+                                <li class="nav-item">
+                                    <a href="#" class="btn-appointment open-appointment-popup">Book Appointment</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
+    </header>
 
     <!-- ================= HERO ================= -->
     <section class="doctors-hero">
-        <div class="container text-center">
-            <h1>Meet Our Expert Doctors</h1>
-            <p>Highly qualified specialists dedicated to your health & care</p>
-        </div>
+      <div class="container text-center">
+        <h1>Meet Our Expert Doctors</h1>
+        <p>Highly qualified specialists dedicated to your health & care</p>
+      </div>
     </section>
 
     <!-- ================= DOCTORS GRID ================= -->
     <section class="doctor-section">
-        <div class="container">
-            <div class="doctor-grid">
-                <!-- Doctor Card 1 -->
-                <div class="doctor-card">
-                    <img src="images/doctor1.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.9 | 15+ Years</div>
-                        <h3>Dr. Rakesh Sharma</h3>
-                        <h4>Cardiologist</h4>
-                        <p class="degree">MD, DM (AIIMS)</p>
-                        <span class="availability">🟢 Available Today</span>
+      <div class="container">
+        <div class="doctor-grid">
+          <!-- Doctor Card 1 -->
+          <div class="doctor-card">
+            <img src="images/doctor1.jpg" alt="Doctor" />
+            <div class="doctor-body">
+              <div class="doctor-rating">⭐ 4.9 | 15+ Years</div>
+              <h3>Dr. Rakesh Sharma</h3>
+              <h4>Cardiologist</h4>
+              <p class="degree">MD, DM (AIIMS)</p>
+              <span class="availability">🟢 Available Today</span>
 
-                        <div class="doctor-actions">
-                            <a href="https://wa.me/919845633745" target="_blank" class="btn whatsapp">WhatsApp</a
+              <div class="doctor-actions">
+                <a
+                  href="https://wa.me/919845633745"
+                  target="_blank"
+                  class="btn whatsapp"
+                  >WhatsApp</a
                 >
                 <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
+                                    <a href="#" class="btn linkedin">LinkedIn</a>
                 </div>
+            </div>
+            </div>
 
-                <!-- Doctor Card 2 -->
-                <div class="doctor-card">
-                    <img src="images/doctor2.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.8 | 12+ Years</div>
-                        <h3>Dr. Neha Verma</h3>
-                        <h4>Neurologist</h4>
-                        <p class="degree">MD, DM</p>
-                        <span class="availability">🟢 Available Today</span>
+            <!-- Doctor Card 2 -->
+            <div class="doctor-card">
+                <img src="images/doctor2.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.8 | 12+ Years</div>
+                    <h3>Dr. Neha Verma</h3>
+                    <h4>Neurologist</h4>
+                    <p class="degree">MD, DM</p>
+                    <span class="availability">🟢 Available Today</span>
 
-                        <div class="doctor-actions">
-                            <a href="https://wa.me/919845633745" target="_blank" class="btn whatsapp">WhatsApp</a
+                    <div class="doctor-actions">
+                        <a href="https://wa.me/919845633745" target="_blank" class="btn whatsapp">WhatsApp</a
                 >
                 <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Doctor Card 3 -->
-                <div class="doctor-card">
-                    <img src="images/doctor3.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.7 | 10+ Years</div>
-                        <h3>Dr. Amit Gupta</h3>
-                        <h4>Orthopedic</h4>
-                        <p class="degree">MS (Ortho)</p>
-                        <span class="availability">🟡 Available Tomorrow</span>
+            <!-- Doctor Card 3 -->
+            <div class="doctor-card">
+                <img src="images/doctor3.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.7 | 10+ Years</div>
+                    <h3>Dr. Amit Gupta</h3>
+                    <h4>Orthopedic</h4>
+                    <p class="degree">MS (Ortho)</p>
+                    <span class="availability">🟡 Available Tomorrow</span>
 
-                        <div class="doctor-actions">
-                            <a href="https://wa.me/919845633745" target="_blank" class="btn whatsapp">WhatsApp</a
+                    <div class="doctor-actions">
+                        <a href="https://wa.me/919845633745" target="_blank" class="btn whatsapp">WhatsApp</a
                 >
                 <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 4 -->
-                <div class="doctor-card">
-                    <img src="images/doctor4.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.8 | 14+ Years</div>
-                        <h3>Dr. Anjali Mehta</h3>
-                        <h4>Gynecologist</h4>
-                        <p class="degree">MD (OBG)</p>
-                        <span class="availability">🟢 Available Today</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 5 -->
-                <div class="doctor-card">
-                    <img src="images/doctor5.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.7 | 11+ Years</div>
-                        <h3>Dr. Rohit Kapoor</h3>
-                        <h4>Dermatologist</h4>
-                        <p class="degree">MD (Skin)</p>
-                        <span class="availability">🟢 Available Today</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 6 -->
-                <div class="doctor-card">
-                    <img src="images/doctor6.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.9 | 18+ Years</div>
-                        <h3>Dr. Sanjay Malhotra</h3>
-                        <h4>General Surgeon</h4>
-                        <p class="degree">MS (Surgery)</p>
-                        <span class="availability">🟡 Available Tomorrow</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 7 -->
-                <div class="doctor-card">
-                    <img src="images/doctor7.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.6 | 9+ Years</div>
-                        <h3>Dr. Pooja Singh</h3>
-                        <h4>Pediatrician</h4>
-                        <p class="degree">MD (Pediatrics)</p>
-                        <span class="availability">🟢 Available Today</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 8 -->
-                <div class="doctor-card">
-                    <img src="images/doctor8.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.8 | 13+ Years</div>
-                        <h3>Dr. Vikram Joshi</h3>
-                        <h4>ENT Specialist</h4>
-                        <p class="degree">MS (ENT)</p>
-                        <span class="availability">🟡 Available Tomorrow</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 9 -->
-                <div class="doctor-card">
-                    <img src="images/doctor9.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.7 | 12+ Years</div>
-                        <h3>Dr. Neeraj Bansal</h3>
-                        <h4>Urologist</h4>
-                        <p class="degree">MCh (Urology)</p>
-                        <span class="availability">🟢 Available Today</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 10 -->
-                <div class="doctor-card">
-                    <img src="images/doctor10.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.9 | 16+ Years</div>
-                        <h3>Dr. Kavita Rao</h3>
-                        <h4>Radiologist</h4>
-                        <p class="degree">MD (Radiology)</p>
-                        <span class="availability">🟢 Available Today</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 11 -->
-                <div class="doctor-card">
-                    <img src="images/doctor11.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.6 | 10+ Years</div>
-                        <h3>Dr. Arjun Patel</h3>
-                        <h4>Psychiatrist</h4>
-                        <p class="degree">MD (Psychiatry)</p>
-                        <span class="availability">🟡 Available Tomorrow</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor 12 -->
-                <div class="doctor-card">
-                    <img src="images/doctor12.jpg" alt="Doctor" />
-                    <div class="doctor-body">
-                        <div class="doctor-rating">⭐ 4.8 | 14+ Years</div>
-                        <h3>Dr. Sunita Agarwal</h3>
-                        <h4>Ophthalmologist</h4>
-                        <p class="degree">MS (Eye)</p>
-                        <span class="availability">🟢 Available Today</span>
-
-                        <div class="doctor-actions">
-                            <a href="#" class="btn whatsapp">WhatsApp</a>
-                            <a href="tel:+919845633745" class="btn call">Call</a>
-                            <a href="#" class="btn linkedin">LinkedIn</a>
-                        </div>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- BRAND -->
-            <div class="footer-brand">
-                <div class="brand-logo">
-                    <img src="images/logo.png" alt="MediCare" />
-                </div>
-                <p>
-                    Providing exceptional healthcare services with compassion and expertise since 1998. Your health is our priority.
-                </p>
+            <!-- Doctor 4 -->
+            <div class="doctor-card">
+                <img src="images/doctor4.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.8 | 14+ Years</div>
+                    <h3>Dr. Anjali Mehta</h3>
+                    <h4>Gynecologist</h4>
+                    <p class="degree">MD (OBG)</p>
+                    <span class="availability">🟢 Available Today</span>
 
-                <div class="social-links">
-                    <a href="#">🌐</a>
-                    <a href="#">🐦</a>
-                    <a href="#">📘</a>
-                    <a href="#">📸</a>
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- QUICK LINKS -->
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="doctors.html">Our Doctors</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
+            <!-- Doctor 5 -->
+            <div class="doctor-card">
+                <img src="images/doctor5.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.7 | 11+ Years</div>
+                    <h3>Dr. Rohit Kapoor</h3>
+                    <h4>Dermatologist</h4>
+                    <p class="degree">MD (Skin)</p>
+                    <span class="availability">🟢 Available Today</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
             </div>
 
-            <!-- SERVICES -->
-            <div class="footer-links">
-                <h4>Our Services</h4>
-                <a href="#">General Medicine</a>
-                <a href="#">Cardiology</a>
-                <a href="#">Neurology</a>
-                <a href="#">Pediatrics</a>
-                <a href="#">Emergency Care</a>
+            <!-- Doctor 6 -->
+            <div class="doctor-card">
+                <img src="images/doctor6.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.9 | 18+ Years</div>
+                    <h3>Dr. Sanjay Malhotra</h3>
+                    <h4>General Surgeon</h4>
+                    <p class="degree">MS (Surgery)</p>
+                    <span class="availability">🟡 Available Tomorrow</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
             </div>
 
-            <!-- CONTACT -->
-            <div class="footer-contact">
-                <h4>Contact Info</h4>
-                <p>📍 123 Medical Center Drive, Healthcare City</p>
-                <p>📞 +91 98456 33745</p>
-                <p>✉ info@medicare.com</p>
-                <p>⏰ Mon – Sat: 8AM – 8PM</p>
-            </div>
-        </div>
+            <!-- Doctor 7 -->
+            <div class="doctor-card">
+                <img src="images/doctor7.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.6 | 9+ Years</div>
+                    <h3>Dr. Pooja Singh</h3>
+                    <h4>Pediatrician</h4>
+                    <p class="degree">MD (Pediatrics)</p>
+                    <span class="availability">🟢 Available Today</span>
 
-        <!-- BOTTOM BAR -->
-        <div class="footer-bottom">
-            <span>© 2025 MediCare Hospital. All rights reserved.</span>
-            <div>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms</a>
-                <a href="#">Cookies</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ================= MOBILE HEADER ================= -->
-    <div class="tata-mobile-header d-md-none">
-        <div class="tata-mobile-content">
-            <div class="tata-mobile-logo-wrapper">
-                <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" class="tata-mobile-logo" />
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="tata-mobile-datetime">
-                <div class="tata-date" id="tataMobileDate">Loading...</div>
-                <div class="tata-time" id="tataMobileTime">Loading...</div>
+            <!-- Doctor 8 -->
+            <div class="doctor-card">
+                <img src="images/doctor8.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.8 | 13+ Years</div>
+                    <h3>Dr. Vikram Joshi</h3>
+                    <h4>ENT Specialist</h4>
+                    <p class="degree">MS (ENT)</p>
+                    <span class="availability">🟡 Available Tomorrow</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="tata-mobile-contacts">
-                <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
-                    <i class="fas fa-phone-alt"></i>
+            <!-- Doctor 9 -->
+            <div class="doctor-card">
+                <img src="images/doctor9.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.7 | 12+ Years</div>
+                    <h3>Dr. Neeraj Bansal</h3>
+                    <h4>Urologist</h4>
+                    <p class="degree">MCh (Urology)</p>
+                    <span class="availability">🟢 Available Today</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 10 -->
+            <div class="doctor-card">
+                <img src="images/doctor10.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.9 | 16+ Years</div>
+                    <h3>Dr. Kavita Rao</h3>
+                    <h4>Radiologist</h4>
+                    <p class="degree">MD (Radiology)</p>
+                    <span class="availability">🟢 Available Today</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 11 -->
+            <div class="doctor-card">
+                <img src="images/doctor11.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.6 | 10+ Years</div>
+                    <h3>Dr. Arjun Patel</h3>
+                    <h4>Psychiatrist</h4>
+                    <p class="degree">MD (Psychiatry)</p>
+                    <span class="availability">🟡 Available Tomorrow</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 12 -->
+            <div class="doctor-card">
+                <img src="images/doctor12.jpg" alt="Doctor" />
+                <div class="doctor-body">
+                    <div class="doctor-rating">⭐ 4.8 | 14+ Years</div>
+                    <h3>Dr. Sunita Agarwal</h3>
+                    <h4>Ophthalmologist</h4>
+                    <p class="degree">MS (Eye)</p>
+                    <span class="availability">🟢 Available Today</span>
+
+                    <div class="doctor-actions">
+                        <a href="#" class="btn whatsapp">WhatsApp</a>
+                        <a href="tel:+919845633745" class="btn call">Call</a>
+                        <a href="#" class="btn linkedin">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </section>
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <img src="images/logo.png" alt="MediCare" />
+                        </div>
+                        <p>
+                            Providing exceptional healthcare services with compassion and expertise since 1998. Your health is our priority.
+                        </p>
+
+                        <div class="social-links">
+                            <a href="#">🌐</a>
+                            <a href="#">🐦</a>
+                            <a href="#">📘</a>
+                            <a href="#">📸</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="doctors.html">Our Doctors</a>
+                        <a href="services.html">Services</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Our Services</h4>
+                        <a href="#">General Medicine</a>
+                        <a href="#">Cardiology</a>
+                        <a href="#">Neurology</a>
+                        <a href="#">Pediatrics</a>
+                        <a href="#">Emergency Care</a>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <p>📍 123 Medical Center Drive, Healthcare City</p>
+                        <p>📞 +91 98456 33745</p>
+                        <p>✉ info@medicare.com</p>
+                        <p>⏰ Mon – Sat: 8AM – 8PM</p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span>© 2025 MediCare Hospital. All rights reserved.</span>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- ================= MOBILE HEADER ================= -->
+            <div class="tata-mobile-header d-md-none">
+                <div class="tata-mobile-content">
+                    <div class="tata-mobile-logo-wrapper">
+                        <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" class="tata-mobile-logo" />
+                    </div>
+
+                    <div class="tata-mobile-datetime">
+                        <div class="tata-date" id="tataMobileDate">Loading...</div>
+                        <div class="tata-time" id="tataMobileTime">Loading...</div>
+                    </div>
+
+                    <div class="tata-mobile-contacts">
+                        <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                        <a href="mailto:info@medicare.com" class="tata-contact-icon" title="Email Us">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= MOBILE NAV ================= -->
+            <nav class="mobile-nav d-md-none">
+                <a href="index.html#home" class="nav-item">
+                    <span class="icon">🏠</span>
+                    <span class="label">Home</span>
                 </a>
-                <a href="mailto:info@medicare.com" class="tata-contact-icon" title="Email Us">
-                    <i class="fas fa-envelope"></i>
+
+                <a href="about.html" class="nav-item">
+                    <span class="icon">👥</span>
+                    <span class="label">About</span>
                 </a>
-            </div>
-        </div>
-    </div>
 
-    <!-- ================= MOBILE NAV ================= -->
-    <nav class="mobile-nav d-md-none">
-        <a href="index.html#home" class="nav-item">
-            <span class="icon">🏠</span>
-            <span class="label">Home</span>
-        </a>
+                <a href="services.html" class="nav-item">
+                    <span class="icon">🧪</span>
+                    <span class="label">Services</span>
+                </a>
 
-        <a href="about.html" class="nav-item">
-            <span class="icon">👥</span>
-            <span class="label">About</span>
-        </a>
+                <a href="#" class="nav-item appointment-item open-appointment-popup">
+                    <span class="icon">📅</span>
+                    <span class="label">Booking</span>
+                </a>
 
-        <a href="services.html" class="nav-item">
-            <span class="icon">🧪</span>
-            <span class="label">Services</span>
-        </a>
+                <a href="gallery.html" class="nav-item">
+                    <span class="icon">🖼️</span>
+                    <span class="label">Gallery</span>
+                </a>
 
-        <a href="#" class="nav-item appointment-item open-appointment-popup">
-            <span class="icon">📅</span>
-            <span class="label">Booking</span>
-        </a>
+                <a href="doctors.html" class="nav-item">
+                    <span class="icon">👨‍⚕️</span>
+                    <span class="label">Doctors</span>
+                </a>
 
-        <a href="gallery.html" class="nav-item">
-            <span class="icon">🖼️</span>
-            <span class="label">Gallery</span>
-        </a>
+                <a href="contact.html" class="nav-item">
+                    <span class="icon">📞</span>
+                    <span class="label">Contact</span>
+                </a>
+            </nav>
 
-        <a href="doctors.html" class="nav-item">
-            <span class="icon">👨‍⚕️</span>
-            <span class="label">Doctors</span>
-        </a>
+            <!-- ✅ Appointment Popup Modal (ONLY ONE) -->
+            <div class="appointment-popup" id="appointmentPopup">
+                <div class="popup-box">
+                    <button class="popup-close">&times;</button>
 
-        <a href="contact.html" class="nav-item">
-            <span class="icon">📞</span>
-            <span class="label">Contact</span>
-        </a>
-    </nav>
+                    <h2>Book Appointment</h2>
+                    <p>Please fill the details to confirm your appointment.</p>
 
-    <!-- ✅ Appointment Popup Modal -->
-    <div class="appointment-popup" id="appointmentPopup">
-        <div class="popup-box">
-            <button class="popup-close">&times;</button>
-
-            <h2>Book Appointment</h2>
-            <p>Please fill the details to confirm your appointment.</p>
-
-            <form class="popup-form">
-                <input type="text" placeholder="Full Name" required />
-                <input type="tel" placeholder="Phone Number" required />
-                <select required>
+                    <form class="popup-form">
+                        <input type="text" placeholder="Full Name" required />
+                        <input type="tel" placeholder="Phone Number" required />
+                        <select required>
             <option value="">Select Department</option>
             <option>Cardiology</option>
             <option>Neurology</option>
             <option>Pathology</option>
           </select>
-                <input type="date" required />
-                <button type="submit" class="popup-submit">
+                        <input type="date" required />
+                        <button type="submit" class="popup-submit">
             Confirm Appointment
           </button>
-            </form>
-        </div>
-    </div>
+                    </form>
+                </div>
+            </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+            <!-- Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="script.js"></script>
 </body>
 
 </html>

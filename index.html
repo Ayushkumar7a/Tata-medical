@@ -8,10 +8,11 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Add this in your <head> section -->
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -23,84 +24,63 @@
 </head>
 
 <body>
-    <!-- ================= TOP BAR ================= -->
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <!-- LOGO -->
-            <div class="top-logo">
-                <img src="images/logo.png" alt="Tata Medical Logo" />
-            </div>
 
-            <!-- INFO -->
-            <div class="top-info">
-                <span>📍 Roorkee, Uttarakhand</span>
-                <span id="liveDateTime">🕒 Loading...</span>
-                <span>📞 9845633745</span>
-                <span>✉ info@medicare.com</span>
-            </div>
-        </div>
-    </div>
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-md navbar-dark main-nav fixed-top" style="top: 50px">
-        <div class="container">
+    <header class="premium-header">
 
-            <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- ✅ TOP BAR (ONLY ONE) -->
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-logo">
+                    <img src="images/logo.png" alt="Tata Medical Logo" />
+                </div>
 
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-                <ul class="navbar-nav gap-md-4 align-items-md-center">
-
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
-
-                    <!-- ✅ About Dropdown (Desktop Hover) -->
-                    <li class="nav-item dropdown about-dropdown">
-                        <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown">
-            About
-            <i class="fa-solid fa-angle-down ms-1"></i>
-          </a>
-
-                        <ul class="dropdown-menu about-menu">
-                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                            <li><a class="dropdown-item" href="meet-team.html">Management Team</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Services -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html#services">Services</a>
-                    </li>
-
-                    <!-- Doctors -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="doctors.html#doctors">Doctors</a>
-                    </li>
-
-                    <!-- Gallery -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html#gallery">Gallery</a>
-                    </li>
-
-                    <!-- Contact -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-
-                    <!-- ✅ Book Appointment Button Style Nav Item -->
-                    <a href="#" class="btn-appointment open-appointment-popup">
-  Book Appointment
-</a>
-                    </li>
-
-                </ul>
+                <div class="top-info">
+                    <span>📍 Roorkee, Uttarakhand</span>
+                    <span id="liveDateTime">🕒 Loading...</span>
+                    <span>📞 9845633745</span>
+                    <span>✉ info@medicare.com</span>
+                </div>
             </div>
         </div>
-    </nav>
+
+        <nav class="navbar navbar-expand-md navbar-dark main-nav premium-nav fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                    <ul class="navbar-nav gap-md-4 align-items-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#home">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown about-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                About
+                            </a>
+                            <ul class="dropdown-menu about-menu">
+                                <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                                <li><a class="dropdown-item" href="meet-team.html">Management Team</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                        <li class="nav-item">
+                            <a href="#" class="btn-appointment open-appointment-popup">Book Appointment</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- ================= HOME ================= -->
     <!-- ================= PREMIUM HERO (IMAGE ZOOM + TEXT ANIMATION) ================= -->
@@ -120,14 +100,15 @@
                 </p>
 
                 <div class="hero-actions">
-                    <button class="hero-btn primary" id="openAppointmentPopup">
-          Book Appointment
-        </button>
+                    <button class="hero-btn primary open-appointment-popup">
+    Book Appointment
+</button>
                     <a href="contact.html" class="hero-btn outline">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- ================= PREMIUM CARDS ================= -->
     <section class="premium-cards-section">
         <div class="container">
@@ -159,15 +140,14 @@
                         Get instant guidance, appointment support & emergency enquiry anytime.
                     </p>
 
-                    <button class="premium-btn" id="openAppointmentPopup">
-          Book Appointment
-        </button>
+                    <button class="hero-btn primary open-appointment-popup">
+    Book Appointment
+</button>
                 </div>
 
             </div>
         </div>
     </section>
-
 
     <!-- ================= APPOINTMENT POPUP MODAL ================= -->
     <div class="appointment-popup" id="appointmentPopup">
@@ -182,96 +162,19 @@
                 <input type="email" placeholder="Email Address" required />
                 <input type="tel" placeholder="Phone Number" required />
                 <select required>
-        <option value="">Select Department</option>
-        <option>General Medicine</option>
-        <option>Cardiology</option>
-        <option>Neurology</option>
-        <option>Pediatrics</option>
-        <option>Orthopedics</option>
-      </select>
+                    <option value="">Select Department</option>
+                    <option>General Medicine</option>
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                    <option>Orthopedics</option>
+                </select>
                 <input type="date" required />
 
                 <button type="submit" class="popup-submit">
-        Confirm Appointment
-      </button>
+                    Confirm Appointment
+                </button>
             </form>
-        </div>
-    </div>
-
-    <!-- ================= ABOUT ================= -->
-    <div class="about-grid-pro">
-        <!-- LEFT CONTENT -->
-        <div class="about-content-pro">
-            <span class="about-badge">About Tata Medical</span>
-
-            <h2 class="about-title">
-                Trusted Healthcare With <span>Modern Excellence</span>
-            </h2>
-
-            <p class="about-desc">
-                For over two decades, MediCare has been a trusted name in healthcare. We focus on accurate diagnosis, ethical medical practices, and personalized patient care.
-            </p>
-
-            <div class="about-features-pro">
-                <div class="feature-pro">
-                    <i class="fa-solid fa-hospital"></i>
-                    <span>Advanced Infrastructure</span>
-                </div>
-
-                <div class="feature-pro">
-                    <i class="fa-solid fa-user-doctor"></i>
-                    <span>Experienced Doctors</span>
-                </div>
-
-                <div class="feature-pro">
-                    <i class="fa-solid fa-prescription-bottle-medical"></i>
-                    <span>Quality Treatment</span>
-                </div>
-
-                <div class="feature-pro">
-                    <i class="fa-solid fa-clock"></i>
-                    <span>24/7 Emergency Support</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- RIGHT STATS -->
-        <div class="about-stats-pro">
-            <div class="stat-card-pro">
-                <div class="stat-top">
-                    <span class="stat-icon"><i class="fa-solid fa-award"></i></span>
-                    <span class="stat-tag">Experience</span>
-                </div>
-                <h3>10+</h3>
-                <p>Years of Excellence</p>
-            </div>
-
-            <div class="stat-card-pro">
-                <div class="stat-top">
-                    <span class="stat-icon"><i class="fa-solid fa-user-doctor"></i></span>
-                    <span class="stat-tag">Specialists</span>
-                </div>
-                <h3>50+</h3>
-                <p>Qualified Doctors</p>
-            </div>
-
-            <div class="stat-card-pro">
-                <div class="stat-top">
-                    <span class="stat-icon"><i class="fa-solid fa-heart-pulse"></i></span>
-                    <span class="stat-tag">Patients</span>
-                </div>
-                <h3>10k+</h3>
-                <p>Happy Patients</p>
-            </div>
-
-            <div class="stat-card-pro">
-                <div class="stat-top">
-                    <span class="stat-icon"><i class="fa-solid fa-truck-medical"></i></span>
-                    <span class="stat-tag">Emergency</span>
-                </div>
-                <h3>24/7</h3>
-                <p>Emergency Care</p>
-            </div>
         </div>
     </div>
 
@@ -363,8 +266,7 @@
                 <!-- Doctor Card -->
                 <div class="doctor-card-new">
                     <img src="images/doctor1.jpg" alt="Dr Robert Wilson" />
-
-                    <button class="doctor-book-btn">Book Appointment</button>
+                    <button class="doctor-book-btn open-appointment-popup">Book Appointment</button>
 
                     <div class="doctor-info">
                         <div class="rating">⭐ 4.9 <span>• 15+ Years</span></div>
@@ -379,7 +281,7 @@
 
                 <div class="doctor-card-new">
                     <img src="images/doctor2.jpg" alt="Dr Sarah Johnson" />
-                    <button class="doctor-book-btn">Book Appointment</button>
+                    <button class="doctor-book-btn open-appointment-popup">Book Appointment</button>
 
                     <div class="doctor-info">
                         <div class="rating">⭐ 4.8 <span>• 12+ Years</span></div>
@@ -394,7 +296,7 @@
 
                 <div class="doctor-card-new">
                     <img src="images/doctor3.jpg" alt="Dr Michael Chen" />
-                    <button class="doctor-book-btn">Book Appointment</button>
+                    <button class="doctor-book-btn open-appointment-popup">Book Appointment</button>
 
                     <div class="doctor-info">
                         <div class="rating">⭐ 4.9 <span>• 20+ Years</span></div>
@@ -409,7 +311,7 @@
 
                 <div class="doctor-card-new">
                     <img src="images/doctor4.jpg" alt="Dr Emily Davis" />
-                    <button class="doctor-book-btn">Book Appointment</button>
+                    <button class="doctor-book-btn open-appointment-popup">Book Appointment</button>
 
                     <div class="doctor-info">
                         <div class="rating">⭐ 4.7 <span>• 10+ Years</span></div>
@@ -438,49 +340,64 @@
             </div>
 
             <div class="gallery-grid">
+
                 <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Hospital Building" />
-                    <div class="gallery-overlay">
-                        <span>Hospital Infrastructure</span>
-                    </div>
+                    <a href="images/gallery1.jpg" data-lightbox="hospital-gallery" data-title="Hospital Infrastructure">
+                        <img src="images/gallery1.jpg" alt="Hospital Building" />
+                        <div class="gallery-overlay">
+                            <span>Hospital Infrastructure</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Doctor Consultation" />
-                    <div class="gallery-overlay">
-                        <span>Doctor Consultation</span>
-                    </div>
+                    <a href="images/gallery2.jpg" data-lightbox="hospital-gallery" data-title="Doctor Consultation">
+                        <img src="images/gallery2.jpg" alt="Doctor Consultation" />
+                        <div class="gallery-overlay">
+                            <span>Doctor Consultation</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Medical Laboratory" />
-                    <div class="gallery-overlay">
-                        <span>Advanced Laboratory</span>
-                    </div>
+                    <a href="images/gallery3.jpg" data-lightbox="hospital-gallery" data-title="Advanced Laboratory">
+                        <img src="images/gallery3.jpg" alt="Medical Laboratory" />
+                        <div class="gallery-overlay">
+                            <span>Advanced Laboratory</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/gallery4.jpg" alt="Medical Team" />
-                    <div class="gallery-overlay">
-                        <span>Expert Medical Team</span>
-                    </div>
+                    <a href="images/gallery4.jpg" data-lightbox="hospital-gallery" data-title="Expert Medical Team">
+                        <img src="images/gallery4.jpg" alt="Medical Team" />
+                        <div class="gallery-overlay">
+                            <span>Expert Medical Team</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/gallery5.jpg" alt="Reception Area" />
-                    <div class="gallery-overlay">
-                        <span>Patient Reception</span>
-                    </div>
+                    <a href="images/gallery5.jpg" data-lightbox="hospital-gallery" data-title="Patient Reception">
+                        <img src="images/gallery5.jpg" alt="Reception Area" />
+                        <div class="gallery-overlay">
+                            <span>Patient Reception</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/gallery6.jpg" alt="Patient Care" />
-                    <div class="gallery-overlay">
-                        <span>Compassionate Care</span>
-                    </div>
+                    <a href="images/gallery6.jpg" data-lightbox="hospital-gallery" data-title="Compassionate Care">
+                        <img src="images/gallery6.jpg" alt="Patient Care" />
+                        <div class="gallery-overlay">
+                            <span>Compassionate Care</span>
+                        </div>
+                    </a>
                 </div>
+
             </div>
     </section>
+
     <!-- ================= REVIEWS ================= -->
     <section class="reviews-section">
         <div class="reviews-head">
@@ -541,6 +458,7 @@
             </div>
         </div>
     </section>
+
     <!-- ================= NEWSLETTER ================= -->
     <section class="newsletter-section">
         <div class="newsletter-box">
@@ -555,6 +473,7 @@
             </form>
         </div>
     </section>
+
     <!-- ================= CONTACT ================= -->
     <section id="contact" class="contact-section">
 
@@ -564,23 +483,23 @@
                 <h2>Get in Touch</h2>
                 <p>We are here to help you. Reach out anytime.</p>
 
-                <!-- CTA BUTTON -->
                 <div class="contact-cta">
-                    <a href="#contact-form" class="contact-btn">Contact Now</a>
+                    <a href="contact.html" class="contact-btn">Contact Now</a>
                 </div>
             </div>
         </div>
 
     </section>
+
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="footer-container">
-            <!-- BRAND -->
+
             <div class="footer-brand">
                 <div class="brand-logo">
                     <img src="images/logo.png" alt="MediCare" />
-
                 </div>
+
                 <p>
                     Providing exceptional healthcare services with compassion and expertise since 1998. Your health is our priority.
                 </p>
@@ -593,7 +512,6 @@
                 </div>
             </div>
 
-            <!-- QUICK LINKS -->
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <a href="#home">Home</a>
@@ -603,7 +521,6 @@
                 <a href="#contact">Contact</a>
             </div>
 
-            <!-- SERVICES -->
             <div class="footer-links">
                 <h4>Our Services</h4>
                 <a href="#">General Medicine</a>
@@ -613,7 +530,6 @@
                 <a href="#">Emergency Care</a>
             </div>
 
-            <!-- CONTACT -->
             <div class="footer-contact">
                 <h4>Contact Info</h4>
                 <p>📍 123 Medical Center Drive, Healthcare City</p>
@@ -623,7 +539,6 @@
             </div>
         </div>
 
-        <!-- BOTTOM BAR -->
         <div class="footer-bottom">
             <span>© 2025 MediCare Hospital. All rights reserved.</span>
             <div>
@@ -633,29 +548,20 @@
             </div>
         </div>
     </footer>
-    <!-- ================= MOBILE HEADER ================= -->
-
-    <!-- <div class="mobile-header d-md-none">
-        <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" />
-    </div> -->
-
-
 
     <!-- Mobile Header -->
     <div class="tata-mobile-header d-md-none">
         <div class="tata-mobile-content">
-            <!-- Left: Logo -->
+
             <div class="tata-mobile-logo-wrapper">
                 <img src="images/logo.png" alt="Tata Medical & Diagnostic Center" class="tata-mobile-logo" />
             </div>
 
-            <!-- Center: Live Date & Time -->
             <div class="tata-mobile-datetime">
                 <div class="tata-date" id="tataMobileDate">Loading...</div>
                 <div class="tata-time" id="tataMobileTime">Loading...</div>
             </div>
 
-            <!-- Right: Contact Icons -->
             <div class="tata-mobile-contacts">
                 <a href="tel:9845633745" class="tata-contact-icon" title="Call Us">
                     <i class="fas fa-phone-alt"></i>
@@ -666,6 +572,7 @@
             </div>
         </div>
     </div>
+
     <!-- ================= MOBILE NAV ================= -->
     <nav class="mobile-nav d-md-none">
         <a href="#home" class="nav-item">
@@ -703,9 +610,14 @@
             <span class="label">Contact</span>
         </a>
     </nav>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- ✅ GALLERY PREVIEW POPUP -->
+    <div class="gallery-preview" id="galleryPreview">
+        <button class="gallery-close" id="galleryCloseBtn">&times;</button>
+        <img src="" id="galleryPreviewImg" alt="Preview" />
+    </div>
 </body>
 
 </html>

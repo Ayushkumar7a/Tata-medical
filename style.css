@@ -26,17 +26,14 @@
 body {
     background: var(--light-bg);
     color: var(--dark-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 html,
 body {
     height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 footer {
@@ -45,49 +42,150 @@ footer {
 
 
 /* ======================================================
-   DESKTOP HEADER (TOP BAR + NAV)
+   PREMIUM FLOATING NAV (LabOut Style) + Sticky Full Width
 ====================================================== */
+
+
+/* ✅ Top bar stays fixed */
 
 .top-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 58px;
-    z-index: 2000;
-    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    height: 64px;
+    z-index: 5000;
+    background: #355b3c;
     display: flex;
     align-items: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
+
+
+/* ✅ Floating Navbar */
 
 .main-nav {
     position: fixed;
-    top: 70px;
-    /* ✅ top-bar height ke hisaab se */
-    width: 100%;
-    background: rgba(255, 255, 255, 0.92) !important;
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1180px, calc(100% - 40px));
+    background: var(--nav-bg) !important;
+    border: 1px solid var(--nav-border);
+    border-radius: var(--nav-radius);
+    box-shadow: var(--nav-shadow);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-    z-index: 999;
-    padding: 10px 0;
+    padding: 12px 20px;
+    z-index: 4900;
+    transition: all 0.35s ease;
 }
 
+
+/* ✅ Full width sticky on scroll */
+
+.main-nav.nav-scrolled {
+    top: 64px;
+    width: 100%;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    padding: 14px 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-left: none;
+    border-right: none;
+}
+
+
+/* ✅ Navbar links */
+
 .main-nav .nav-link {
-    color: #1c1c1c !important;
-    font-weight: 600;
+    color: #222 !important;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.25s ease;
 }
 
 .main-nav .nav-link:hover {
-    color: #2e7d32 !important;
+    color: var(--nav-green) !important;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-    /* top-bar + navbar */
+
+/* ✅ Active style if needed */
+
+.main-nav .nav-link.active {
+    color: var(--nav-green) !important;
+}
+
+
+/* ✅ Book appointment button in nav */
+
+.btn-appointment {
+    background: linear-gradient(135deg, var(--nav-green), #43a047);
+    color: #fff !important;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: 0.3s ease;
+    box-shadow: 0 12px 30px rgba(46, 125, 50, 0.25);
+}
+
+.btn-appointment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 45px rgba(46, 125, 50, 0.35);
+}
+
+
+/* ✅ Dropdown fix: hover open on desktop */
+
+@media (min-width: 992px) {
+    .about-dropdown {
+        position: relative;
+    }
+    .about-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu {
+        margin-top: 14px;
+        border-radius: 14px;
+        border: none;
+        padding: 10px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+    }
+    .dropdown-item {
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-weight: 700;
+        color: var(--nav-dark);
+        transition: 0.25s ease;
+    }
+    .dropdown-item:hover {
+        background: rgba(46, 125, 50, 0.12);
+        color: var(--nav-green);
+    }
+}
+
+
+/* ✅ BODY spacing so content doesn't hide behind fixed header+nav */
+
+body {
+    padding-top: 150px;
+}
+
+
+/* ✅ Mobile: hide desktop nav (your Tata header works) */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 64px !important;
+    }
+    .main-nav {
+        display: none !important;
+    }
 }
 
 .top-bar-inner {
@@ -135,7 +233,7 @@ html {
 ====================================================== */
 
 .hero-left {
-    background: linear-gradient(to right, rgba(20, 50, 30, 0.75), rgba(20, 50, 30, 0.35)), url("images/hero-hospital.jpg") center / cover no-repeat;
+    background: linear-gradient(to right, rgba(20, 50, 30, 0.75), rgba(20, 50, 30, 0.35)), url("images/home-hero.jpg") center / cover no-repeat;
     border-radius: 28px;
     min-height: 420px;
 }
@@ -155,12 +253,6 @@ html {
     font-size: 1.1rem;
     margin: 18px 0 28px;
     line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-    .hero-left {
-        overflow: visible;
-    }
 }
 
 
@@ -948,67 +1040,6 @@ section {
 
 
 /* ======================================================
-   MOBILE BOTTOM NAV – FIXED & BALANCED
-====================================================== */
-
-@media (max-width: 768px) {
-    .mobile-nav {
-        position: fixed;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 24px);
-        max-width: 520px;
-        background: linear-gradient(135deg, #1f3d2b, #2e7d32);
-        border-radius: 26px;
-        padding: 12px 10px;
-        display: flex;
-        justify-content: space-between;
-        /* ✅ IMPORTANT */
-        align-items: center;
-        z-index: 3000;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-    }
-    .mobile-nav .nav-item {
-        flex: 1;
-        /* ✅ equal width */
-        min-width: 0;
-        /* ✅ fixes spacing bug */
-        text-align: center;
-        color: #e0f2f1;
-        text-decoration: none;
-        font-size: 11px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        padding: 6px 0;
-    }
-    .mobile-nav .icon {
-        font-size: 18px;
-        line-height: 1;
-    }
-    .mobile-nav .label {
-        max-width: 60px;
-        /* ✅ fixes Appointment gap */
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    /* ❌ REMOVE highlight */
-    .mobile-nav .appointment-item {
-        background: none;
-        color: #e0f2f1;
-        box-shadow: none;
-        margin-top: 0;
-        border-radius: 0;
-        font-weight: normal;
-    }
-}
-
-
-/* ======================================================
    SERVICES – PROFESSIONAL / APOLLO STYLE
 ====================================================== */
 
@@ -1517,71 +1548,6 @@ section {
 }
 
 
-/* ================= TOP BAR FIX ================= */
-
-.top-bar {
-    background: #2f4f2f;
-    /* dark medical green */
-    height: 64px;
-    display: flex;
-    align-items: center;
-}
-
-.top-bar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-/* LOGO SIZE INCREASE */
-
-.top-logo img {
-    height: 52px;
-    /* 🔥 bigger logo */
-    width: auto;
-    object-fit: contain;
-}
-
-
-/* INFO VISIBILITY FIX */
-
-.top-info {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    color: #ffffff;
-    /* 🔥 white text */
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.top-info span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    opacity: 0.95;
-}
-
-
-/* ICON COLOR */
-
-.top-info span i,
-.top-info span svg {
-    color: #c8e6c9;
-}
-
-
-/* ================= MOBILE HANDLING ================= */
-
-@media (max-width: 992px) {
-    .top-info {
-        display: none;
-        /* clean mobile look */
-    }
-}
-
-
 /* =====================================================
    MOBILE VIEW FIX – CLEAN & PROFESSIONAL
    (Does NOT affect desktop)
@@ -2010,46 +1976,61 @@ section {
 
 /* ================= HERO ================= */
 
-.about-page .page-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("images/doctors-hero.jpg") center/cover no-repeat;
-    padding: 120px 20px;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 0 40px 40px;
-}
 
-.about-page .page-banner h1 {
-    font-size: 3rem;
-    font-weight: 800;
-}
+/* ✅ Banner / Hero Fix */
 
-.about-page .page-banner p {
-    font-size: 1.1rem;
-    opacity: 0.95;
-}
-
-.page-hero {
+.page-hero,
+.page-banner {
     position: relative;
-    min-height: 320px;
+    width: 100%;
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    background: url("images/doctors-hero.jpg") center/cover no-repeat;
     color: #fff;
-    background-size: cover;
-    background-position: center;
+    border-radius: 0 0 50px 50px;
+    overflow: hidden;
 }
 
-.page-hero::after {
+
+/* ✅ Better overlay */
+
+.page-hero::before,
+.page-banner::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    /* dark premium overlay */
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65));
 }
 
-.page-hero .container {
+
+/* ✅ text always on top */
+
+.page-hero .container,
+.page-banner .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+}
+
+.page-hero h1,
+.page-banner h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    /* ✅ force white */
+    margin-bottom: 10px;
+}
+
+.page-hero p,
+.page-banner p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    /* ✅ readable */
+    color: #fff;
+    /* ✅ force white */
 }
 
 
@@ -2440,10 +2421,22 @@ section {
 
 .contact-page .contact-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("images/contact-banner.jpg") center/cover no-repeat;
-    padding: 120px 20px;
+    min-height: 420px;
+    /* ✅ Same height everywhere */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #fff;
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 50px 50px;
+    padding: 0 20px;
+    /* ✅ padding sirf side me */
+}
+
+.contact-page {
+    padding-top: 0;
+    /* ✅ remove extra top padding */
 }
 
 .contact-page .contact-hero h1 {
@@ -2525,7 +2518,9 @@ section {
         padding-top: 90px;
     }
     .contact-page .contact-hero {
-        padding: 80px 16px;
+        min-height: 300px;
+        border-radius: 0 0 28px 28px;
+        padding: 0 16px;
     }
     .contact-page .contact-hero h1 {
         font-size: 2rem;
@@ -2684,15 +2679,6 @@ section {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
-}
-
-.top-bar {
-    border-bottom: none !important;
-    box-shadow: none !important;
-}
-
-body.contact-page {
-    padding-top: 0 !important;
 }
 
 
@@ -2920,16 +2906,10 @@ body.contact-page {
     }
 }
 
-
-/* ✅ REMOVE EXTRA GAP AFTER HERO */
-
 .hero-section {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
-
-
-/* ✅ Next section ko hero se chipka do */
 
 .hero-section+section {
     margin-top: 0 !important;
@@ -2955,7 +2935,7 @@ body.contact-page {
 .premium-hero-bg {
     position: absolute;
     inset: 0;
-    background: url("images/doctors-hero.jpg") center/cover no-repeat;
+    background: url("images/home-hero.jpg") center/cover no-repeat;
     transform: scale(1);
     animation: heroZoom 10s ease-in-out infinite alternate;
 }
@@ -3301,4 +3281,1432 @@ body.contact-page {
     .page-hero p {
         font-size: 1rem;
     }
+}
+
+
+/* ============================
+   PREMIUM NAV LIKE REFERENCE
+============================ */
+
+
+/* Top bar fixed */
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58px;
+    z-index: 2000;
+}
+
+
+/* Premium Navbar */
+
+.premium-nav {
+    position: fixed;
+    top: 58px;
+    /* top-bar ke just niche */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    /* ✅ start me floating */
+    max-width: 1350px;
+    border-radius: 0 0 28px 28px;
+    /* ✅ start rounded corners */
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
+    z-index: 1999;
+}
+
+
+/* Nav links */
+
+.premium-nav .nav-link {
+    color: #111 !important;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.premium-nav .nav-link:hover {
+    color: #2e7d32 !important;
+}
+
+
+/* Book Appointment Button */
+
+.btn-appointment {
+    background: #2e7d32;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.btn-appointment:hover {
+    background: #256428;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.35);
+}
+
+
+/* ✅ Scroll pe rectangle full width */
+
+.premium-nav.scrolled {
+    width: 100%;
+    left: 0;
+    transform: none;
+    max-width: none;
+    border-radius: 0;
+    /* ✅ rectangle */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Fix body padding for top fixed header */
+
+
+/* Mobile me full width + no radius */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    .premium-nav {
+        display: none !important;
+    }
+}
+
+
+/* =====================================================
+   SERVICES PAGE (ISOLATED + PREMIUM)
+   Works ONLY on services.html
+===================================================== */
+
+
+/* ✅ IMPORTANT:
+   Remove html, body reset from this file ❌
+   Because it breaks Premium Navbar + other pages
+*/
+
+
+/* ✅ Only services page base */
+
+body.services-page {
+    background: #f5f7fb;
+    padding-top: 140px;
+    /* ✅ top-bar + premium navbar space */
+    overflow-x: hidden;
+}
+
+
+/* ✅ Remove section default gaps */
+
+.services-page section {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+   HERO / BANNER
+===================================================== */
+
+.services-page .services-banner {
+    width: 100%;
+    margin: 0;
+    padding: 150px 20px 120px;
+    /* ✅ more balanced height */
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(31, 61, 43, 0.85)), url("images/doctors-hero.jpg") center/cover no-repeat;
+    border-radius: 0 0 40px 40px;
+}
+
+.services-page .services-banner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.services-page .services-banner p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    max-width: 760px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   INTRO SECTION
+===================================================== */
+
+.services-page .services-intro {
+    padding: 80px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.services-page .services-intro h2 {
+    font-size: 2.3rem;
+    color: #1f3d2b;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.services-page .services-intro p {
+    max-width: 780px;
+    margin: auto;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SERVICES GRID
+===================================================== */
+
+.services-page .services-list {
+    background: #f5f7fb;
+    padding: 90px 20px;
+}
+
+.services-page .services-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 26px;
+}
+
+
+/* CARD */
+
+.services-page .service-card {
+    background: #ffffff;
+    padding: 34px 26px;
+    border-radius: 22px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    min-height: 220px;
+}
+
+
+/* Light gradient shine */
+
+.services-page .service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(46, 125, 50, 0.12), transparent 65%);
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+
+/* Hover Premium */
+
+.services-page .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 55px rgba(46, 125, 50, 0.18);
+}
+
+.services-page .service-card:hover::before {
+    opacity: 1;
+}
+
+
+/* ICON */
+
+.services-page .service-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+
+/* TITLE */
+
+.services-page .service-card h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1f3d2b;
+    margin-bottom: 10px;
+}
+
+
+/* TEXT */
+
+.services-page .service-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =====================================================
+   HIGHLIGHTS SECTION
+===================================================== */
+
+.services-page .services-highlights {
+    background: #ffffff;
+    padding: 90px 20px;
+}
+
+.services-page .services-highlights h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #1f3d2b;
+}
+
+.services-page .highlight-grid {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.services-page .highlight-item {
+    background: #f5f7fb;
+    padding: 18px 20px;
+    border-radius: 16px;
+    font-weight: 700;
+    color: #2e7d32;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   DEPARTMENTS SECTION
+===================================================== */
+
+.services-page .department-services {
+    padding: 90px 20px;
+    background: #f5f7fb;
+}
+
+.services-page .department-services h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #1f3d2b;
+}
+
+.services-page .department-list {
+    max-width: 900px;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.services-page .department-list li {
+    background: #e8f5e9;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: #1f3d2b;
+    transition: 0.3s ease;
+}
+
+.services-page .department-list li:hover {
+    background: #2e7d32;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   PROCESS SECTION
+===================================================== */
+
+.services-page .service-process {
+    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    padding: 90px 20px;
+    color: #ffffff;
+}
+
+.services-page .service-process h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.services-page .process-steps {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.services-page .process-steps .step {
+    background: rgba(255, 255, 255, 0.16);
+    padding: 18px;
+    border-radius: 16px;
+    font-weight: 700;
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+
+/* =====================================================
+   FAQ SECTION
+===================================================== */
+
+.services-page .services-faq {
+    padding: 90px 20px;
+    background: #ffffff;
+}
+
+.services-page .services-faq h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #1f3d2b;
+}
+
+.services-page .faq-item {
+    max-width: 900px;
+    margin: 0 auto 18px;
+    background: #f5f7fb;
+    padding: 22px 26px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.services-page .faq-item h4 {
+    margin-bottom: 8px;
+    color: #2e7d32;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.services-page .faq-item p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.services-page .services-cta {
+    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    color: #fff;
+    padding: 90px 20px 110px;
+    text-align: center;
+}
+
+.services-page .services-cta h2 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.services-page .services-cta p {
+    font-size: 1.05rem;
+    opacity: 0.95;
+}
+
+
+/* CTA BUTTON */
+
+.services-page .cta-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #1f3d2b;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-top: 18px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.services-page .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   MOBILE FIXES
+===================================================== */
+
+@media (max-width: 768px) {
+    body.services-page {
+        padding-top: 70px;
+        /* ✅ mobile header spacing */
+        padding-bottom: 120px;
+    }
+    .services-page .services-banner {
+        padding: 110px 16px 80px;
+        border-radius: 0 0 26px 26px;
+    }
+    .services-page .services-banner h1 {
+        font-size: 2rem;
+    }
+    .services-page .services-banner p {
+        font-size: 1rem;
+    }
+    .services-page .services-intro {
+        padding: 55px 16px;
+    }
+    .services-page .services-list {
+        padding: 55px 16px;
+    }
+    .services-page .service-card {
+        text-align: center;
+        min-height: auto;
+    }
+    .services-page .service-icon {
+        margin: 0 auto 14px;
+    }
+    .services-page .services-cta {
+        padding: 70px 16px 110px;
+    }
+}
+
+
+/* ======================================================
+   DOCTORS PAGE CSS (MERGED + CLEAN + FIXED)
+   ✅ Banner height fixed
+   ✅ Navbar + top-bar gap fixed
+   ✅ Premium nav supported
+   ✅ Mobile responsive perfect
+====================================================== */
+
+
+/* ✅ IMPORTANT:
+   Do NOT reset html, body here ❌
+   Because it breaks other pages + premium nav
+*/
+
+
+/* ================= DOCTORS PAGE BASE ================= */
+
+body.doctors-page {
+    background: #f9fafb;
+    padding-top: 140px;
+    /* ✅ top-bar (58px) + premium-nav space */
+    overflow-x: hidden;
+}
+
+
+/* ================= HERO / BANNER ================= */
+
+.doctors-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("images/doctors-hero.jpg") center/cover no-repeat;
+    min-height: 420px;
+    /* ✅ fixed stable height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0 0 50px 50px;
+    margin: 0;
+    padding: 90px 20px;
+}
+
+
+/* ✅ Title */
+
+.doctors-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+
+/* ✅ Subtitle */
+
+.doctors-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin: 0;
+}
+
+
+/* ================= DOCTOR GRID SECTION ================= */
+
+.doctor-section {
+    padding: 120px 20px;
+    background: #f9fafb;
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+
+/* ================= DOCTOR CARD ================= */
+
+.doctor-card {
+    background: #ffffff;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+
+/* ================= DOCTOR BODY ================= */
+
+.doctor-body {
+    padding: 26px;
+    text-align: center;
+}
+
+.doctor-rating {
+    color: #2e7d32;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.doctor-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+.doctor-body h4 {
+    font-size: 0.95rem;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.degree {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.availability {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.doctor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.doctor-actions .btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.doctor-actions .btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+
+/* BUTTON COLORS */
+
+.btn.whatsapp {
+    background: #25d366;
+}
+
+.btn.call {
+    background: #2e7d32;
+}
+
+.btn.linkedin {
+    background: #0a66c2;
+}
+
+
+/* ================= FOOTER GAP ================= */
+
+.footer {
+    margin-top: 60px;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    body.doctors-page {
+        padding-top: 70px;
+        /* ✅ mobile header */
+        padding-bottom: 120px;
+    }
+    .doctors-hero {
+        min-height: 300px;
+        padding: 80px 16px 70px;
+        border-radius: 0 0 30px 30px;
+    }
+    .doctors-hero h1 {
+        font-size: 2rem;
+    }
+    .doctors-hero p {
+        font-size: 1rem;
+    }
+    .doctor-card img {
+        height: 220px;
+    }
+    .doctor-section {
+        padding: 70px 14px;
+    }
+    /* ✅ Premium nav hidden on mobile */
+    .premium-nav {
+        display: none !important;
+    }
+}
+
+
+/* ======================================================
+   GALLERY PAGE CSS (MERGED + CLEAN + FIXED)
+   ✅ Banner height stable
+   ✅ Top-bar + navbar spacing fixed
+   ✅ Mobile responsive perfect
+====================================================== */
+
+
+/* ✅ DO NOT reset html,body here
+   It breaks other pages
+*/
+
+
+/* ================= GALLERY PAGE BASE ================= */
+
+body.gallery-page {
+    background: #f9fafb;
+    padding-top: 140px;
+    /* ✅ top-bar + premium-nav space */
+    overflow-x: hidden;
+}
+
+
+/* ================= HERO / BANNER ================= */
+
+.gallery-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("images/doctors-hero.jpg") center / cover no-repeat;
+    min-height: 420px;
+    /* ✅ fixed banner height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0 0 50px 50px;
+    padding: 90px 20px;
+    margin: 0;
+}
+
+.gallery-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.gallery-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+
+/* ================= INTRO ================= */
+
+.gallery-intro {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.gallery-intro h2 {
+    color: #1f3d2b;
+    font-weight: 800;
+}
+
+.gallery-intro p {
+    max-width: 700px;
+    margin: auto;
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* ================= GRID ================= */
+
+.gallery-grid-section {
+    padding: 40px 20px 90px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+
+/* ================= CTA ================= */
+
+.gallery-cta {
+    background: linear-gradient(135deg, #1f3d2b, #2e7d32);
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.gallery-cta h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+.gallery-cta p {
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    body.gallery-page {
+        padding-top: 70px;
+        /* ✅ mobile header */
+        padding-bottom: 120px;
+    }
+    .gallery-hero {
+        min-height: 300px;
+        padding: 80px 16px 70px;
+        border-radius: 0 0 30px 30px;
+    }
+    .gallery-hero h1 {
+        font-size: 2.1rem;
+    }
+    .gallery-card img {
+        height: 220px;
+    }
+    /* premium nav hidden on mobile */
+    .premium-nav {
+        display: none !important;
+    }
+}
+
+
+/* ======================================================
+   MEET OUR TEAM PAGE CSS (MERGED + CLEAN + FIXED)
+   ✅ Banner height fixed
+   ✅ Top-bar + navbar spacing safe
+   ✅ Duplicate blocks removed
+   ✅ Mobile responsive perfect
+====================================================== */
+
+
+/* ================= TEAM PAGE BASE ================= */
+
+body.team-page {
+    background: #f7f9fc;
+    padding-top: 140px;
+    /* ✅ top-bar + premium nav spacing */
+    overflow-x: hidden;
+}
+
+
+/* ================= HERO / BANNER ================= */
+
+.team-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("images/doctors-hero.jpg") center/cover no-repeat;
+    min-height: 420px;
+    /* ✅ same height everywhere */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 50px 50px;
+    padding: 90px 20px;
+    margin: 0;
+}
+
+.team-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.team-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+
+/* ================= TEAM SECTION ================= */
+
+.team-section {
+    padding: 80px 20px;
+    background: #f9fbfd;
+}
+
+
+/* Heading */
+
+.section-head {
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+
+/* ================= GRID ================= */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================= TEAM CARD ================= */
+
+.team-card {
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.35s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.team-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+
+/* ================= BODY TEXT ================= */
+
+.team-body {
+    padding: 22px;
+}
+
+.team-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+    color: #263238;
+}
+
+.team-body h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.team-body p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+
+/* ================= SOCIAL LINKS ================= */
+
+.team-social {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.team-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e7d32;
+    font-size: 16px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.team-social a:hover {
+    background: #2e7d32;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.team-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.btn-team {
+    padding: 8px 18px;
+    border-radius: 22px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.btn-team.call {
+    background: #2e7d32;
+}
+
+.btn-team.email {
+    background: #1e88e5;
+}
+
+.btn-team:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+
+/* ======================================================
+   PREMIUM NAV SUPPORT (Same as Doctors/Gallery)
+====================================================== */
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58px;
+    z-index: 2000;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    body.team-page {
+        padding-top: 70px;
+        padding-bottom: 120px;
+    }
+    .team-hero {
+        min-height: 300px;
+        padding: 80px 16px 70px;
+        border-radius: 0 0 30px 30px;
+    }
+    .team-hero h1 {
+        font-size: 2rem;
+    }
+    .team-section {
+        padding: 60px 14px;
+    }
+    .team-card img {
+        height: 220px;
+    }
+    /* premium nav hidden on mobile */
+    .premium-nav {
+        display: none !important;
+    }
+}
+
+
+/* ✅ Doctor Card must be relative */
+
+.doctor-card-new {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ✅ Button perfect position (photo ke just niche, center) */
+
+.doctor-book-btn {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    /* ✅ isko 56-62% me adjust kar sakta hai */
+    transform: translate(-50%, -50%);
+    padding: 10px 22px;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.25);
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.35s ease;
+}
+
+.doctor-book-btn {
+    white-space: nowrap;
+    width: auto;
+    min-width: 170px;
+    text-align: center;
+}
+
+
+/* ✅ Desktop hover only */
+
+@media (hover: hover) and (pointer: fine) {
+    .doctor-book-btn {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -50%) translateY(12px);
+    }
+    .doctor-card-new:hover .doctor-book-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+
+/* ✅ Mobile always visible */
+
+@media (hover: none) and (pointer: coarse) {
+    .doctor-book-btn {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .doctor-book-btn {
+        min-width: 190px;
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+}
+
+
+/* ==========================================
+   ✅ PREMIUM FEATURE STRIP (REFERENCE STYLE)
+========================================== */
+
+.premium-feature-strip {
+    padding: 40px 0 55px;
+}
+
+.feature-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+
+/* ✅ common */
+
+.feature-strip-box {
+    padding: 55px 45px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feature-strip-box h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 18px 0 14px;
+}
+
+.feature-strip-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 95%;
+}
+
+
+/* ✅ icon */
+
+.feature-icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+}
+
+
+/* ✅ green */
+
+.feature-strip-box.green {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.feature-strip-box.green .feature-icon-box {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+
+/* ✅ blue */
+
+.feature-strip-box.blue {
+    background: #1e4fae;
+    color: #fff;
+}
+
+.feature-strip-box.blue .feature-icon-box {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+
+/* ✅ white */
+
+.feature-strip-box.white {
+    background: #ffffff;
+    color: #222;
+}
+
+.feature-strip-box.white .feature-icon-box {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+
+/* ✅ button */
+
+.feature-btn {
+    margin-top: 22px;
+    width: max-content;
+    padding: 14px 26px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    background: #2e7d32;
+    color: #fff;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.feature-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(46, 125, 50, 0.3);
+}
+
+.page-banner {
+    padding: 120px 0 60px;
+    /* ✅ normal height */
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background: url("images/doctors-hero.jpg") center/cover no-repeat;
+}
+
+.page-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.page-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================= UNIVERSAL HERO / BANNER ================= */
+
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("images/doctors-hero.jpg") center/cover no-repeat;
+    min-height: 420px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 50px 50px;
+    margin: 0;
+    padding: 90px 20px;
+}
+
+.page-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin: 0;
+}
+
+
+/* ✅ Responsive */
+
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 300px;
+        padding: 70px 16px;
+        border-radius: 0 0 28px 28px;
+    }
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    .page-hero p {
+        font-size: 1rem;
+    }
+}
+
+.gallery-preview {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    padding: 20px;
+}
+
+.gallery-preview.active {
+    display: flex;
+}
+
+.gallery-preview img {
+    max-width: 95%;
+    max-height: 85vh;
+    border-radius: 18px;
+    object-fit: contain;
+}
+
+.gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 35px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.gallery-close:hover {
+    background: rgba(255, 255, 255, 0.35);
 }
